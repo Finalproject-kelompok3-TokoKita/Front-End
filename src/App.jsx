@@ -7,6 +7,7 @@ import Productlist from './Pages/Productlist'
 import Sellerpage from './Pages/Sellerpage'
 import Userprofile from './Pages/Userprofile'
 import Contact from './Pages/Contact'
+import Cart from './Pages/Cart'
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
         <Route path='/productlist' element={<Productlist/>} />
         <Route path='/sellerpage' element={<Sellerpage/>} />
         <Route path='/userprofile' element={<Userprofile/>} />
+        <Route path='/cart' element={<Cart/>} />
         <Route path='/contact' element={<Contact/>} />
       </Routes>
     </Router>
