@@ -254,6 +254,88 @@ nav {
   border-radius: 12px;
 }
 
+/* Dashboard */
+
+#dashboard-seller-info{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  column-gap: 0px;
+  row-gap: 0px;
+}
+
+#dashboard-main{
+  margin-top: 80px;
+}
+
+#dashboard-content{
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+#dashboard-cardinfo{
+  text-align: center;
+  
+}
+.dashboard-seller-wrap img{
+  border-radius: 20px;
+}
+
+.dashboard-card-info{
+  border: 1px solid grey;
+  border-radius: 25px;
+  padding-top: 25px;
+  margin: 20px 0;
+}
+
+.dashboard-allmenu-action-button{
+  padding: 8px 22px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-weight: bolder;
+}
+
+.dasboard-filter-form{
+  border-radius: 10px;
+  width: 340px;
+  height: 25px;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+/* order status */
+.order-status-card{
+  border: 1px solid;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 3px 4px #d1deea;
+}
+
+.order-status-card-filter-form{
+  border-radius: 10px;
+  width: 340px;
+  height: 25px;
+  font-size: 15px;
+  padding-left: 5px;
+  margin-top: 20px;
+}
+
+
 /* footer */
 
 #footer {

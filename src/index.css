@@ -74,6 +74,20 @@ img {
   row-gap: 5px;
 }
 
+.two-col-dashboard-wrapper{
+  display: grid;
+  grid-template-columns: 20% 80%;
+  column-gap: 10px;
+  row-gap: 5px;
+}
+
+#dashboard-seller-info{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  column-gap: 0px;
+  row-gap: 0px;
+}
+
 .clear{
   clear: both;
 }
