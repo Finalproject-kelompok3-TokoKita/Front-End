@@ -24,7 +24,7 @@ const Tokodisekitar = () => {
                                     <span> 5 Star </span>
                                 </div>
                                 <br />
-                                <a href="" className="index-product-button-link">Kunjungi Toko</a>
+                                <a href={'/sellerpage'} className="index-product-button-link">Kunjungi Toko</a>
                             </div>
                         </div>
                         <div className="index-product-list">
@@ -46,7 +46,7 @@ const Tokodisekitar = () => {
                                     <span> 5 Star </span>
                                 </div>
                                 <br />
-                                <a href="" className="index-product-button-link">Kunjungi Toko</a>
+                                <a href={'/sellerpage'} className="index-product-button-link">Kunjungi Toko</a>
                             </div>
                         </div>
                         <div className="index-product-list">
@@ -68,7 +68,7 @@ const Tokodisekitar = () => {
                                     <span> 5 Star </span>
                                 </div>
                                 <br />
-                                <a href="" className="index-product-button-link">Kunjungi Toko</a>
+                                <a href={'/sellerpage'} className="index-product-button-link">Kunjungi Toko</a>
                             </div>
                         </div>
                         <div className="index-product-list">
@@ -90,7 +90,7 @@ const Tokodisekitar = () => {
                                     <span> 5 Star </span>
                                 </div>
                                 <br />
-                                <a href="" className="index-product-button-link">Kunjungi Toko</a>
+                                <a href={'/sellerpage'} className="index-product-button-link">Kunjungi Toko</a>
                             </div>
                         </div>
                         <div className="index-product-list">
@@ -112,7 +112,7 @@ const Tokodisekitar = () => {
                                     <span> 5 Star </span>
                                 </div>
                                 <br />
-                                <a href="" className="index-product-button-link">Kunjungi Toko</a>
+                                <a href={'/sellerpage'} className="index-product-button-link">Kunjungi Toko</a>
                             </div>
                         </div>
                         <div className="index-product-list">
@@ -134,7 +134,7 @@ const Tokodisekitar = () => {
                                     <span> 5 Star </span>
                                 </div>
                                 <br />
-                                <a href="" className="index-product-button-link">Kunjungi Toko</a>
+                                <a href={'/sellerpage'} className="index-product-button-link">Kunjungi Toko</a>
                             </div>
                         </div>
                     </div>

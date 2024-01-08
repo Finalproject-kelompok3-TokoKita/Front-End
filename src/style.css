@@ -112,7 +112,7 @@
     font-size: 18px;
 }
 
-span {
+.span {
     padding-left: 10px;
     color: #00AA13;
     cursor: pointer;
@@ -279,7 +279,7 @@ span {
     color: #fff;
 }
 
-section {
+.section {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -316,7 +316,7 @@ section {
     gap: 3em;
 }
 
-form {
+.form-masAgung {
     width: 100%;
     margin-top: 3em;
 }
@@ -416,3 +416,92 @@ form {
     color: var(--primaryColor);
     width: 70px;
 }
+
+/* edit user by Ezer */
+
+.head-1 {
+    padding: 8px 0px 8px 48px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.edit-foto {
+    margin-right: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 385px;
+    box-shadow: 1px 1px 10px #d9d9d9;
+    padding: 20px;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+.img-ezer {
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.biodata {
+    display: flex;
+    padding: 48px;
+    flex: 1;
+}
+
+.btn-useredit {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 3px;
+    border: 0px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* button[type="edit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5rem;
+    border: 0px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+} */
+
+.edit-biodata {
+    flex: auto;
+}
+
+#main {
+    box-shadow: 1px 1px 10px #d9d9d9;
+    border-radius: 10px;
+}
+
+#form-useredit {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-useredit {
+    width: 100%;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border: 1px solid #00aa13;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* input::placeholder {
+    font-weight: bold;
+    opacity: 100%;
+    color: black;
+} */

@@ -6,15 +6,15 @@ const Nav = () => {
                     <h1 style={{color: "green"}}>TOKO KITA</h1>
                 </div>
                 <div className="nav-link" style={{textAlign: "center", paddingTop: "3px"}}>
-                    <a href="" style={{color: "black"}}>Home</a>
-                    <a href="" style={{color: "black"}}>Shop</a>
-                    <a href="" style={{color: "black"}}>Contact</a>
+                    <a href={'/'} style={{color: "black"}}>Home</a>
+                    <a href={'/productlist'} style={{color: "black"}}>Shop</a>
+                    <a href={'/contact'} style={{color: "black"}}>Contact</a>
                 </div>
                 <div className="nav-link" style={{textAlign: "right", paddingTop: "3px"}}>
-                    <a href="" style={{color: "black"}}>Cart</a>
+                    <a href={'/cart'} style={{color: "black"}}>Cart</a>
                     <a href="" style={{color: "black"}}>Favorite</a>
-                    <a href="" style={{color: "black"}}>Toko</a>
-                    <a href="" style={{color: "black"}}>Profile</a>
+                    <a href={'/dashboard'} style={{color: "black"}}>Toko</a>
+                    <a href={'/userprofile'} style={{color: "black"}}>Profile</a>
                 </div>
             </nav>
         </>

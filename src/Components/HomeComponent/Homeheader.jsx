@@ -12,15 +12,15 @@ const Homeheader = () => {
                                 <h1 style={{ color: "green" }}>TOKO KITA</h1>
                             </div>
                             <div className="nav-link" style={{ textAlign: "center", paddingTop: "3px" }}>
-                                <a href="">Home</a>
-                                <a href="">Cari Menu</a>
-                                <a href="">Kontak</a>
+                                <a href={'/'}>Home</a>
+                                <a href={'/productlist'}>Cari Menu</a>
+                                <a href={'/contact'}>Kontak</a>
                             </div>
                             <div className="nav-link" style={{ textAlign: "right", paddingTop: "3px" }}>
-                                <a href="">Cart</a>
-                                <a href="">Favorit</a>
-                                <a href="">Toko</a>
-                                <a href="">Profil</a>
+                                <a href={'/cart'}>Cart</a>
+                                <a href="">Favorite</a>
+                                <a href={'/dashboard'}>Toko</a>
+                                <a href={'/userprofile'}>Profile</a>
                             </div>
                         </nav>
                         <Searchbar />

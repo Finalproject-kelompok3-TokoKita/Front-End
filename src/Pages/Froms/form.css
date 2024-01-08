@@ -1,0 +1,73 @@
+#body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+.login-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.register-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+.title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #45a049;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-ezer {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.form-btn-ezer {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+.form-btn-ezer:hover {
+    background-color: #45a049;
+}
+
+.a-link-ezer {
+    color: #ec5e00;
+    text-decoration: none;
+}
+
+.a-link-ezer:hover {
+    text-decoration: underline;
+}
+
+.show-password {
+    text-align: left;
+    font-size: small;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
