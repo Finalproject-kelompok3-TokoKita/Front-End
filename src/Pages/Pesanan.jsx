@@ -30,8 +30,8 @@
           <h5>Tunjukkan Bukti Pembayaran Kepada Penjual</h5>
           </div>
           <div className="unduh">
-          <button><img src="./assets/images/panah.png" alt />Unduh</button>
-          <button><img src="./assets/images/share.png" alt />Bagikan</button>
+          <button><img src="./assets/panah.png" alt />Unduh</button>
+          <button><img src="./assets/share.png" alt />Bagikan</button>
           </div>
      </div>
      </form>

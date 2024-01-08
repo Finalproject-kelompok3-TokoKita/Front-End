@@ -17,14 +17,14 @@
                <span className="metode1">Lihat Semua</span>
           </div>
           <div className="inputBox1">
-               <img className="bca" src="./assets/images/bca.png" alt />
+               <img className="bca" src="./assets/bca.png" alt />
                <div className="bcaa">BCA Virtual Account</div>
-               <img className="metode2" src="./assets/images/bunder1.png" alt />
+               <img className="metode2" src="./assets/bunder1.png" alt />
           </div>
           <div className="inputBox1">
-               <img className="bca" src="./assets/images/bri.png" alt />
+               <img className="bca" src="./assets/bri.png" alt />
                <div className="bcaa">BRI Virtual Account</div>
-               <img className="metode2" src="./assets/images/bunder2.png" alt />
+               <img className="metode2" src="./assets/bunder2.png" alt />
           </div>
           <div className="pem">
                <h4>Detail Pembayaran</h4>
