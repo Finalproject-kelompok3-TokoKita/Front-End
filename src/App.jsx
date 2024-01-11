@@ -14,6 +14,9 @@ import Login from './Pages/Froms/Login'
 import Register from './Pages/Froms/Register'
 import Sellersignup from './Pages/Froms/Sellersignup'
 import Useredit from './Pages/Froms/Useredit'
+import Test from './Pages/Froms/Test'
+import Postmenu from './Pages/Froms/Postmenu'
+import Putmenu from './Pages/Froms/Putmenu'
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -21,7 +24,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Auth */}
+        {/* Auth */}     
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<Register/>} />
         {/* Main */}    
@@ -31,6 +34,8 @@ function App() {
         <Route path='/contact' element={<Contact/>} />
         {/* Seller */}
         <Route path='/seller-register' element={<Sellersignup/>} />
+        <Route path='/add-menu' element={<Postmenu/>} />
+        <Route path='/edit-menu' element={<Putmenu/>} />
         <Route path='/sellerpage' element={<Sellerpage/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/orderlist' element={<Statusorder/>} />

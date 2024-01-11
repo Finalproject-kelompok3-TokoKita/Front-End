@@ -91,3 +91,8 @@ img {
 .clear{
   clear: both;
 }
+
+hr{
+  background-color: #d1deea;
+  height: 0.5px;
+}

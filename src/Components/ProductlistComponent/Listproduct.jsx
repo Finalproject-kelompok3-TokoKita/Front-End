@@ -3,7 +3,7 @@ const Listproduct = () => {
         <>
             <div id="product-list-item" style={{ marginTop: "30px" }}>
                 <div className="three-col-wrapper">
-                    <div className="product-list-content">
+                    <div className="product-list-content shadow">
                         <img src="" alt="" />
                         <div className="container">
                             <h4>
@@ -26,7 +26,7 @@ const Listproduct = () => {
                             <a href={'/sellerpage'} className="product-list-button-link">Kunjungi Toko</a>
                         </div>
                     </div>
-                    <div className="product-list-content">
+                    <div className="product-list-content shadow">
                         <img src="" alt="" />
                         <div className="container">
                             <h4>
@@ -49,7 +49,7 @@ const Listproduct = () => {
                             <a href={'/sellerpage'} className="product-list-button-link">Kunjungi Toko</a>
                         </div>
                     </div>
-                    <div className="product-list-content">
+                    <div className="product-list-content shadow">
                         <img src="" alt="" />
                         <div className="container">
                             <h4>
@@ -72,7 +72,7 @@ const Listproduct = () => {
                             <a href={'/sellerpage'} className="product-list-button-link">Kunjungi Toko</a>
                         </div>
                     </div>
-                    <div className="product-list-content">
+                    <div className="product-list-content shadow">
                         <img src="" alt="" />
                         <div className="container">
                             <h4>
@@ -95,7 +95,7 @@ const Listproduct = () => {
                             <a href={'/sellerpage'} className="product-list-button-link">Kunjungi Toko</a>
                         </div>
                     </div>
-                    <div className="product-list-content">
+                    <div className="product-list-content shadow">
                         <img src="" alt="" />
                         <div className="container">
                             <h4>
@@ -118,7 +118,7 @@ const Listproduct = () => {
                             <a href={'/sellerpage'} className="product-list-button-link">Kunjungi Toko</a>
                         </div>
                     </div>
-                    <div className="product-list-content">
+                    <div className="product-list-content shadow">
                         <img src="" alt="" />
                         <div className="container">
                             <h4>
@@ -141,7 +141,7 @@ const Listproduct = () => {
                             <a href={'/sellerpage'} className="product-list-button-link">Kunjungi Toko</a>
                         </div>
                     </div>
-                    <div className="product-list-content">
+                    <div className="product-list-content shadow">
                         <img src="" alt="" />
                         <div className="container">
                             <h4>
@@ -164,7 +164,7 @@ const Listproduct = () => {
                             <a href={'/sellerpage'} className="product-list-button-link">Kunjungi Toko</a>
                         </div>
                     </div>
-                    <div className="product-list-content">
+                    <div className="product-list-content shadow">
                         <img src="" alt="" />
                         <div className="container">
                             <h4>
@@ -187,7 +187,7 @@ const Listproduct = () => {
                             <a href={'/sellerpage'} className="product-list-button-link">Kunjungi Toko</a>
                         </div>
                     </div>
-                    <div className="product-list-content">
+                    <div className="product-list-content shadow">
                         <img src="" alt="" />
                         <div className="container">
                             <h4>

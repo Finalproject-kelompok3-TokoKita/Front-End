@@ -1,6 +1,11 @@
+import { useState } from "react"
 import "./form.css"
 
 const Login = () => {
+
+    const [Loginemail, setLoginemail] = useState('')
+    const [Loginpassword, setLoginpassword] = useState('')
+
     return (
         <>
             <body id="body">

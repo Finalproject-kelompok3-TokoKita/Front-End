@@ -1,7 +1,7 @@
 const Nav = () => {
     return (
         <>
-            <nav className="three-col-wrapper" style={{borderBottom: "2px solid black"}}>
+            <nav className="three-col-wrapper" style={{borderBottom: "2px solid #d1deea"}}>
                 <div id="web-title">
                     <h1 style={{color: "green"}}>TOKO KITA</h1>
                 </div>

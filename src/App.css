@@ -166,8 +166,12 @@ nav {
 
 /* product-list */
 
+.shadow{
+  box-shadow: 1px 1px 2px 3px #d1deea;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
 .product-list-filter-form-detail{
-  border: 1px solid grey;
   border-radius: 25px;
   padding: 10px 0 30px 30px;
   margin-top: 30px;
