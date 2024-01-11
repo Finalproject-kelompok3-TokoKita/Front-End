@@ -14,9 +14,10 @@ import Login from './Pages/Froms/Login'
 import Register from './Pages/Froms/Register'
 import Sellersignup from './Pages/Froms/Sellersignup'
 import Useredit from './Pages/Froms/Useredit'
-import Test from './Pages/Froms/Test'
 import Postmenu from './Pages/Froms/Postmenu'
 import Putmenu from './Pages/Froms/Putmenu'
+import Pembayaran from './Pages/Pembayaran'
+import Pesanan from './Pages/Pesanan'
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -42,6 +43,9 @@ function App() {
         {/* User */}
         <Route path='/useredit' element={<Useredit/>} />
         <Route path='/userprofile' element={<Userprofile/>} />
+        <Route path='/pesanan' element={<Pesanan/>} />
+        <Route path='/pembayaran' element={<Pembayaran/>} />
+
       </Routes>
     </Router>
   )
