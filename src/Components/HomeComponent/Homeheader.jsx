@@ -1,34 +1,32 @@
 import Searchbar from "../Searchbar";
+// import image
+import card5 from "../../assets/bazaar.jpg";
 
 const Homeheader = () => {
   return (
     <>
+      <header>
+        <div className="logo">
+          <a href="#">Tokokita</a>
+        </div>
+        <nav className="navbar-header">
+          <a href={"/"}>Home</a>
+          <a href={"/productlist"}>Shop</a>
+          <a href={"/contact"}>Contact</a>
+        </nav>
+        <ul className="items">
+          <a href={"/userprofile"} className="use">
+            Sign in
+          </a>
+          <a href={"/userprofile"} className="uses">
+            Sign up
+          </a>
+        </ul>
+      </header>
       <div id="main">
-        <img src="" alt="" />
+        <img src={card5} alt="" />
         <div id="index-main-detail">
           <div className="container">
-            <nav className="three-col-wrapper">
-              <div id="web-title">
-                <h1 style={{ color: "green" }}>TOKO KITA</h1>
-              </div>
-              <div
-                className="nav-link"
-                style={{ textAlign: "center", paddingTop: "3px" }}
-              >
-                <a href={"/"}>Home</a>
-                <a href={"/productlist"}>Cari Menu</a>
-                <a href={"/contact"}>Kontak</a>
-              </div>
-              <div
-                className="nav-link"
-                style={{ textAlign: "right", paddingTop: "3px" }}
-              >
-                <a href={"/cart"}>Cart</a>
-                <a href={"/favorite"}>Favorite</a>
-                <a href={"/dashboard"}>Toko</a>
-                <a href={"/userprofile"}>Profile</a>
-              </div>
-            </nav>
             <Searchbar />
           </div>
         </div>
@@ -38,8 +36,8 @@ const Homeheader = () => {
           <div className="three-col-wrapper">
             <div className="simple-box-1">
               <svg
-                width="118"
-                height="118"
+                width="100"
+                height="100"
                 viewBox="0 0 118 118"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,12 +61,12 @@ const Homeheader = () => {
                   fill="#FF5600"
                 />
               </svg>
-              <h1>Terdekat</h1>
+              <h2>Terdekat</h2>
             </div>
             <div className="simple-box-2">
               <svg
-                width="118"
-                height="118"
+                width="100"
+                height="100"
                 viewBox="0 0 118 118"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -90,12 +88,12 @@ const Homeheader = () => {
                   fill="#FAA307"
                 />
               </svg>
-              <h1>Terlaris</h1>
+              <h2>Terlaris</h2>
             </div>
             <div className="simple-box-3">
               <svg
-                width="118"
-                height="118"
+                width="100"
+                height="100"
                 viewBox="0 0 118 118"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +119,7 @@ const Homeheader = () => {
                   fill="white"
                 />
               </svg>
-              <h1>Promo</h1>
+              <h2>Promo</h2>
             </div>
           </div>
         </div>

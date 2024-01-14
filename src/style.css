@@ -1,3 +1,89 @@
+/* header  nav*/
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.container-barnav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.logo a {
+  color: #00aa13;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.navbar-header {
+  font-size: 20px;
+}
+.navbar-header a {
+  color: black;
+  padding: 20px;
+}
+.search-header input {
+  width: 300px;
+  height: 35px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+.kita {
+  text-align: center;
+}
+.jelajah {
+  width: 218px;
+  height: 44px;
+  border-radius: 100px;
+  background: #00aa13;
+  border: none;
+  color: white;
+}
+
+.search-header button {
+  height: 35px;
+  width: 50px;
+  border-radius: 2px;
+  border: none;
+  background-color: var(--main-color);
+  color: #fff;
+}
+.items img {
+  width: 30px;
+  padding: 10px;
+}
+
+.items .use {
+  line-height: 100px;
+  font-weight: 600;
+  color: black;
+}
+.items .uses {
+  line-height: 100px;
+  font-weight: 600;
+  color: white;
+}
+.use {
+  margin-right: 10px;
+  background-color: white;
+  padding: 5px 10px;
+  border: 1px solid #919aa3;
+  border-radius: 5px;
+}
+.uses {
+  background-color: #ff5600;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
 /* userprofile */
 .wrapper {
   position: absolute;
