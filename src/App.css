@@ -223,6 +223,7 @@ nav {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-size: 14px;
   border-radius: 15px;
 }
 
@@ -255,15 +256,20 @@ nav {
 }
 
 #seller-page-addtocart {
-  background-color: green;
+  background-color: #00aa13;
+  cursor: pointer;
+  border: none;
   color: white;
   padding: 10px 380px;
   text-align: center;
   border-radius: 12px;
+  margin-bottom: 10px;
 }
 
 #seller-page-addtofavorite {
-  background-color: coral;
+  cursor: pointer;
+  background-color: #ff5600;
+  border: none;
   color: white;
   padding: 10px 50px;
   text-align: center;

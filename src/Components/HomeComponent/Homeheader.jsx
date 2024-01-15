@@ -15,10 +15,10 @@ const Homeheader = () => {
           <a href={"/contact"}>Contact</a>
         </nav>
         <ul className="items">
-          <a href={"/userprofile"} className="use">
+          <a href={"/login"} className="use">
             Sign in
           </a>
-          <a href={"/userprofile"} className="uses">
+          <a href={"/signup"} className="uses">
             Sign up
           </a>
         </ul>

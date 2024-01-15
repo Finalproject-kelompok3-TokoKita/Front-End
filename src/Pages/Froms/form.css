@@ -1,211 +1,212 @@
 #body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .login-container {
-    background-color: #ffffff;
-    padding: 2rem;
-    width: 100%;
-    max-width: 400px;
+  background-color: #ffffff;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
 }
 
 .register-container {
-    background-color: #ffffff;
-    padding: 2rem;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+  background-color: #ffffff;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
 
 .title {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #45a049;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #45a049;
 }
 
 #form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-input-ezer {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
 }
 
 .form-btn-ezer {
-    background-color: #4caf50;
-    color: white;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    text-align: center;
-    width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
 }
 
 .form-btn-ezer:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .a-link-ezer {
-    color: #ec5e00;
-    text-decoration: none;
+  color: #ec5e00;
+  text-decoration: none;
 }
 
 .a-link-ezer:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .show-password {
-    text-align: left;
-    font-size: small;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+  text-align: left;
+  font-size: small;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 /* Postmenu */
 
 #body-postmenu {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    height: 100vh;
-    margin: 28px 63px 16px 63px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  height: 100vh;
+  margin: 28px 63px 16px 63px;
 }
 
 #main-postmenu {
-    box-shadow: 1px 1px 10px #d9d9d9;
-    border-radius: 10px;
-    padding: 42px 32px;
+  box-shadow: 1px 1px 10px #d9d9d9;
+  border-radius: 10px;
+  padding: 42px 32px;
+  margin-top: 15px;
 }
 
 .upload-foto {
-    display: flex;
-    margin-bottom: 44px;
+  display: flex;
+  margin-bottom: 44px;
 }
 
-.upload-foto>input {
-    visibility: hidden;
-    width: 0;
-    height: 0;
+.upload-foto > input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 .label-foto {
-    flex: 1;
+  flex: 1;
 }
 
 .form-group {
-    flex: 6;
-    padding-left: 65px;
+  flex: 6;
+  padding-left: 65px;
 }
 
 .upload-produk-inputtext {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    width: 98%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 98%;
 }
 
 .upload-produk-inputnumber {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    width: 98%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 98%;
 }
 
 #upload-produk-select {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    width: 99%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 99%;
 }
 
 .nama {
-    display: flex;
-    margin-bottom: 44px;
+  display: flex;
+  margin-bottom: 44px;
 }
 
 .label-nama {
-    flex: 1;
+  flex: 1;
 }
 
 .deskripsi {
-    display: flex;
-    margin-bottom: 44px;
+  display: flex;
+  margin-bottom: 44px;
 }
 
 .label-deskripsi {
-    flex: 1;
+  flex: 1;
 }
 
 .harga {
-    display: flex;
-    margin-bottom: 44px;
+  display: flex;
+  margin-bottom: 44px;
 }
 
 .label-harga {
-    flex: 1;
+  flex: 1;
 }
 
 .kategori {
-    display: flex;
-    margin-bottom: 44px;
+  display: flex;
+  margin-bottom: 44px;
 }
 
 .label-kategori {
-    flex: 1;
+  flex: 1;
 }
 
 .stok {
-    display: flex;
+  display: flex;
 }
 
 .label-stok {
-    flex: 1;
+  flex: 1;
 }
 
 .button {
-    display: flex;
-    padding: 42px 0px 42px 0px;
-    flex-direction: row-reverse;
+  display: flex;
+  padding: 42px 0px 42px 0px;
+  flex-direction: row-reverse;
 }
 
 .upload-produk-btnsubmit {
-    background-color: #4caf50;
-    color: white;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    width: 15%;
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  width: 15%;
 }
 
 button[type="cancel"] {
-    background-color: #fff;
-    color: black;
-    padding: 0.5rem;
-    border: 1px solid #cfd1d4;
-    border-radius: 3px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    width: 15%;
-    margin-right: 18px;
+  background-color: #fff;
+  color: black;
+  padding: 0.5rem;
+  border: 1px solid #cfd1d4;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  width: 15%;
+  margin-right: 18px;
 }
 
 .upload-produk-btnsubmit:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }

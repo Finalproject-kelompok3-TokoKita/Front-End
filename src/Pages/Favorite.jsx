@@ -2,6 +2,7 @@ import card1 from "../assets/card.png";
 import card2 from "../assets/favorite.png";
 import card3 from "../assets/rumah.png";
 import card4 from "../assets/orang.png";
+import card5 from "../assets/love.png";
 
 const Favorite = () => {
   return (
@@ -43,7 +44,7 @@ const Favorite = () => {
                   <h3 className="product-name">Makanan Tradisional</h3>
                   <p className="khas">Makanan Khas Indonesia</p>
                   <h4 className="product-offer">10k</h4>
-                  <img src="./assets/images/love.png" alt />
+                  <img className="love" src={card5} alt />
                   <p className="product-remove"></p>
                 </div>
                 <div className="favorite-gambar">
@@ -61,7 +62,7 @@ const Favorite = () => {
                   <h3 className="product-name">Makanan Tradisional</h3>
                   <p className="khas">Makanan Khas Indonesia</p>
                   <h4 className="product-offer">10k</h4>
-                  <img src="./assets/images/love.png" alt />
+                  <img className="love" src={card5} alt />
                 </div>
                 <div className="favorite-gambar">
                   <img src="./assets/images/ayam.jpg" alt />

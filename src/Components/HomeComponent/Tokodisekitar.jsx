@@ -26,7 +26,7 @@ const Tokodisekitar = () => {
                   >
                     10 Km
                   </span>
-                  <span> 5 Star </span>
+                  <span> 5⭐</span>
                 </div>
                 <br />
                 <a href={"/sellerpage"} className="index-product-button-link">
@@ -55,7 +55,7 @@ const Tokodisekitar = () => {
                   >
                     10 Km
                   </span>
-                  <span> 5 Star </span>
+                  <span> 5⭐ </span>
                 </div>
                 <br />
                 <a href={"/sellerpage"} className="index-product-button-link">
@@ -84,7 +84,7 @@ const Tokodisekitar = () => {
                   >
                     10 Km
                   </span>
-                  <span> 5 Star </span>
+                  <span> 5⭐ </span>
                 </div>
                 <br />
                 <a href={"/sellerpage"} className="index-product-button-link">
@@ -113,7 +113,7 @@ const Tokodisekitar = () => {
                   >
                     10 Km
                   </span>
-                  <span> 5 Star </span>
+                  <span> 5⭐ </span>
                 </div>
                 <br />
                 <a href={"/sellerpage"} className="index-product-button-link">
@@ -142,7 +142,7 @@ const Tokodisekitar = () => {
                   >
                     10 Km
                   </span>
-                  <span> 5 Star </span>
+                  <span> 5⭐ </span>
                 </div>
                 <br />
                 <a href={"/sellerpage"} className="index-product-button-link">
@@ -171,7 +171,7 @@ const Tokodisekitar = () => {
                   >
                     10 Km
                   </span>
-                  <span> 5 Star </span>
+                  <span> 5⭐ </span>
                 </div>
                 <br />
                 <a href={"/sellerpage"} className="index-product-button-link">

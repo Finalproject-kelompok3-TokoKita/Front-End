@@ -29,6 +29,9 @@ header {
   color: black;
   padding: 20px;
 }
+.navbar-header a:hover {
+  color: #00aa13;
+}
 .search-header input {
   width: 300px;
   height: 35px;
@@ -78,6 +81,11 @@ header {
   border: 1px solid #919aa3;
   border-radius: 5px;
 }
+.use:hover {
+  background-color: #00aa13;
+  color: white;
+  transition: 0.3s all ease-in-out;
+}
 .uses {
   background-color: #ff5600;
   padding: 5px 10px;
@@ -98,7 +106,6 @@ header {
 
 .wrapper .left {
   width: 35%;
-  /* background: linear-gradient(to right,#01a9ac,#01dbdf); */
   background: white;
   padding: 30px 25px;
   border-top-left-radius: 5px;
@@ -112,7 +119,6 @@ header {
   width: 200px;
   margin-bottom: 10px;
   padding: 10px;
-  /* padding-bottom: 90px; */
   border: 1px solid #d9d9d9;
 }
 
@@ -143,9 +149,8 @@ header {
   padding-bottom: 5px;
   border-bottom: 1px solid #e0e0e0;
   color: #353c4e;
-  font-bold: 600;
+  font-weight: 600;
   text-transform: uppercase;
-  /* letter-spacing: 5px; */
 }
 
 .wrapper .right .info_data,
@@ -171,13 +176,6 @@ header {
   margin-bottom: 5px;
 }
 
-/* .wrapper .right .info_data .data p,
-        .wrapper .right .projects_data .data p{
-        font-size: 13px;
-        margin-bottom: 10px;
-        color: #919aa3;
-        } */
-
 .wrapper .social_media ul {
   display: flex;
 }
@@ -185,7 +183,6 @@ header {
 .wrapper .social_media ul li {
   width: 45px;
   height: 45px;
-  /* background: linear-gradient(to right,#01a9ac,#01dbdf); */
   margin-right: 10px;
   border-radius: 5px;
   text-align: center;
@@ -347,7 +344,7 @@ p {
 }
 
 .cart-total .bayar {
-  font-bold: 600;
+  font-weight: 600;
   padding-bottom: 10px;
 }
 
@@ -567,14 +564,136 @@ p {
   border-radius: 4px;
   box-sizing: border-box;
 }
+/* user profile */
+.wrapper {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  width: 980px;
+  height: 420px;
+  display: flex;
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+}
 
-/* input::placeholder {
-    font-weight: bold;
-    opacity: 100%;
-    color: black;
-} */
+.wrapper .left {
+  width: 35%;
+  background: linear-gradient(to right, #01a9ac, #01dbdf);
+  background: white;
+  padding: 30px 25px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  color: #fff;
+}
 
-/* favorite.jsx */
+.wrapper .left img {
+  border-radius: 5px;
+  width: 200px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+}
+.wrapper .left h4 {
+  margin-bottom: 10px;
+}
+
+.wrapper .left p {
+  font-size: 12px;
+}
+
+.wrapper .right {
+  width: 65%;
+  background: #fff;
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.wrapper .right .info,
+.wrapper .right .projects {
+  margin-bottom: 25px;
+}
+
+.wrapper .right .info h3,
+.wrapper .right .projects h3 {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #353c4e;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.wrapper .right .info_data,
+.wrapper .right .projects_data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper .right .info_data .data,
+.wrapper .right .projects_data .data {
+  width: 55%;
+}
+
+.wrapper .right .info_data .data h4,
+.wrapper .right .projects_data .data h4 {
+  color: #919aa8;
+  margin-bottom: 5px;
+}
+.wrapper .right .info_data .data h5,
+.wrapper .right .projects_data .data h5 {
+  color: #919aa3;
+  margin-bottom: 5px;
+}
+
+.wrapper .social_media ul {
+  display: flex;
+}
+
+.wrapper .social_media ul li {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.wrapper .social_media ul li a {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+}
+span {
+  padding-left: 10px;
+  color: #00aa13;
+  cursor: pointer;
+}
+.ubah {
+  cursor: pointer;
+  padding: 8px;
+  width: 180px;
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  border-radius: 3px;
+}
+.file {
+  color: black;
+  padding: 5px;
+}
+.ubah2 {
+  cursor: pointer;
+  padding: 8px;
+  width: 180px;
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  border-radius: 3px;
+  margin-top: 10px;
+  color: white;
+  background-color: #00aa13;
+}
+
+/* ----------favorite.jsx---------- */
 .container-favorite {
   width: 1314px;
   margin: 0 auto;
@@ -608,7 +727,7 @@ p {
 }
 .menu-favorite {
   margin-top: -10px;
-  width: 119%;
+  width: 115%;
   padding: 5px;
   border-bottom: 1px solid silver;
 }
@@ -625,6 +744,7 @@ p {
 .favorite-gambar-tambah button {
   display: flex;
   margin-top: 10px;
+  margin-right: 12px;
   cursor: pointer;
   width: 120px;
   height: 25px;
@@ -642,7 +762,7 @@ p {
   height: 80px;
   line-height: 80px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   padding-left: 25px;
 }
 .total-pesanan .tambah-pesan {
@@ -664,18 +784,17 @@ p {
   position: relative;
 }
 .product-name {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .product-name,
 .product-price,
 .product-offer {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   right: 20px;
   padding: 1px 1px;
 }
 .product-info4 .khas {
-  margin-top: -10px;
-  margin-bottom: 10px;
+  margin-top: -20px;
   font-size: 15px;
 }
 .product-remove:hover {
@@ -683,4 +802,31 @@ p {
   color: green;
   font-weight: 600;
   border: 1px solid green;
+}
+.product-info4 .love {
+  margin-top: -10px;
+}
+/* footer */
+.bac {
+  background: white;
+  width: 100%;
+  height: 100%;
+  margin-top: 600px;
+}
+.feb {
+  background-color: white;
+}
+.fab-icon img {
+  padding: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+/* list profuck */
+.jaj {
+  margin-top: 70px;
+  font-size: 14px;
+}
+.krip {
+  padding-top: 20px;
 }
