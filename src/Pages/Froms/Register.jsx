@@ -1,23 +1,30 @@
 import { useState } from "react"
 import axios from "axios"
 import "./form.css"
-import Signupvalidation from "../../Service/Validation/Signupvalidation"
+import { useNavigate } from "react-router-dom"
+//import Signupvalidation from "../../Service/Validation/Signupvalidation"
 
 const Register = () => {
     
-    const [Regisname, setRegisname] = useState('')
-    const [Regisemail, setRegisemail] = useState('')
-    const [Regispassword, setRegispassword] = useState('')
-    const [Regispasswordcheck, setRegispasswordcheck] = useState('')
+    const [regisdata, setRegisdata] = useState({
+        username: '',
+        email: '',
+        password: ''
+    })
 
-    const handleRegister = (event) => {
-        event.preventDefault()
-        axios.post('', {
-            name: Regisname,
-            EMail: Regisemail,
-            password: Regispassword
-        }).then( res => console.log(response))
-          .catch(er => console.log(er))
+    const [passcheck, setPasscheck] = useState('')
+    const redirect = useNavigate()
+
+    const handleRegister = (e) => {
+        e.preventDefault()
+
+        if (regisdata.password != passcheck) {
+            alert("pass not match")    
+        }else{
+            // axios.post('http://localhost:5000/register', regisdata)
+            // .then(res => console.log(res))
+            // .then(err => console.log(err))
+        }
     }
 
     return (
@@ -28,26 +35,30 @@ const Register = () => {
                     <form id="form" onSubmit={handleRegister}>
                         <input className="form-input-ezer" 
                         type="text" 
-                        placeholder="Username"  
-                        onChange={e => setRegisname(e.target.value)} />
+                        placeholder="Username"
+                        name="username"  
+                        onChange={e => setRegisdata({...regisdata, username: e.target.value})} />
 
                         <input className="form-input-ezer" 
                         type="email" 
-                        placeholder="Email" 
-                        onChange={e => setRegisemail(e.target.value)}/>
+                        placeholder="Email"
+                        name="email" 
+                        onChange={e => setRegisdata({...regisdata, email: e.target.value})}/>
 
                         <input className="form-input-ezer" 
                         type="password" 
                         id="password" 
-                        placeholder="Password" 
-                        onChange={e => setRegispassword(e.target.value)}/>
+                        placeholder="Password"
+                        name="password" 
+                        onChange={e => setRegisdata({...regisdata, password: e.target.value})}/>
 
                         <input
                             className="form-input-ezer"
                             type="password"
                             id="confirm-password"
                             placeholder="Ulangi Password"
-                            onChange={e => setRegispasswordcheck(e.target.value)}
+                            name="confirm-password"
+                            onChange={e => setPasscheck(e.target.value)}
                         />
                         <div className="show-password">
                             <input type="checkbox" id="show-password-checkbox" />
