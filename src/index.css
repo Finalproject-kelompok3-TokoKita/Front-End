@@ -1,22 +1,11 @@
-:root {
-/* 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
-
-  /* font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-}
 body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
-h1{
+h1 {
   margin: 0;
   padding: 0;
 }
@@ -39,60 +28,60 @@ img {
   margin: 0 auto;
 }
 
-.two-col-wrapper{
+.two-col-wrapper {
   display: grid;
   grid-template-columns: 50% 50%;
   column-gap: 10px;
   row-gap: 5px;
 }
 
-.three-col-wrapper{
+.three-col-wrapper {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   column-gap: 10px;
   row-gap: 5px;
 }
 
-.four-col-wrapper{
+.four-col-wrapper {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   column-gap: 10px;
   row-gap: 5px;
 }
 
-.two-col-productlist-wrapper{
+.two-col-productlist-wrapper {
   display: grid;
   grid-template-columns: 25% 75%;
   column-gap: 10px;
   row-gap: 5px;
 }
 
-.two-col-sellerpage-wrapper{
+.two-col-sellerpage-wrapper {
   display: grid;
   grid-template-columns: 75% 25%;
   column-gap: 10px;
   row-gap: 5px;
 }
 
-.two-col-dashboard-wrapper{
+.two-col-dashboard-wrapper {
   display: grid;
   grid-template-columns: 20% 80%;
   column-gap: 10px;
   row-gap: 5px;
 }
 
-#dashboard-seller-info{
+#dashboard-seller-info {
   display: grid;
   grid-template-columns: 30% 70%;
   column-gap: 0px;
   row-gap: 0px;
 }
 
-.clear{
+.clear {
   clear: both;
 }
 
-hr{
+hr {
   background-color: #d1deea;
   height: 0.5px;
 }

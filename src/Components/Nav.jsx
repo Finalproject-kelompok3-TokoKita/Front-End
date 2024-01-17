@@ -1,24 +1,37 @@
+// import image
+import card1 from "../assets/card.png";
+import card2 from "../assets/favorite.png";
+import card3 from "../assets/rumah.png";
+import card4 from "../assets/orang.png";
 const Nav = () => {
-    return (
-        <>
-            <nav className="three-col-wrapper" style={{borderBottom: "2px solid #d1deea"}}>
-                <div id="web-title">
-                    <h1 style={{color: "green"}}>TOKO KITA</h1>
-                </div>
-                <div className="nav-link" style={{textAlign: "center", paddingTop: "3px"}}>
-                    <a href={'/'} style={{color: "black"}}>Home</a>
-                    <a href={'/productlist'} style={{color: "black"}}>Shop</a>
-                    <a href={'/contact'} style={{color: "black"}}>Contact</a>
-                </div>
-                <div className="nav-link" style={{textAlign: "right", paddingTop: "3px"}}>
-                    <a href={'/cart'} style={{color: "black"}}>Cart</a>
-                    <a href="" style={{color: "black"}}>Favorite</a>
-                    <a href={'/dashboard'} style={{color: "black"}}>Toko</a>
-                    <a href={'/userprofile'} style={{color: "black"}}>Profile</a>
-                </div>
-            </nav>
-        </>
-    )
-}
+  return (
+    <>
+      <header>
+        <div className="logo">
+          <a href="#">Tokokita</a>
+        </div>
+        <nav className="navbar-header">
+          <a href={"/"}>Home</a>
+          <a href={"/productlist"}>Shop</a>
+          <a href={"/contact"}>Contact</a>
+        </nav>
+        <ul className="items">
+          <a href={"/cart"}>
+            <img src={card1} alt />
+          </a>
+          <a href={"/favorite"}>
+            <img src={card2} alt />
+          </a>
+          <a href={"/dashboard"}>
+            <img src={card3} alt />
+          </a>
+          <a href={"/userprofile"}>
+            <img src={card4} alt />
+          </a>
+        </ul>
+      </header>
+    </>
+  );
+};
 
-export default Nav
+export default Nav;

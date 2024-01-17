@@ -1,35 +1,76 @@
-import Footer from "../Components/Footer"
-import Nav from "../Components/Nav"
+import Footer from "../Components/Footer";
+// import image
+import card1 from "../assets/card.png";
+import card2 from "../assets/favorite.png";
+import card3 from "../assets/rumah.png";
+import card4 from "../assets/orang.png";
 
 const Contact = () => {
-    return (
-        <>
-            <div className="container">
-                <Nav />
-            </div>
-            <section className="contact-form section">
-                <h4 className="sectionHeader">Toko kita adalah platform yang bertujuan untuk membantu para penjual UMKM</h4>
-                <p className="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos
-                    inventore omnis aliquid rerum alias molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officia, alias. Alias doloribus minus repellat nemo beatae corrupti excepturi asperiores reiciendis
-                    numquam voluptas quas illo, vel recusandae incidunt totam vitae debitis!</p>
-                <div className="kita">
-                    <button className="jelajah">Jelajahi Toko Kita</button>
-                </div>
+  return (
+    <>
+      <header>
+        <div className="logo">
+          <a href="#">Tokokita</a>
+        </div>
+        <nav className="navbar-header">
+          <a href={"/"}>Home</a>
+          <a href={"/productlist"}>Shop</a>
+          <a href={"/contact"}>Contact</a>
+        </nav>
+        <ul className="items">
+          <a href={"/cart"}>
+            <img src={card1} alt />
+          </a>
+          <a href={"/favorite"}>
+            <img src={card2} alt />
+          </a>
+          <a href={"/dashboard"}>
+            <img src={card3} alt />
+          </a>
+          <a href={"/userprofile"}>
+            <img src={card4} alt />
+          </a>
+        </ul>
+      </header>
+      <section className="contact-form section">
+        <h4 className="sectionHeader">
+          Toko kita adalah platform yang bertujuan untuk membantu para penjual
+          UMKM
+        </h4>
+        <p className="para">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos
+          inventore omnis aliquid rerum alias molestias. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Officia, alias. Alias doloribus
+          minus repellat nemo beatae corrupti excepturi asperiores reiciendis
+          numquam voluptas quas illo, vel recusandae incidunt totam vitae
+          debitis!
+        </p>
+        <div className="kita">
+          <button className="jelajah">Jelajahi Toko Kita</button>
+        </div>
 
-                <div className="contactForm">
-                    <form className="form-masAgung">
-                        <input type="text" className="input" placeholder="your name" />
-                        <input type="text" className="input" placeholder="your email" />
-                        <input type="text" className="input" placeholder="your Subject" />
-                        <textarea className="input" cols="30" rows="5" placeholder="Your message..."></textarea>
-                        <input type="submit" className="input submit" value="Send Message" />
-                    </form>
-                </div>
-            </section>
-            <Footer/>
-        </>
-    )
-}
+        <div className="contactForm">
+          <form className="form-masAgung">
+            <input type="text" className="input" placeholder="your name" />
+            <input type="text" className="input" placeholder="your email" />
+            <input type="text" className="input" placeholder="your Subject" />
+            <textarea
+              className="input"
+              cols="30"
+              rows="5"
+              placeholder="Your message..."
+            ></textarea>
+            <input
+              type="submit"
+              className="input submit1"
+              value="Send Message"
+            />
+          </form>
+        </div>
+      </section>
+      <Footer />
+    </>
+  );
+};
 
-export default Contact
+export default Contact;
