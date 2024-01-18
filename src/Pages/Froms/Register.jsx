@@ -19,7 +19,6 @@ const Register = () => {
     const handleRegister = (event) => {
         event.preventDefault();
 
-
         if (regisdata.password != passcheck) {
             alert("pass not match")
         } else {

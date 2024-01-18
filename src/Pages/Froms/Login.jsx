@@ -10,17 +10,21 @@ const Login = () => {
   })
 
   const redirect = useNavigate()
-
+  axios.defaults.withCredentials = true
   const handleLogin = (e) => {
     e.preventDefault()
 
     if (logindata.password == "" || logindata.username == "") {
       alert("Please Insert data")
     } else {
-      // axios.post('http://localhost:5000/register', regisdata)
-      // .then(res => console.log(res))
-      // .then(err => console.log(err))
-      alert("you're log in")
+      axios.post('http://localhost:5000/login', logindata)
+        .then(res => {
+          if (res.data.message === "Log In success") {
+            redirect('/')
+          }
+        })
+        // .then(res => console.log(res))
+        .then(err => console.log(err))
     }
   }
 
@@ -35,7 +39,7 @@ const Login = () => {
               type="text"
               placeholder="Username or Email address"
               name="username"
-              onChange={e => setLogindata({...logindata, username: e.target.value})}
+              onChange={e => setLogindata({ ...logindata, username: e.target.value })}
             />
             <a href="" style={{ textAlign: "right" }}>
               Lupa Password
@@ -45,7 +49,7 @@ const Login = () => {
               type="password"
               placeholder="Password"
               name="password"
-              onChange={e => setLogindata({...logindata, password: e.target.value})}
+              onChange={e => setLogindata({ ...logindata, password: e.target.value })}
             />
             <button className="form-btn-ezer" type="submit">
               Login

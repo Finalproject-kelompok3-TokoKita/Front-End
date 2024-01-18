@@ -1,5 +1,4 @@
 import Searchbar from "../Searchbar";
-// import image
 import card5 from "../../assets/bazaar.jpg";
 
 const Homeheader = () => {
