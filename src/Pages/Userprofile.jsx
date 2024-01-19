@@ -5,12 +5,6 @@ import card2 from "../assets/favorite.png";
 import card3 from "../assets/rumah.png";
 import card4 from "../assets/orang.png";
 import card5 from "../assets/prof.png";
-import card6 from "../assets/frame5.png";
-import card7 from "../assets/frame6.png";
-import card8 from "../assets/frame7.png";
-import card9 from "../assets/facebook.jpg";
-import card10 from "../assets/instagram.jpg";
-import card11 from "../assets/twitter.jpg";
 
 const Userprofile = () => {
   return (

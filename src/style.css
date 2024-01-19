@@ -1,6 +1,6 @@
-/* header  nav*/
+/* -----------Header----------*/
 header {
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,7 +92,7 @@ header {
   border: none;
   border-radius: 5px;
 }
-/* userprofile */
+/* ----------userprofile---------- */
 .wrapper {
   position: absolute;
   top: 60%;
@@ -237,7 +237,7 @@ p {
   padding-bottom: 10px;
 }
 
-/* Cart */
+/* ----------Cart---------- */
 
 .cart {
   display: flex;
@@ -348,7 +348,7 @@ p {
   padding-bottom: 10px;
 }
 
-/* contact */
+/* ----------Contact---------- */
 
 .kita {
   text-align: center;
@@ -455,7 +455,7 @@ p {
   cursor: pointer;
   width: 20px;
 }
-/* submit contact.jsx */
+/* ----------Submit contact.jsx---------- */
 .submit1 {
   border-radius: 50px;
   background: #00aa13;
@@ -494,7 +494,7 @@ p {
   width: 70px;
 }
 
-/* edit user by Ezer */
+/* ----------Edit user by Ezer---------- */
 
 .head-1 {
   padding: 8px 0px 8px 48px;
@@ -564,7 +564,7 @@ p {
   border-radius: 4px;
   box-sizing: border-box;
 }
-/* user profile */
+/* ----------User profile---------- */
 .wrapper {
   margin-left: 5px;
   margin-right: 5px;
@@ -693,7 +693,7 @@ span {
   background-color: #00aa13;
 }
 
-/* ----------favorite.jsx---------- */
+/* ----------Favorite.jsx---------- */
 .container-favorite {
   width: 1314px;
   margin: 0 auto;
@@ -806,7 +806,7 @@ span {
 .product-info4 .love {
   margin-top: -10px;
 }
-/* footer */
+/* ----------Footer---------- */
 .bac {
   background: white;
   width: 100%;
@@ -822,7 +822,7 @@ span {
   margin-right: 5px;
   border-radius: 3px;
 }
-/* list profuck */
+/* ----------List profuck---------- */
 .jaj {
   margin-top: 70px;
   font-size: 14px;
