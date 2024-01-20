@@ -341,6 +341,7 @@ nav {
 .dasboard-filter-form {
   border-radius: 10px;
   width: 340px;
+  border: 1px solid #878787;
   margin-top: 10px;
   outline: none;
   height: 25px;

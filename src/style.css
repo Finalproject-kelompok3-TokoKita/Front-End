@@ -827,3 +827,356 @@ span {
   margin-top: 70px;
   font-size: 14px;
 }
+/* ----------pembayaran.jsx---------- */
+.col .silang1 {
+  width: 20px;
+  cursor: pointer;
+  background-color: #00aa13;
+  padding: 3px;
+  border-radius: 100%;
+}
+.col .silang-bayar {
+  font-weight: 600;
+  margin-left: 30px;
+  margin-top: -22px;
+}
+.inputBox .metode {
+  font-weight: 600;
+}
+.bca {
+  width: 65px;
+  height: 15px;
+}
+.bcaa {
+  margin-left: 85px;
+  margin-top: -25px;
+}
+.inputBox1 {
+  border-top: 1px solid rgba(17, 24, 39, 0.2);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.2);
+  padding: 20px;
+}
+.pem {
+  border-bottom: 1px solid rgba(17, 24, 39, 0.2);
+}
+.pem h4,
+p {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+.metode1 {
+  margin-left: 80%;
+  margin-top: -18px;
+  color: #00aa13;
+  font-weight: 600;
+}
+.metode2 {
+  margin-left: 90%;
+  margin-top: -18px;
+  cursor: pointer;
+  width: 20px;
+}
+.metode3 {
+  margin-left: 65%;
+  font-weight: 600;
+}
+.metode4 {
+  margin-left: 70%;
+  font-weight: 600;
+}
+.metode5 {
+  margin-left: 79%;
+  font-weight: 600;
+}
+.container-pembayaran {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  min-height: 100vh;
+}
+
+.container-pembayaran form {
+  padding: 20px;
+  width: 600px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-pembayaran form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.container-pembayaran form .row .col {
+  flex: 1 1 250px;
+}
+
+.container-pembayaran form .row .col .title {
+  font-size: 20px;
+  color: #333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container-pembayaran form .row .col .inputBox {
+  margin: 15px 0;
+}
+
+.container-pembayaran form .row .col .inputBox span {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container-pembayaran form .row .col .inputBox input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container-pembayaran form .row .col .inputBox input:focus {
+  border: 1px solid #000;
+}
+
+.container-pembayaran form .row .col .flex {
+  display: flex;
+  gap: 15px;
+}
+
+.container-pembayaran form .row .col .flex .inputBox {
+  margin-top: 5px;
+}
+
+.container-pembayaran form .row .col .inputBox img {
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container-pembayaran form .submit-btn {
+  display: inline-block;
+  text-align: center;
+  width: 96%;
+  padding: 12px;
+  font-size: 17px;
+  background: #27ae60;
+  border: none;
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container-pembayaran form .submit-btn:hover {
+  background: #2ecc71;
+}
+/* ..........Pesanan.jsx---------- */
+.col .silang {
+  width: 20px;
+  cursor: pointer;
+  background-color: white;
+  padding: 3px;
+  border-radius: 100%;
+}
+.col .silang-bayar {
+  font-weight: 600;
+  margin-top: -20px;
+  color: white;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.col .silang-bayar2 {
+  color: white;
+  display: flex;
+  font-size: 13px;
+  padding-top: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.transaksi {
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+.transaksi h3 {
+  text-align: center;
+  padding-top: 20px;
+}
+.transaksi p {
+  text-align: center;
+  padding-top: 10px;
+}
+.pem h4,
+p {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+.pem h4 {
+  padding-left: 14px;
+}
+.pem h5 {
+  padding-left: 14px;
+  font-weight: normal;
+  font-size: 15px;
+}
+.unduh button {
+  width: 120px;
+  background-color: #00aa13;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 15px;
+  cursor: pointer;
+}
+.unduh img {
+  padding: 10px;
+}
+.unduh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 20px;
+}
+.tran {
+  font-weight: 600;
+  font-size: 18px;
+}
+.metode1 {
+  margin-left: 80%;
+  margin-top: -18px;
+  color: #00aa13;
+  font-weight: 600;
+}
+.metode2 {
+  margin-left: 90%;
+  margin-top: -18px;
+  cursor: pointer;
+  width: 20px;
+}
+.metode3 {
+  margin-left: 65%;
+  font-weight: 600;
+}
+.metode4 {
+  margin-left: 70%;
+  font-weight: 600;
+}
+.metode5 {
+  margin-left: 79%;
+  font-weight: 600;
+}
+.inputBox .metode {
+  font-weight: 600;
+}
+.bca {
+  width: 65px;
+  height: 15px;
+}
+.bcaa {
+  margin-left: 85px;
+  margin-top: -25px;
+}
+.inputBox1 {
+  border-top: 1px solid rgba(17, 24, 39, 0.2);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.2);
+  padding: 20px;
+}
+.container-pesanan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  min-height: 100vh;
+}
+
+.container-pesanan form {
+  padding: 20px;
+  width: 600px;
+  background: #fff;
+  border-radius: 5px;
+  background: #00aa13;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-pesanan form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.container-pesanan form .row .col {
+  flex: 1 1 250px;
+}
+
+.container-pesanan form .row .col .title {
+  font-size: 20px;
+  color: #333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container-pesanan form .row .col .inputBox {
+  margin: 15px 0;
+}
+
+.container-pesanan form .row .col .inputBox span {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container-pesanan form .row .col .inputBox input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container-pesanan form .row .col .inputBox input:focus {
+  border: 1px solid #000;
+}
+
+.container-pesanan form .row .col .flex {
+  display: flex;
+  gap: 15px;
+}
+
+.container-pesanan form .row .col .flex .inputBox {
+  margin-top: 5px;
+}
+
+.container-pesanan form .row .col .inputBox img {
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container-pesanan form .submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  background: #27ae60;
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container-pesanan form .submit-btn:hover {
+  background: #2ecc71;
+}

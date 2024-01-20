@@ -7,8 +7,6 @@ import card2 from "../assets/favorite.png";
 import card3 from "../assets/rumah.png";
 import card4 from "../assets/orang.png";
 
-// import Nav from "../Components/Nav";
-
 const Cart = () => {
   return (
     <>

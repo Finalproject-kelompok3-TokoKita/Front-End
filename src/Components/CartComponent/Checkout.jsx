@@ -15,7 +15,7 @@ const Checkout = () => {
           <span className="span">Total Pembayaran</span>
           <span className="span">25k</span>
         </p>
-        <a href="#">Pilih Pembayaran</a>
+        <a href={"/pembayaran"}>Pilih Pembayaran</a>
       </div>
     </>
   );
