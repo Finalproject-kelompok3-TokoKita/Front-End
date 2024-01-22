@@ -48,6 +48,7 @@ function App() {
         {/* User */}
         <Route path="/useredit" element={key ? <Useredit /> : login} />
         <Route path="/userprofile" element={key ? <Userprofile /> : login} />
+        {/* <Route path="/userprofile/:id" element={key ? <Userprofile /> : login} /> */}
         <Route path="/pesanan" element={key ? <Pesanan /> : login} />
         <Route path="/pembayaran" element={key ? <Pembayaran /> : login} />
       </Routes>
