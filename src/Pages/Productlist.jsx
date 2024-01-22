@@ -6,11 +6,12 @@ import card1 from "../assets/card.png";
 import card2 from "../assets/favorite.png";
 import card3 from "../assets/rumah.png";
 import card4 from "../assets/orang.png";
+import Nav from "../Components/Nav";
 
 const Productlist = () => {
   return (
     <>
-      <header>
+      {/* <header>
         <div className="logo">
           <a href="#">Tokokita</a>
         </div>
@@ -33,7 +34,8 @@ const Productlist = () => {
             <img src={card4} alt />
           </a>
         </ul>
-      </header>
+      </header> */}
+      <Nav/>
       <div className="container">
         <Searchbar />
       </div>
