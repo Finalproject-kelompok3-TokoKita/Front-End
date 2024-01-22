@@ -5,35 +5,14 @@ import card2 from "../assets/favorite.png";
 import card3 from "../assets/rumah.png";
 import card4 from "../assets/orang.png";
 import card5 from "../assets/prof.png";
+import Userbio from "../Components/ProfileComponent/Userbio";
+import Nav from "../Components/Nav";
 
 const Userprofile = () => {
   return (
     <>
-      <header>
-        <div className="logo">
-          <a href="#">Tokokita</a>
-        </div>
-        <nav className="navbar-header">
-          <a href={"/"}>Home</a>
-          <a href={"/productlist"}>Shop</a>
-          <a href={"/contact"}>Contact</a>
-        </nav>
-        <ul className="items">
-          <a href={"/cart"}>
-            <img src={card1} alt />
-          </a>
-          <a href={"/favorite"}>
-            <img src={card2} alt />
-          </a>
-          <a href={"/dashboard"}>
-            <img src={card3} alt />
-          </a>
-          <a href={"/userprofile"}>
-            <img src={card4} alt />
-          </a>
-        </ul>
-      </header>
-      <div className="wrapper">
+      <Nav/>
+      {/* <div className="wrapper">
         <div className="left">
           <img src={card5} alt="user" width={100} />
           <button className="ubah">Ubah Foto Profil</button>
@@ -83,7 +62,9 @@ const Userprofile = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      {/* NOTE : yang diedit di bagian <Userbio />> bukan bikin html baru */}
+      <Userbio/>
       <div className="bac"></div>
       <Footer />
     </>

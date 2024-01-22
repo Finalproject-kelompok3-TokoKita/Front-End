@@ -1,27 +1,11 @@
 import Searchbar from "../Searchbar";
 import card5 from "../../assets/bazaar.jpg";
+import Nav from "../Nav";
 
 const Homeheader = () => {
   return (
     <>
-      <header>
-        <div className="logo">
-          <a href="#">Tokokita</a>
-        </div>
-        <nav className="navbar-header">
-          <a href={"/"}>Home</a>
-          <a href={"/productlist"}>Shop</a>
-          <a href={"/contact"}>Contact</a>
-        </nav>
-        <ul className="items">
-          <a href={"/login"} className="use">
-            Sign in
-          </a>
-          <a href={"/signup"} className="uses">
-            Sign up
-          </a>
-        </ul>
-      </header>
+      <Nav />
       <div id="main">
         <img src={card5} alt="" />
         <div id="index-main-detail">

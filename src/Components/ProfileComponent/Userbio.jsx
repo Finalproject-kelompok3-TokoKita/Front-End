@@ -1,4 +1,8 @@
+import axios from "axios"
+
 const Userbio = () => {
+
+
     return (
         <>
             <div className="wrapper">

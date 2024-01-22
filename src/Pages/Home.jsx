@@ -9,17 +9,17 @@ import Login from "./Froms/Login";
 const Home = () => {
 
   const key = Cookies.get('token')
-  const redirect = useNavigate()
   return (
     <>
-      {key ?
+      {/* {key ?
         <div>
-          <Homeheader />
-          <Anekakuliner />
-          <Tokodisekitar />
-          <Footer />
+          
         </div>
-        : <Login />}
+        : <Login />} */}
+      <Homeheader />
+      <Anekakuliner />
+      <Tokodisekitar />
+      <Footer />
     </>
   );
 };

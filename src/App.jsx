@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, redirect } from "react-router-dom";
 import "./App.css";
 import "./style.css";
 import Home from "./Pages/Home";
@@ -19,10 +19,13 @@ import Postmenu from "./Pages/Froms/Postmenu";
 import Putmenu from "./Pages/Froms/Putmenu";
 import Pembayaran from "./Pages/Pembayaran";
 import Pesanan from "./Pages/Pesanan";
+import Cookies from "js-cookie";
+import { Navigate } from 'react-router-dom';
 
 function App() {
   //const [count, setCount] = useState(0)
-
+  const key = Cookies.get('token')
+  const login = <Navigate to="/login" />
   return (
     <Router>
       <Routes>
@@ -32,21 +35,21 @@ function App() {
         {/* Main */}
         <Route path="/" element={<Home />} />
         <Route path="/productlist" element={<Productlist />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/favorite" element={<Favorite />} />
+        <Route path="/cart" element={key ? <Cart /> : login} />
+        <Route path="/contact" element={key ? <Contact /> : login} />
+        <Route path="/favorite" element={key ? <Favorite /> : login} />
         {/* Seller */}
-        <Route path="/seller-register" element={<Sellersignup />} />
-        <Route path="/add-menu" element={<Postmenu />} />
-        <Route path="/edit-menu" element={<Putmenu />} />
-        <Route path="/sellerpage" element={<Sellerpage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/orderlist" element={<Statusorder />} />
+        <Route path="/seller-register" element={key ? <Sellersignup /> : login} />
+        <Route path="/add-menu" element={key ? <Postmenu /> : login} />
+        <Route path="/edit-menu" element={key ? <Putmenu /> : login} />
+        <Route path="/sellerpage" element={key ? <Sellerpage /> : login} />
+        <Route path="/dashboard" element={key ? <Dashboard /> : login} />
+        <Route path="/orderlist" element={key ? <Statusorder /> : login} />
         {/* User */}
-        <Route path="/useredit" element={<Useredit />} />
-        <Route path="/userprofile" element={<Userprofile />} />
-        <Route path="/pesanan" element={<Pesanan />} />
-        <Route path="/pembayaran" element={<Pembayaran />} />
+        <Route path="/useredit" element={key ? <Useredit /> : login} />
+        <Route path="/userprofile" element={key ? <Userprofile /> : login} />
+        <Route path="/pesanan" element={key ? <Pesanan /> : login} />
+        <Route path="/pembayaran" element={key ? <Pembayaran /> : login} />
       </Routes>
     </Router>
   );
