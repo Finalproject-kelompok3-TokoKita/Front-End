@@ -23,7 +23,7 @@ const Login = () => {
             redirect('/')
           }
         })
-        // .then(res => console.log(res))
+        //.then(res => console.log(res))
         .then(err => console.log(err))
     }
   }

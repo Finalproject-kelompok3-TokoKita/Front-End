@@ -1,7 +1,6 @@
 import axios from "axios"
 
-const Userbio = () => {
-
+const Userbio = ({userdata}) => {
 
     return (
         <>
@@ -24,9 +23,9 @@ const Userbio = () => {
                                 <h4>Jenis Kelamin</h4>
                             </div>
                             <div className="data">
-                                <h5>Insyu Karaeng <span>Ubah</span></h5>
-                                <h5>31 Desember 1997 <span>Ubah</span></h5>
-                                <h5>Perempuan <span>Ubah</span></h5>
+                                <h5>{userdata.fullName} <span>Ubah</span></h5>
+                                <h5>{userdata.dateOfBirth} <span>Ubah</span></h5>
+                                <h5>{userdata.gender} <span>Ubah</span></h5>
                             </div>
                         </div>
                     </div>
@@ -39,8 +38,8 @@ const Userbio = () => {
                                 <h4>No Hp</h4>
                             </div>
                             <div className="data">
-                                <h5>email.com <span>Ubah</span></h5>
-                                <h5>+62 856 6654 7765 <span>Ubah</span></h5>
+                                <h5>{userdata.email} <span>Ubah</span></h5>
+                                <h5>{userdata.phone} <span>Ubah</span></h5>
                             </div>
                         </div>
                     </div>
