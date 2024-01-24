@@ -4,39 +4,46 @@ import card1 from "../../assets/card.png";
 import card2 from "../../assets/favorite.png";
 import card3 from "../../assets/rumah.png";
 import card4 from "../../assets/orang.png";
+import Nav from "../../Components/Nav";
+import { useState } from "react"
+import axios from "axios"
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Postmenu = () => {
+  const token = Cookies.get('token')
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+  //const redirect = useNavigate()
+
+  const [addproduct, setAddproduct] = useState({
+    name: '',
+    description: '',
+    price: '',
+    quantity: ''
+  })
+
+  const storeProduct = (event) => {
+    event.preventDefault();
+
+    console.log(addproduct)
+    // axios.post('http://localhost:5000/product', addproduct)
+    //   // .then(res => {
+    //   //   if (res.data.message === "Created") {
+    //   //     redirect('/dashboard')
+    //   //   }
+    //   // })
+    //   .then(res => console.log(res))
+    //   .then(err => console.log(err))
+  }
+
   return (
     <>
-      <header>
-        <div className="logo">
-          <a href="#">Tokokita</a>
-        </div>
-        <nav className="navbar-header">
-          <a href={"/"}>Home</a>
-          <a href={"/productlist"}>Shop</a>
-          <a href={"/contact"}>Contact</a>
-        </nav>
-        <ul className="items">
-          <a href={"/cart"}>
-            <img src={card1} alt />
-          </a>
-          <a href={"/favorite"}>
-            <img src={card2} alt />
-          </a>
-          <a href={"/dashboard"}>
-            <img src={card3} alt />
-          </a>
-          <a href={"/userprofile"}>
-            <img src={card4} alt />
-          </a>
-        </ul>
-      </header>
+      <Nav />
       <div id="body-postmenu">
         <h1>Tambah menu</h1>
         <main id="main-postmenu">
           <h2>Informasi Menu</h2>
-          <form>
+          <form onSubmit={storeProduct}>
             <div className="upload-foto">
               <div className="label-foto">
                 <h3>Foto</h3>
@@ -45,7 +52,7 @@ const Postmenu = () => {
                   (Untuk gambar optimal gunakan ukuran minimum 700 x 700 px).
                 </p>
               </div>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <label htmlFor="img">
                   {" "}
                   <img src="" />
@@ -54,9 +61,8 @@ const Postmenu = () => {
                   type="file"
                   id="img"
                   accept="image/*"
-                  style={{ display: "none" }}
                 />
-              </div>
+              </div> */}
             </div>
 
             <div className="nama">
@@ -69,9 +75,11 @@ const Postmenu = () => {
               </div>
               <div className="form-group">
                 <input
+                  name="name"
                   type="text"
                   className="upload-produk-inputtext"
                   placeholder="Contoh: Ayam Goreng Keremes"
+                  onChange={e => setAddproduct({ ...addproduct, price: e.target.value })}
                 />
               </div>
             </div>
@@ -86,8 +94,10 @@ const Postmenu = () => {
               </div>
               <div className="form-group">
                 <input
+                  name="description"
                   className="upload-produk-inputtext"
                   placeholder="Contoh: 1 porsi ayam goreng kremes"
+                  onChange={e => setAddproduct({ ...addproduct, description: e.target.value })}
                 />
               </div>
             </div>
@@ -98,14 +108,15 @@ const Postmenu = () => {
               </div>
               <div className="form-group">
                 <input
-                  name="Rp"
+                  name="price"
                   className="upload-produk-inputnumber"
                   placeholder="100000000"
+                  onChange={e => setAddproduct({ ...addproduct, price: e.target.value })}
                 />
               </div>
             </div>
 
-            <div className="kategori">
+            {/* <div className="kategori">
               <div className="label-kategori">
                 <h3>kategori</h3>
               </div>
@@ -117,14 +128,16 @@ const Postmenu = () => {
                   <option value="Jajanan">Jajanan</option>
                 </select>
               </div>
-            </div>
+            </div> */}
 
             <div className="stok">
               <div className="label-stok">
                 <h3>stok</h3>
               </div>
               <div className="form-group">
-                <input type="number" placeholder="Masukkan Jumlah Stok" />
+                <input type="text" name="quantity" placeholder="Masukkan Jumlah Stok"
+                onChange={e => setAddproduct({ ...addproduct, quantity: e.target.value })}
+                />
               </div>
             </div>
           </form>
@@ -133,7 +146,6 @@ const Postmenu = () => {
           <button type="submit" className="upload-produk-btnsubmit">
             Simpan
           </button>
-          <button type="cancel">Batal</button>
         </div>
       </div>
     </>

@@ -2,19 +2,19 @@ const Dashboardnav = () => {
   return (
     <>
       <div id="dasboard-nav">
-        <h2 className="bag">
+        <div className="bag">
           <h4 className="tok">TokoKita</h4>
           <a href={"/"}>Home</a>
-        </h2>
-        <h2 className="big">
+        </div>
+        <div className="big">
           <a href={"/add-menu"}>Tambah Menu</a>
-        </h2>
-        <h2 className="big">
+        </div>
+        <div className="big">
           <a href={"/orderlist"}>Daftar Pesanan</a>
-        </h2>
-        <h2 className="big">
+        </div>
+        <div className="big">
           <a href="">Pengaturan</a>
-        </h2>
+        </div>
       </div>
     </>
   );

@@ -3,39 +3,34 @@ import Dashboardnav from "../Components/DashboardComponent/Dashboardnav";
 import Sellermenulist from "../Components/DashboardComponent/Sellermenulist";
 import Sellerprofile from "../Components/DashboardComponent/Sellerprofile";
 import Sellercardinfo from "../Components/DashboardComponent/sellercardinfo";
-// import image
-import card1 from "../assets/card.png";
-import card2 from "../assets/favorite.png";
-import card3 from "../assets/rumah.png";
-import card4 from "../assets/orang.png";
+import Nav from "../Components/Nav";
+import Cookies from "js-cookie";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
 
 const Dashboard = () => {
+  const token = Cookies.get('token')
+  const [userdata, setUserdata] = useState({})
+  axios.defaults.withCredentials = true
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}` 
+  const decoded = jwtDecode(token)
+  const id = decoded.uid
+
+  // useEffect(() => {
+  //   axios.get('http://localhost:5000/store/'+id)
+  //   // .then(res => {
+  //   //   if (res.data.message === "Berhasil") {
+  //   //     setUserdata(res.data.data)
+  //   //   }
+  //   // })
+  //   .then(res => console.log(res))
+  //   .then(err => console.log(err))
+  // }, [])
+
   return (
     <>
-      <header>
-        <div className="logo">
-          <a href="#">Tokokita</a>
-        </div>
-        <nav className="navbar-header">
-          <a href={"/"}>Home</a>
-          <a href={"/productlist"}>Shop</a>
-          <a href={"/contact"}>Contact</a>
-        </nav>
-        <ul className="items">
-          <a href={"/cart"}>
-            <img src={card1} alt />
-          </a>
-          <a href={"/favorite"}>
-            <img src={card2} alt />
-          </a>
-          <a href={"/dashboard"}>
-            <img src={card3} alt />
-          </a>
-          <a href={"/userprofile"}>
-            <img src={card4} alt />
-          </a>
-        </ul>
-      </header>
+      <Nav />
       <div id="dashboard-main">
         <div className="container">
           <div className="two-col-dashboard-wrapper">

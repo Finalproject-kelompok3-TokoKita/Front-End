@@ -8,7 +8,6 @@ import card5 from "../assets/prof.png";
 import Userbio from "../Components/ProfileComponent/Userbio";
 import Nav from "../Components/Nav";
 import Cookies from "js-cookie";
-import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -18,16 +17,16 @@ const Userprofile = () => {
   axios.defaults.withCredentials = true
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/user')
-    .then(res => {
-      if (res.data.message === "Berhasil") {
-        setUserdata(res.data.data)
-      }
-    })
-    //.then(res => console.log(res))
-    .then(err => console.log(err))
-  }, [])
+  // useEffect(() => {
+  //   axios.get('http://localhost:5000/user')
+  //   .then(res => {
+  //     if (res.data.message === "Berhasil") {
+  //       setUserdata(res.data.data)
+  //     }
+  //   })
+  //   //.then(res => console.log(res))
+  //   .then(err => console.log(err))
+  // }, [])
 
   return (
     <>
