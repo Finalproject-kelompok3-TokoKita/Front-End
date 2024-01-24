@@ -5,45 +5,44 @@ import card2 from "../../assets/favorite.png";
 import card3 from "../../assets/rumah.png";
 import card4 from "../../assets/orang.png";
 import Nav from "../../Components/Nav";
-import { useState } from "react"
-import axios from "axios"
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
 const Postmenu = () => {
   const token = Cookies.get('token')
+  axios.defaults.withCredentials = true
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-  //const redirect = useNavigate()
 
-  const [addproduct, setAddproduct] = useState({
+  const [input, setInput] = useState({
     name: '',
     description: '',
     price: '',
-    quantity: ''
+    quantity: '',
+    storeID: ''
   })
 
-  const storeProduct = (event) => {
-    event.preventDefault();
-
-    console.log(addproduct)
-    // axios.post('http://localhost:5000/product', addproduct)
-    //   // .then(res => {
-    //   //   if (res.data.message === "Created") {
-    //   //     redirect('/dashboard')
-    //   //   }
-    //   // })
-    //   .then(res => console.log(res))
-    //   .then(err => console.log(err))
+  const handleProduct = (event) => {
+    event.preventDefault()
+    axios.post('http://localhost:5000/product', input)
+      // .then(res => {
+      //   if (res.data.message === "Berhasil Registrasi") {
+      //     redirect('/login')
+      //   }
+      // })
+      .then(res => console.log(res))
+      .then(err => console.log(err))
   }
+
 
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <div id="body-postmenu">
         <h1>Tambah menu</h1>
         <main id="main-postmenu">
           <h2>Informasi Menu</h2>
-          <form onSubmit={storeProduct}>
+          <form id="regis" onSubmit={handleProduct}>
             <div className="upload-foto">
               <div className="label-foto">
                 <h3>Foto</h3>
@@ -52,7 +51,7 @@ const Postmenu = () => {
                   (Untuk gambar optimal gunakan ukuran minimum 700 x 700 px).
                 </p>
               </div>
-              {/* <div className="form-group">
+              <div className="form-group">
                 <label htmlFor="img">
                   {" "}
                   <img src="" />
@@ -62,7 +61,7 @@ const Postmenu = () => {
                   id="img"
                   accept="image/*"
                 />
-              </div> */}
+              </div>
             </div>
 
             <div className="nama">
@@ -78,8 +77,7 @@ const Postmenu = () => {
                   name="name"
                   type="text"
                   className="upload-produk-inputtext"
-                  placeholder="Contoh: Ayam Goreng Keremes"
-                  onChange={e => setAddproduct({ ...addproduct, price: e.target.value })}
+                  onChange={e => setInput({ ...input, name: e.target.value })}
                 />
               </div>
             </div>
@@ -96,8 +94,7 @@ const Postmenu = () => {
                 <input
                   name="description"
                   className="upload-produk-inputtext"
-                  placeholder="Contoh: 1 porsi ayam goreng kremes"
-                  onChange={e => setAddproduct({ ...addproduct, description: e.target.value })}
+                  onChange={e => setInput({ ...input, description: e.target.value })}
                 />
               </div>
             </div>
@@ -110,8 +107,7 @@ const Postmenu = () => {
                 <input
                   name="price"
                   className="upload-produk-inputnumber"
-                  placeholder="100000000"
-                  onChange={e => setAddproduct({ ...addproduct, price: e.target.value })}
+                  onChange={e => setInput({ ...input, price: e.target.value })}
                 />
               </div>
             </div>
@@ -135,18 +131,22 @@ const Postmenu = () => {
                 <h3>stok</h3>
               </div>
               <div className="form-group">
-                <input type="text" name="quantity" placeholder="Masukkan Jumlah Stok"
-                onChange={e => setAddproduct({ ...addproduct, quantity: e.target.value })}
+                <input type="text" name="quantity"
+                  onChange={e => setInput({ ...input, quantity: e.target.value })}
                 />
               </div>
             </div>
+            {/* <input type="hidden" name="storeID" value={}
+            onChange={e => setInput({ ...input, storeID: e.target.value })}
+            /> */}
+
+            <div className="button">
+              <button type="submit" className="upload-produk-btnsubmit">
+                Simpan
+              </button>
+            </div>
           </form>
         </main>
-        <div className="button">
-          <button type="submit" className="upload-produk-btnsubmit">
-            Simpan
-          </button>
-        </div>
       </div>
     </>
   );

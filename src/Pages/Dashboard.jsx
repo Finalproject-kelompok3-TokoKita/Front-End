@@ -8,17 +8,18 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
+import { useParams } from "react-router-dom";
 
 const Dashboard = () => {
   const token = Cookies.get('token')
-  const [userdata, setUserdata] = useState({})
   axios.defaults.withCredentials = true
-  axios.defaults.headers.common['Authorization'] = `Bearer ${token}` 
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
   const decoded = jwtDecode(token)
-  const id = decoded.uid
+  // const id = decoded.uid
+  // const { id } = useParams()
 
   // useEffect(() => {
-  //   axios.get('http://localhost:5000/store/'+id)
+  //   axios.get(`http://localhost:5000/store/${id}`)
   //   // .then(res => {
   //   //   if (res.data.message === "Berhasil") {
   //   //     setUserdata(res.data.data)
