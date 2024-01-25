@@ -1,17 +1,17 @@
-import axios from "axios"
+import { Link } from "react-router-dom"
 
-const Userbio = ({userdata}) => {
+const Userbio = ({ userdata }) => {
 
     return (
         <>
             <div className="wrapper">
                 <div className="left">
-                    <img src="./assets/images/prof.png" alt="user" width="100" />
+                    <img width={100} />
                     <button className="ubah">Ubah Foto Profil</button>
-                    <p className="file">Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file yang diperbolehkan: .JPG .JPEG .PNG</p>
-                    <button className="ubah2">Ubah Password</button>
-
-
+                    <p className="file">
+                        Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file
+                        yang diperbolehkan: .JPG .JPEG .PNG
+                    </p>
                 </div>
                 <div className="right">
                     <div className="info">
@@ -23,13 +23,18 @@ const Userbio = ({userdata}) => {
                                 <h4>Jenis Kelamin</h4>
                             </div>
                             <div className="data">
-                                <h5>{userdata.fullName} <span>Ubah</span></h5>
-                                <h5>{userdata.dateOfBirth} <span>Ubah</span></h5>
-                                <h5>{userdata.gender} <span>Ubah</span></h5>
+                                <h5>
+                                    {userdata.fullName}
+                                </h5>
+                                <h5>
+                                    {userdata.dateOfBirth}
+                                </h5>
+                                <h5>
+                                    {userdata.gender}
+                                </h5>
                             </div>
                         </div>
                     </div>
-
                     <div className="projects">
                         <h3>Ubah Kontak</h3>
                         <div className="projects_data">
@@ -38,13 +43,20 @@ const Userbio = ({userdata}) => {
                                 <h4>No Hp</h4>
                             </div>
                             <div className="data">
-                                <h5>{userdata.email} <span>Ubah</span></h5>
-                                <h5>{userdata.phone} <span>Ubah</span></h5>
+                                <h5>
+                                    {userdata.email}
+                                </h5>
+                                <h5>
+                                    {userdata.phone}
+                                </h5>
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <Link to={`/editprofile/${userdata.id}`}><button className="">edit user</button></Link>
+                    </div>
                 </div>
-            </div >
+            </div>
         </>
     )
 }

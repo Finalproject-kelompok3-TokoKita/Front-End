@@ -1,4 +1,5 @@
-const Filterproduct = () => {
+const Filterproduct = ({ setCategory, category, city }) => {
+
   return (
     <>
       <div id="product-list-filter-form">
@@ -12,22 +13,24 @@ const Filterproduct = () => {
           <input type="range" style={{ marginTop: "15px" }} />
         </div>
         <div className="product-list-filter-form-detail shadow">
-          <h2>Jenis Kuliner</h2>
-          <div>Jajanan (value from databse)</div>
-          <div>Jajanan (value from databse)</div>
-          <div>Jajanan (value from databse)</div>
-          <div>Jajanan (value from databse)</div>
-          <div>Jajanan (value from databse)</div>
-          <div>Jajanan (value from databse)</div>
-          <div>Jajanan (value from databse)</div>
-          <div>Jajanan (value from databse)</div>
-          <div>Jajanan (value from databse)</div>
+          <h2>Pilih Kategori</h2>
+          <select name="" id="" onChange={(e)=>setCategory(e.target.value)}>
+            {
+              category.map((cat) => (
+                <option key={cat.id} value={cat.name}>{cat.name}</option>
+              ))
+            }
+          </select>
         </div>
         <div className="product-list-filter-form-detail shadow">
-          <h2>Urutkan</h2>
-          <div>Terdekat</div>
-          <div>Terlaris</div>
-          <div>Promo</div>
+          <h2>Pilih Kota</h2>
+          <select name="" id="">
+            {
+              city.map((cy) => (
+                <option key={cy.id} value={cy.name}>{cy.name}</option>
+              ))
+            }
+          </select>
         </div>
       </div>
     </>

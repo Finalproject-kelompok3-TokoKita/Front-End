@@ -14,20 +14,21 @@ const Dashboard = () => {
   const token = Cookies.get('token')
   axios.defaults.withCredentials = true
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-  const decoded = jwtDecode(token)
+  //const decoded = jwtDecode(token)
   // const id = decoded.uid
   // const { id } = useParams()
+  const { id } = useParams()
 
-  // useEffect(() => {
-  //   axios.get(`http://localhost:5000/store/${id}`)
-  //   // .then(res => {
-  //   //   if (res.data.message === "Berhasil") {
-  //   //     setUserdata(res.data.data)
-  //   //   }
-  //   // })
-  //   .then(res => console.log(res))
-  //   .then(err => console.log(err))
-  // }, [])
+  useEffect(() => {
+    axios.get("http://localhost:5000/store/" + id)
+    // .then(res => {
+    //   if (res.data.message === "Berhasil") {
+    //     setUserdata(res.data.data)
+    //   }
+    // })
+    .then(res => console.log(res))
+    .then(err => console.log(err))
+  }, [])
 
   return (
     <>

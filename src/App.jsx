@@ -42,12 +42,12 @@ function App() {
         <Route path="/seller-register" element={key ? <Sellersignup /> : login} />
         <Route path="/add-menu" element={key ? <Postmenu /> : login} />
         <Route path="/edit-menu" element={key ? <Putmenu /> : login} />
-        <Route path="/sellerpage" element={key ? <Sellerpage /> : login} />
+        <Route path="/seller/:id" element={key ? <Sellerpage /> : login} />
         {/* <Route path="/dashboard" element={key ? <Dashboard /> : login} /> */}
-        <Route path="/dashboard/:uid" element={key ? <Dashboard /> : login} />
+        <Route path="/dashboard/:id" element={key ? <Dashboard /> : login} />
         <Route path="/orderlist" element={key ? <Statusorder /> : login} />
         {/* User */}
-        <Route path="/useredit" element={key ? <Useredit /> : login} />
+        <Route path="/editprofile/:id" element={key ? <Useredit /> : login} />
         <Route path="/userprofile" element={key ? <Userprofile /> : login} />
         {/* <Route path="/userprofile/:id" element={key ? <Userprofile /> : login} /> */}
         <Route path="/pesanan" element={key ? <Pesanan /> : login} />
