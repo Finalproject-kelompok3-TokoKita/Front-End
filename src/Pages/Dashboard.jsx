@@ -16,19 +16,24 @@ const Dashboard = () => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
   //const decoded = jwtDecode(token)
   // const id = decoded.uid
-  // const { id } = useParams()
-  const { id } = useParams()
+  const [dashboard, setDashboard] = useState({})
+  const [cities, setCities] = useState('')
+  const [prov, setProv] = useState('')
 
   useEffect(() => {
-    axios.get("http://localhost:5000/store/" + id)
-    // .then(res => {
-    //   if (res.data.message === "Berhasil") {
-    //     setUserdata(res.data.data)
-    //   }
-    // })
-    .then(res => console.log(res))
-    .then(err => console.log(err))
+    axios.get("http://localhost:5000/dashboard")
+    .then(res => {
+      if (res.data.message === "Succesfully") {
+        setDashboard(res.data.data[0])
+        setCities(res.data.data[0].city.name)
+        setProv(res.data.data[0].province.name)
+      }
+    })
+    //.then(res => console.log(res.data.data[0].city.name))
+    //.then(err => console.log(err))
   }, [])
+
+  //console.log(prov)
 
   return (
     <>
@@ -38,7 +43,8 @@ const Dashboard = () => {
           <div className="two-col-dashboard-wrapper">
             <Dashboardnav />
             <div className="">
-              <Sellerprofile />
+              
+              <Sellerprofile dashboard={dashboard} cities={cities} prov={prov}/>
               <Sellercardinfo />
               <Sellermenulist />
             </div>

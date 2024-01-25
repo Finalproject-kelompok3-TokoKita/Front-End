@@ -1,4 +1,4 @@
-const Sellerprofile = () => {
+const Sellerprofile = ({ dashboard, cities, prov }) => {
     return (
         <>
             <div id="dashboard-seller-info">
@@ -6,10 +6,9 @@ const Sellerprofile = () => {
                     <img src="" alt="seller-img" width="100%" height="265" />
                 </div>
                 <div className="dashboard-seller-wrap" style={{marginLeft: "20px"}}>
-                    <h1>Rumah Makan Sederhana</h1>
-                    <h5>Jalan Kemang Pratama Raya Blok AM No.1B, RT.003/RW.001, Bojong Menteng, Kec.
-                        Rawalumbu, Kota Bksscascascsasacsacsaca</h5>
-                    <h2>Kota, Provinsi</h2>
+                    <h1>{dashboard.name}</h1>
+                    <h5>{dashboard.address}</h5>
+                    <h2>{cities}, {prov}</h2>
                     <h3>Jenis Kuliner : Roti, Minuman</h3>
                     <h3>Range Harga</h3>
                     <h3>Jumlah Favorite</h3>

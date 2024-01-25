@@ -44,7 +44,7 @@ function App() {
         <Route path="/edit-menu" element={key ? <Putmenu /> : login} />
         <Route path="/seller/:id" element={key ? <Sellerpage /> : login} />
         {/* <Route path="/dashboard" element={key ? <Dashboard /> : login} /> */}
-        <Route path="/dashboard/:id" element={key ? <Dashboard /> : login} />
+        <Route path="/dashboard" element={key ? <Dashboard /> : login} />
         <Route path="/orderlist" element={key ? <Statusorder /> : login} />
         {/* User */}
         <Route path="/editprofile/:id" element={key ? <Useredit /> : login} />
