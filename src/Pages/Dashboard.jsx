@@ -14,11 +14,10 @@ const Dashboard = () => {
   const token = Cookies.get('token')
   axios.defaults.withCredentials = true
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-  //const decoded = jwtDecode(token)
-  // const id = decoded.uid
   const [dashboard, setDashboard] = useState({})
   const [cities, setCities] = useState('')
   const [prov, setProv] = useState('')
+  const [product, setProduct] = useState([])
 
   useEffect(() => {
     axios.get("http://localhost:5000/dashboard")
@@ -33,7 +32,16 @@ const Dashboard = () => {
     //.then(err => console.log(err))
   }, [])
 
-  //console.log(prov)
+  // useEffect(() => {
+  //   axios.get("http://localhost:5000/product")
+  //   // .then(res => {
+  //   //   if (res.data.message === "Succesfully") {
+  //   //     setProduct(res.data.data)
+  //   //   }
+  //   // })
+  //   .then(res => console.log(res))
+  //   .then(err => console.log(err))
+  // }, [])
 
   return (
     <>
@@ -42,11 +50,10 @@ const Dashboard = () => {
         <div className="container">
           <div className="two-col-dashboard-wrapper">
             <Dashboardnav />
-            <div className="">
-              
+            <div className=""> 
               <Sellerprofile dashboard={dashboard} cities={cities} prov={prov}/>
               <Sellercardinfo />
-              <Sellermenulist />
+              {/* <Sellermenulist product={product}/> */}
             </div>
           </div>
         </div>

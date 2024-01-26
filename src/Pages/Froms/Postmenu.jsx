@@ -8,29 +8,30 @@ import Nav from "../../Components/Nav";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Postmenu = () => {
   const token = Cookies.get('token')
   axios.defaults.withCredentials = true
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+  const redirect = useNavigate()
 
   const [input, setInput] = useState({
     name: '',
     description: '',
     price: '',
-    quantity: '',
-    storeID: ''
+    quantity: ''
   })
 
   const handleProduct = (event) => {
     event.preventDefault()
     axios.post('http://localhost:5000/product', input)
-      // .then(res => {
-      //   if (res.data.message === "Berhasil Registrasi") {
-      //     redirect('/login')
-      //   }
-      // })
-      .then(res => console.log(res))
+      .then(res => {
+        if (res.data.message === "Berhasil Dibuat") {
+          redirect('/dashboard')
+        }
+      })
+      // .then(res => console.log(res))
       .then(err => console.log(err))
   }
 
@@ -136,9 +137,6 @@ const Postmenu = () => {
                 />
               </div>
             </div>
-            {/* <input type="hidden" name="storeID" value={}
-            onChange={e => setInput({ ...input, storeID: e.target.value })}
-            /> */}
 
             <div className="button">
               <button type="submit" className="upload-produk-btnsubmit">
