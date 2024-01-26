@@ -24,16 +24,16 @@ const Nav = () => {
           key ?
             <ul className="items">
               <a href={"/cart"}>
-                <img src={card1} alt />
+                <img src={card1} />
               </a>
               <a href={"/favorite"}>
-                <img src={card2} alt />
+                <img src={card2} />
               </a>
               <a href={"/dashboard"}>
-                <img src={card3} alt />
+                <img src={card3} />
               </a>
               <a href={"/userprofile"}>
-                <img src={card4} alt />
+                <img src={card4} />
               </a>
             </ul>
             :
