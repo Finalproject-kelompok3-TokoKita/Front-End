@@ -3,55 +3,54 @@ import Filterproduct from "../Components/ProductlistComponent/Filterproduct";
 import Listproduct from "../Components/ProductlistComponent/Listproduct";
 import Searchbar from "../Components/Searchbar";
 import Nav from "../Components/Nav";
-import card1 from "../assets/card.png";
-import card2 from "../assets/favorite.png";
-import card3 from "../assets/rumah.png";
-import card4 from "../assets/orang.png";
+
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import Cookies from "js-cookie";
 
 const Productlist = () => {
+  const token = Cookies.get("token");
+  axios.defaults.withCredentials = true;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-  const token = Cookies.get('token')
-  axios.defaults.withCredentials = true
-  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-
-  const [category, setCategory] = useState([])
-  const [city, setCity] = useState([])
-  const [product, setProduct] = useState([])
+  const [category, setCategory] = useState([]);
+  const [city, setCity] = useState([]);
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/categories")
-      .then(res => {
+    axios
+      .get("http://localhost:5000/categories")
+      .then((res) => {
         if (res.data.message === "Succesfully") {
-          setCategory(res.data.data)
+          setCategory(res.data.data);
         }
       })
       //.then(res => console.log(res))
-      .then(err => console.log(err))
-  }, [])
+      .then((err) => console.log(err));
+  }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/store")
-      .then(res => {
+    axios
+      .get("http://localhost:5000/store")
+      .then((res) => {
         if (res.data.message === "Succesfully") {
-          setProduct(res.data.data)
+          setProduct(res.data.data);
         }
       })
-      .then(err => console.log(err))
-  }, [])
+      .then((err) => console.log(err));
+  }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/cities")
-      .then(res => {
+    axios
+      .get("http://localhost:5000/cities")
+      .then((res) => {
         if (res.data.message === "Succesfully") {
-          setCity(res.data.data)
+          setCity(res.data.data);
         }
       })
-      .then(err => console.log(err))
-  }, [])
+      .then((err) => console.log(err));
+  }, []);
 
   return (
     <>
@@ -61,8 +60,12 @@ const Productlist = () => {
       </div>
       <div className="container">
         <div className="two-col-productlist-wrapper">
-          <Filterproduct setCategory={setCategory} category={category} city={city}/>
-          <Listproduct product={product}/>
+          <Filterproduct
+            setCategory={setCategory}
+            category={category}
+            city={city}
+          />
+          <Listproduct product={product} />
         </div>
       </div>
       <Footer />

@@ -32,12 +32,14 @@ nav {
 }
 .searching {
   color: darkgrey;
+  margin-bottom: -10px;
 }
 
 .index-search {
-  width: 100%;
+  width: 80%;
   height: 35px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   border: none;
   outline: none;
   background-color: #d9d8d7;
@@ -48,7 +50,8 @@ nav {
   width: 200px;
   margin-top: 20px;
   height: 35px;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   background-color: green;
   color: white;
   font-weight: 600;
@@ -291,6 +294,9 @@ nav {
 #dasboard-nav .bag {
   margin-top: 50px;
 }
+#dasboard-nav .bag a:hover {
+  color: #00aa13;
+}
 .tok {
   margin-left: 10px;
   color: #00aa13;
@@ -299,6 +305,9 @@ nav {
 }
 #dasboard-nav .big {
   padding-top: 20px;
+}
+#dasboard-nav .big a:hover {
+  color: #00aa13;
 }
 #dashboard-seller-info {
   display: grid;

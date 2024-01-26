@@ -310,6 +310,7 @@ p {
   width: 40px;
   padding: -5px;
   text-align: center;
+  list-style: none;
 }
 
 .cart-total {
