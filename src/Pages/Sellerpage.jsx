@@ -21,10 +21,10 @@ const Sellerpage = () => {
       .then((res) => {
         if (res.data.message === "Scucessfully") {
           setSeller(res.data.data)
-          setCity(res.data.data.city.name)  
+          setCity(res.data.data.city.name)
           setprov(res.data.data.province.name)
-          setCategories(res.data.data.province.name)  
-          setProducts(res.data.data.products)   
+          setCategories(res.data.data.province.name)
+          setProducts(res.data.data.products)
         }
       })
       //.then(res => console.log(res))
@@ -36,8 +36,8 @@ const Sellerpage = () => {
   return (
     <>
       <Nav />
-      <Sellerinfo seller={seller} city={city} prov={prov} categories={categories}/>
-      <Sellermenu products={products}/>
+      <Sellerinfo seller={seller} city={city} prov={prov} categories={categories} />
+      <Sellermenu products={products} />
       <Footer />
     </>
   );

@@ -5,7 +5,7 @@ const Sellermenulist = ({ product }) => {
                 <h2 style={{ textAlign: "center" }}>Daftar Menu</h2>
                 <form action="" method="get" style={{ marginBottom: "20px" }}>
                     <input type="text" name="" id="" className="dasboard-filter-form" placeholder="Cari produk" />
-                    <select name="" id="" className="dasboard-filter-form" style={{ margin: "0 16px" }}>
+                    {/* <select name="" id="" className="dasboard-filter-form" style={{ margin: "0 16px" }}>
                         <option value="">Makanan</option>
                         <option value="">Jajanan</option>
                         <option value="">Minuman</option>
@@ -16,7 +16,7 @@ const Sellermenulist = ({ product }) => {
                         <option value="">dst</option>
                         <option value="">dst</option>
                         <option value="">dst</option>
-                    </select>
+                    </select> */}
                 </form>
                 <hr />
                 <table>

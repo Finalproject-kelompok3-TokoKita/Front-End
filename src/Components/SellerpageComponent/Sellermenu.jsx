@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
 const Sellermenu = ({ products }) => {
@@ -7,10 +7,11 @@ const Sellermenu = ({ products }) => {
   axios.defaults.withCredentials = true
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
-
   const addtocart = (event) => {
+    //console.log(event.target.dataset)
+    const productId = event.target.dataset.id
     event.preventDefault()
-    axios.post('http://localhost:5000/cart')
+    axios.post('http://localhost:5000/cart', {productId})
       // .then(res => {
       //   if (res.data.message === "Log In success") {
       //     redirect('/')
@@ -18,7 +19,6 @@ const Sellermenu = ({ products }) => {
       // })
       .then(res => console.log(res))
       .then(err => console.log(err))
-    console.log('oke')
   }
 
 
@@ -46,7 +46,7 @@ const Sellermenu = ({ products }) => {
                       <h2>{data.name}</h2>
                       <p>{data.description}</p>
                       <h3>{data.price}</h3>
-                      <button type="submit" id="seller-page-addtocart"
+                      <button type="submit" id="seller-page-addtocart" data-id={data.id}
                         onClick={addtocart}
                       >
                         <b>Pesan Sekarang</b>

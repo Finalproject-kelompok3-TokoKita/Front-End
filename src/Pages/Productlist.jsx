@@ -38,6 +38,7 @@ const Productlist = () => {
           setProduct(res.data.data);
         }
       })
+      //.then(res => console.log(res))
       .then((err) => console.log(err));
   }, []);
 
