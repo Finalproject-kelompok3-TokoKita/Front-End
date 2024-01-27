@@ -1,4 +1,27 @@
-const Sellermenu = () => {
+import axios from "axios";
+import { useEffect } from "react";
+import Cookies from "js-cookie";
+
+const Sellermenu = ({ products }) => {
+  const token = Cookies.get('token')
+  axios.defaults.withCredentials = true
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+
+
+  const addtocart = (event) => {
+    event.preventDefault()
+    axios.post('http://localhost:5000/cart')
+      // .then(res => {
+      //   if (res.data.message === "Log In success") {
+      //     redirect('/')
+      //   }
+      // })
+      .then(res => console.log(res))
+      .then(err => console.log(err))
+    console.log('oke')
+  }
+
+
   return (
     <>
       <div id="seller-page-menu">
@@ -13,135 +36,29 @@ const Sellermenu = () => {
             }}
           ></div>
           <div className="container">
-            <h1>Paket</h1>
-            <div className="seller-page-category-wrapper">
-              <hr />
-              <div className="two-col-sellerpage-wrapper seller-page-product-list">
-                <div id="seller-page-menu-info">
-                  <h2>Paket 1 (Nasi ayam + es jeruk)</h2>
-                  <p>1 ayam + 2 es jeruk</p>
-                  <h3>20.000</h3>
-                  <button type="submit" id="seller-page-addtocart">
-                    <b>Tambah</b>
-                  </button>
-                  <button type="submit" id="seller-page-addtofavorite">
-                    <b>Favorit</b>
-                  </button>
+            <h1>Daftar Menu</h1>
+            {
+              products.map((data) => (
+                <div className="seller-page-category-wrapper" key={data.id}>
+                  <hr />
+                  <div className="two-col-sellerpage-wrapper seller-page-product-list">
+                    <div id="seller-page-menu-info">
+                      <h2>{data.name}</h2>
+                      <p>{data.description}</p>
+                      <h3>{data.price}</h3>
+                      <button type="submit" id="seller-page-addtocart"
+                        onClick={addtocart}
+                      >
+                        <b>Pesan Sekarang</b>
+                      </button>
+                    </div>
+                    <div id="seller-page-menu-img">
+                      <img src="" alt="seller-menu-img" height="200" />
+                    </div>
+                  </div>
                 </div>
-                <div id="seller-page-menu-img">
-                  <img src="" alt="seller-menu-img" height="200" />
-                </div>
-              </div>
-            </div>
-            <div className="seller-page-category-wrapper">
-              <hr />
-              <div className="two-col-sellerpage-wrapper seller-page-product-list">
-                <div id="seller-page-menu-info">
-                  <h2>Paket 1 (Nasi ayam + es jeruk)</h2>
-                  <p>1 ayam + 2 es jeruk</p>
-                  <h3>20.000</h3>
-                  <button type="submit" id="seller-page-addtocart">
-                    <b>Tambah</b>
-                  </button>
-                  <button type="submit" id="seller-page-addtofavorite">
-                    <b>Favorit</b>
-                  </button>
-                </div>
-                <div id="seller-page-menu-img">
-                  <img src="" alt="seller-menu-img" height="200" />
-                </div>
-              </div>
-            </div>
-            <div className="seller-page-category-wrapper">
-              <hr />
-              <div className="two-col-sellerpage-wrapper seller-page-product-list">
-                <div id="seller-page-menu-info">
-                  <h2>Paket 1 (Nasi ayam + es jeruk)</h2>
-                  <p>1 ayam + 2 es jeruk</p>
-                  <h3>20.000</h3>
-                  <button type="submit" id="seller-page-addtocart">
-                    <b>Tambah</b>
-                  </button>
-                  <button type="submit" id="seller-page-addtofavorite">
-                    <b>Favorit</b>
-                  </button>
-                </div>
-                <div id="seller-page-menu-img">
-                  <img src="" alt="seller-menu-img" height="200" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="seller-page-product">
-          <div
-            style={{
-              backgroundColor: "rgb(226, 226, 226)",
-              width: "100%",
-              height: "40px",
-              marginTop: "30px",
-              marginBottom: "30px",
-            }}
-          ></div>
-          <div className="container">
-            <h1>Paket</h1>
-            <div className="seller-page-category-wrapper">
-              <hr />
-              <div className="two-col-sellerpage-wrapper seller-page-product-list">
-                <div id="seller-page-menu-info">
-                  <h2>Paket 1 (Nasi ayam + es jeruk)</h2>
-                  <p>1 ayam + 2 es jeruk</p>
-                  <h3>20.000</h3>
-                  <button type="submit" id="seller-page-addtocart">
-                    <b>Tambah</b>
-                  </button>
-                  <button type="submit" id="seller-page-addtofavorite">
-                    <b>Favorit</b>
-                  </button>
-                </div>
-                <div id="seller-page-menu-img">
-                  <img src="" alt="seller-menu-img" height="200" />
-                </div>
-              </div>
-            </div>
-            <div className="seller-page-category-wrapper">
-              <hr />
-              <div className="two-col-sellerpage-wrapper seller-page-product-list">
-                <div id="seller-page-menu-info">
-                  <h2>Paket 1 (Nasi ayam + es jeruk)</h2>
-                  <p>1 ayam + 2 es jeruk</p>
-                  <h3>20.000</h3>
-                  <button type="submit" id="seller-page-addtocart">
-                    <b>Tambah</b>
-                  </button>
-                  <button type="submit" id="seller-page-addtofavorite">
-                    <b>Favorit</b>
-                  </button>
-                </div>
-                <div id="seller-page-menu-img">
-                  <img src="" alt="seller-menu-img" height="200" />
-                </div>
-              </div>
-            </div>
-            <div className="seller-page-category-wrapper">
-              <hr />
-              <div className="two-col-sellerpage-wrapper seller-page-product-list">
-                <div id="seller-page-menu-info">
-                  <h2>Paket 1 (Nasi ayam + es jeruk)</h2>
-                  <p>1 ayam + 2 es jeruk</p>
-                  <h3>20.000</h3>
-                  <button type="submit" id="seller-page-addtocart">
-                    <b>Tambah</b>
-                  </button>
-                  <button type="submit" id="seller-page-addtofavorite">
-                    <b>Favorit</b>
-                  </button>
-                </div>
-                <div id="seller-page-menu-img">
-                  <img src="" alt="seller-menu-img" height="200" />
-                </div>
-              </div>
-            </div>
+              ))
+            }
           </div>
         </div>
       </div>
