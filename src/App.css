@@ -331,6 +331,13 @@ nav {
 .dashboard-seller-wrap img {
   border-radius: 20px;
 }
+.dashboard-seller-wrap h3 {
+  font-weight: 400;
+}
+.three-col-wrapper h2 {
+  font-weight: 400;
+  font-size: 20px;
+}
 
 .dashboard-card-info {
   border: 1px solid grey;
@@ -345,6 +352,12 @@ nav {
   border: none;
   color: white;
   font-weight: bolder;
+}
+#dashboard-allmenu h2 {
+  font-weight: 500;
+}
+#dashboard-allmenu .fw {
+  font-weight: 500;
 }
 
 .dasboard-filter-form {

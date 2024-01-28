@@ -317,7 +317,6 @@ p {
   margin-left: 20px;
   padding: 20px;
   height: 290px;
-  border: 1px solid silver;
   border-radius: 5px;
 }
 
@@ -336,6 +335,7 @@ p {
   border-radius: 5px;
   background-color: #00aa13;
   color: white;
+  cursor: pointer;
   text-decoration: none;
 }
 
