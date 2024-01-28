@@ -7,7 +7,7 @@ import card4 from "../../assets/orang.png";
 import Nav from "../../Components/Nav";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Postmenu = () => {
@@ -16,11 +16,18 @@ const Postmenu = () => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
   const redirect = useNavigate()
 
+  const [category, setCategory] = useState([])
+  const [city, setCity] = useState([])
+  const [prov, setProv] = useState([])
+
   const [input, setInput] = useState({
     name: '',
     description: '',
     price: '',
-    quantity: ''
+    quantity: '',
+    cityId: '',
+    provinceId: '',
+    categoryId: ''
   })
 
   const handleProduct = (event) => {
@@ -112,20 +119,6 @@ const Postmenu = () => {
                 />
               </div>
             </div>
-
-            {/* <div className="kategori">
-              <div className="label-kategori">
-                <h3>kategori</h3>
-              </div>
-              <div className="form-group">
-                <select name="pets" id="pet-select upload-produk-select">
-                  <option value="">--Pilih Kategori yang sudah ada--</option>
-                  <option value="Makanan">Makanan</option>
-                  <option value="Minuman">Minuman</option>
-                  <option value="Jajanan">Jajanan</option>
-                </select>
-              </div>
-            </div> */}
 
             <div className="stok">
               <div className="label-stok">

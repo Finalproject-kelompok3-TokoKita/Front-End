@@ -1,8 +1,54 @@
+import { useEffect, useState } from "react";
 import Nav from "../Components/Nav";
-// import image
 import silang from "../assets/silang.png";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { Link, useNavigate } from "react-router-dom";
 
 const Pembayaran = () => {
+
+  const token = Cookies.get("token");
+  axios.defaults.withCredentials = true;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+  const [payment, setPayment] = useState([])
+  const [getID, setgetID] = useState()
+  const redirect = useNavigate()
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/items")
+      .then(res => {
+        if (res.data.message === "Succesfully") {
+          setPayment(res.data.data)
+        }
+      })
+      //.then(res => (console.log(res)))
+      .then(err => (console.log(err)))
+  }, [])
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/order")
+      .then(res => {
+        if (res.data.message === "Succesfully") {
+          setgetID(res.data.data[0].id)
+        }
+      })
+      //.then(res => (console.log(res)))
+      .then(err => (console.log(err)))
+  }, [])
+
+  const pay = (event) => {
+    event.preventDefault()
+    axios.put('http://localhost:5000/bayar/' + getID)
+      .then(res => {
+        if (res.data.message === "oke") {
+          redirect('/pesanan')
+        }
+      })
+      //.then(res => console.log(res))
+      .then(err => console.log(err))
+  }
+
   return (
     <>
       <Nav />
@@ -29,24 +75,20 @@ const Pembayaran = () => {
                 <input type="checkbox" className="metode2" />
               </div>
               <div className="pem">
-                <h4>Detail Pembayaran</h4>
-                <p>
-                  Nasi Goreng (1)
-                  <span className="metode3">20.000</span>
-                </p>
-                <p>
-                  Es Jeruk (1)
-                  <span className="metode4">20.000</span>
-                </p>
+                <h4>Daftar Pesanan</h4>
+                {
+                  payment.map((pay) => (
+                    <p key={pay.id}>
+                      {pay.product.name}
+                      <span className="metode3">{pay.product.price}</span>
+                    </p>
+                  ))
+                }
               </div>
-              <p>
-                Total
-                <span className="metode5">40.000</span>
-              </p>
             </div>
           </div>
-          <a href={"/pesanan"} className="submit-btn">
-            Submit
+          <a className="submit-btn" onClick={pay}>
+            Bayar Sekarang
           </a>
         </form>
       </div>

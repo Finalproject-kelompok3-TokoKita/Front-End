@@ -36,7 +36,6 @@ const Nav = () => {
               <a href={"/userprofile"}>
                 <img src={card4} />
               </a>
-              <Link> <a href="">Log Out</a></Link>
             </ul>
             :
             <ul className="items">

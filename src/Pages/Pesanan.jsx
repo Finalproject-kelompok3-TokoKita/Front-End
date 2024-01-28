@@ -1,8 +1,42 @@
+import { useParams } from "react-router-dom";
 import Nav from "../Components/Nav";
 // import image
 import silang from "../assets/silang.png";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 
 const Pesanan = () => {
+  const token = Cookies.get("token");
+  axios.defaults.withCredentials = true;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  const [payment, setPayment] = useState([])
+  const [getDate, setGetDate] = useState("")
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/order")
+      .then(res => {
+        if (res.data.message === "Succesfully") {
+          setGetDate(res.data.data[0].createdAt)
+        }
+      })
+      //.then(res => (console.log(res)))
+      .then(err => (console.log(err)))
+  }, [])
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/items")
+      .then(res => {
+        if (res.data.message === "Succesfully") {
+          setPayment(res.data.data)
+        }
+      })
+      //.then(res => (console.log(res)))
+      .then(err => (console.log(err)))
+  }, [])
+
+  console.log(payment)
+
   return (
     <>
       <Nav />
@@ -12,24 +46,24 @@ const Pesanan = () => {
             <div className="col">
               <img className="silang" src={silang} alt />
               <div className="silang-bayar">Yey kamu berhasil membayar</div>
-              <p className="silang-bayar2">9 Desember 2023, 15:50:20 WIB</p>
+              <p className="silang-bayar2">{getDate}</p>
             </div>
           </div>
           <div className="transaksi">
             <h3>Total Transaksi</h3>
-            <p className="tran">4000</p>
+            {/* <p className="tran">4000</p> */}
             <div className="pem">
               <h4>Pesanan</h4>
-              <p>
-                Nasi Goreng (1)
-                <span className="metode3">20.000</span>
-              </p>
-              <p>
-                Es Jeruk (1)
-                <span className="metode4">20.000</span>
-              </p>
+              {
+                payment.map((pay) => (
+                  <p key={pay.id}>
+                    {pay.product.name}
+                    <span className="metode3">{pay.product.price}</span>
+                  </p>
+                ))
+              }
               <h4>Informasi :</h4>
-              <h5>Tunjukkan Bukti Pembayaran Kepada Penjual</h5>
+              <h5>Pembayaran berhasil. Order telah diproses.</h5>
             </div>
           </div>
         </form>

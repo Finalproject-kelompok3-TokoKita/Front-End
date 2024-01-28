@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./form.css"
 import axios from "axios"
 import Cookies from "js-cookie";
@@ -9,22 +9,65 @@ const Sellersignup = () => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
     const redirect = useNavigate()
 
-    const [sellerdata, setSellerdata] = useState({
-        phone: '',
-        name: '',
-        domain: '',
-        address: ''
-    })
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [domain, setDomain] = useState('')
+    const [address, setAddress] = useState('')
+    const [categoryId, setCategoryId] = useState()
+    const [categories, setCategories] = useState([])
+    const [cityId, setCityId] = useState()
+    const [city, setCity] = useState([])
+    const [provinceId, setProvinceId] = useState()
+    const [prov, setProv] = useState([])
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:5000/categories")
+            .then((res) => {
+                if (res.data.message === "Succesfully") {
+                    setCategories(res.data.data)
+                }
+            })
+            //.then(res => console.log(res))
+            .then((err) => console.log(err));
+    }, []);
+
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:5000/province")
+            .then((res) => {
+                if (res.data.message === "Succesfully") {
+                    setProv(res.data.data)
+                }
+            })
+            //.then(res => console.log(res))
+            .then((err) => console.log(err));
+    }, []);
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:5000/cities")
+            .then((res) => {
+                if (res.data.message === "Succesfully") {
+                    setCity(res.data.data)
+                }
+            })
+            .then((err) => console.log(err));
+    }, []);
+
+
 
     const sellerRegister = (event) => {
         event.preventDefault();
-
-        axios.post('http://localhost:5000/store', sellerdata)
-            .then(res => {
-                if (res.data.message === "Created") {
-                    redirect('/dashboard')
-                }
-            })
+        //console.log(categoryId, cityId, provinceId)
+        axios.post('http://localhost:5000/store', {name: name, phone: phone, domain: domain, address: address, cityId: cityId, provinceId: provinceId, categoryId: categoryId})
+        // .then(res => {
+            //     if (res.data.message === "Created") {
+            //         redirect('/dashboard')
+            //     }
+            // })
+            .then(res => console.log(res))
             .then(err => console.log(err))
     }
 
@@ -42,7 +85,7 @@ const Sellersignup = () => {
                             type="tel"
                             placeholder="Masukkan NO. HP mu"
                             className="form-input-ezer"
-                            onChange={e => setSellerdata({ ...sellerdata, phone: e.target.value })}
+                            onChange={e => setPhone(e.target.value)}
                         />
                         <label htmlFor="namatoko">Masukkan Nama Toko & Nama Domain</label>
                         <input
@@ -50,12 +93,12 @@ const Sellersignup = () => {
                             type="text"
                             placeholder="Nama Toko Kamu"
                             className="form-input-ezer"
-                            onChange={e => setSellerdata({ ...sellerdata, name: e.target.value })}
+                            onChange={e => setName(e.target.value)}
                         />
                         <div className="domain">
                             <label htmlFor="domain">tokokita.com/</label>
                             <input name="domain" type="text" placeholder="Nama Domain" className="form-input-ezer"
-                                onChange={e => setSellerdata({ ...sellerdata, domain: e.target.value })}
+                                onChange={e => setDomain(e.target.value)}
                             />
                         </div>
 
@@ -65,8 +108,51 @@ const Sellersignup = () => {
                             type="text"
                             placeholder="Nama Toko Kamu"
                             className="form-input-ezer"
-                            onChange={e => setSellerdata({ ...sellerdata, address: e.target.value })}
+                            onChange={e => setAddress(e.target.value)}
                         />
+
+                        <div className="kategori">
+                            <div className="label-kategori">
+                                <h3>kategori</h3>
+                            </div>
+                            <div className="form-group">
+                                <select name="pets" id="pet-select upload-produk-select" onChange={e => setCategoryId(e.target.value)}>
+                                    {
+                                        categories.map((cat) => (
+                                            <option key={cat.id} value={cat.id}>{cat.name}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div className="kategori">
+                            <div className="label-kategori">
+                                <h3>kota</h3>
+                            </div>
+                            <div className="form-group">
+                                <select name="pets" id="pet-select upload-produk-select" onChange={e => setCityId(e.target.value)}>
+                                    {
+                                        city.map((ct) => (
+                                            <option key={ct.id} value={ct.id}>{ct.name}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div className="kategori">
+                            <div className="label-kategori">
+                                <h3>Provinsi</h3>
+                            </div>
+                            <div className="form-group">
+                                <select name="pets" id="pet-select upload-produk-select" onChange={e => setProvinceId(e.target.value)}>
+                                    {
+                                        prov.map((p) => (
+                                            <option key={p.id} value={p.id}>{p.name}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                        </div>
                         <button type="submit" className="form-btn-ezer">Login</button>
                     </form>
                 </div>

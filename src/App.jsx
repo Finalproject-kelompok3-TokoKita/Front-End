@@ -51,8 +51,8 @@ function App() {
         <Route path="/editprofile/:id" element={key ? <Useredit /> : login} />
         <Route path="/userprofile" element={key ? <Userprofile /> : login} />
         {/* <Route path="/userprofile/:id" element={key ? <Userprofile /> : login} /> */}
-        <Route path="/pesanan" element={key ? <Pesanan /> : login} />
         <Route path="/pembayaran" element={key ? <Pembayaran /> : login} />
+        <Route path="/pesanan" element={key ? <Pesanan /> : login} />
       </Routes>
     </Router>
   );
