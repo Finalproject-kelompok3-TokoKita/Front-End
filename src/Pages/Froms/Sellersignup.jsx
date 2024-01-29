@@ -13,6 +13,7 @@ const Sellersignup = () => {
     const [phone, setPhone] = useState('')
     const [domain, setDomain] = useState('')
     const [address, setAddress] = useState('')
+    const [photo, setPhoto] = useState()
     const [categoryId, setCategoryId] = useState()
     const [categories, setCategories] = useState([])
     const [cityId, setCityId] = useState()
@@ -60,11 +61,29 @@ const Sellersignup = () => {
 
     const sellerRegister = (event) => {
         event.preventDefault();
-        //console.log(categoryId, cityId, provinceId)
-        axios.post('http://localhost:5000/store', {name: name, phone: phone, domain: domain, address: address, cityId: cityId, provinceId: provinceId, categoryId: categoryId})
-        // .then(res => {
+        //console.log(file)
+        const formData = new FormData()
+        formData.append("name", name)
+        formData.append("phone", phone)
+        formData.append("domain", domain)
+        formData.append("address", address)
+        formData.append("file", photo)
+        formData.append("categoryId", categoryId)
+        formData.append("cityId", cityId)
+        formData.append("provinceId", provinceId)
+
+        // for (const value of formData.values()) {
+        //     console.log(value);
+        // }
+        axios.post('http://localhost:5000/store', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+            // .then(res => {
             //     if (res.data.message === "Created") {
             //         redirect('/dashboard')
+            //{ name: name, phone: phone, domain: domain, address: address, categoryId: categoryId, cityId: cityId, provinceId: provinceId }
             //     }
             // })
             .then(res => console.log(res))
@@ -109,6 +128,10 @@ const Sellersignup = () => {
                             placeholder="Nama Toko Kamu"
                             className="form-input-ezer"
                             onChange={e => setAddress(e.target.value)}
+                        />
+
+                        <input type="file" name="file" id=""
+                            onChange={e => setPhoto(e.target.files[0].name)}
                         />
 
                         <div className="kategori">

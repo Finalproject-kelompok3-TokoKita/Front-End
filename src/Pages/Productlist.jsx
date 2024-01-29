@@ -16,6 +16,7 @@ const Productlist = () => {
 
   const [category, setCategory] = useState([]);
   const [city, setCity] = useState([]);
+  const [province, setProvince] = useState([]);
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -26,7 +27,6 @@ const Productlist = () => {
           setCategory(res.data.data);
         }
       })
-      //.then(res => console.log(res))
       .then((err) => console.log(err));
   }, []);
 
@@ -38,7 +38,6 @@ const Productlist = () => {
           setProduct(res.data.data);
         }
       })
-      //.then(res => console.log(res))
       .then((err) => console.log(err));
   }, []);
 
@@ -50,6 +49,18 @@ const Productlist = () => {
           setCity(res.data.data);
         }
       })
+      .then((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/province")
+      .then((res) => {
+        if (res.data.message === "Succesfully") {
+          setProvince(res.data.data);
+        }
+      })
+      //.then(res => console.log(res))
       .then((err) => console.log(err));
   }, []);
 
@@ -65,6 +76,7 @@ const Productlist = () => {
             setCategory={setCategory}
             category={category}
             city={city}
+            province={province}
           />
           <Listproduct product={product} />
         </div>

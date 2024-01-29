@@ -22,19 +22,19 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios.get("http://localhost:5000/dashboard")
-      // .then(res => {
-      //   if (res.data.message === "Succesfully") {
-      //     if (res.data.data != 0) {
-      //       setDashboard(res.data.data[0])
-      //       setCities(res.data.data[0].city.name)
-      //       setProv(res.data.data[0].province.name)
-      //       setProduct(res.data.data[0].products)
-      //     } else {
-      //       back('/seller-register')
-      //     }
-      //   }
-      // })
-      .then(res => console.log(res))
+      .then(res => {
+        if (res.data.message === "Succesfully") {
+          if (res.data.data != 0) {
+            setDashboard(res.data.data[0])
+            setCities(res.data.data[0].city.name)
+            setProv(res.data.data[0].province.name)
+            setProduct(res.data.data[0].products)
+          } else {
+            back('/seller-register')
+          }
+        }
+      })
+      //.then(res => console.log(res))
       .then(err => console.log(err))
   }, [])
 

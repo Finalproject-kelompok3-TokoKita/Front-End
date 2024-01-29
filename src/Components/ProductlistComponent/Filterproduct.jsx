@@ -1,4 +1,4 @@
-const Filterproduct = ({ setCategory, category, city }) => {
+const Filterproduct = ({ setCategory, category, city, province }) => {
 
   return (
     <>
@@ -28,6 +28,17 @@ const Filterproduct = ({ setCategory, category, city }) => {
             {
               city.map((cy) => (
                 <option key={cy.id} value={cy.name}>{cy.name}</option>
+              ))
+            }
+          </select>
+        </div>
+
+        <div className="product-list-filter-form-detail shadow">
+          <h2>Pilih Provinsi</h2>
+          <select name="" id="">
+            {
+              province.map((prov) => (
+                <option key={prov.id} value={prov.name}>{prov.name}</option>
               ))
             }
           </select>
