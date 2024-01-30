@@ -67,7 +67,7 @@ const Sellersignup = () => {
         formData.append("phone", phone)
         formData.append("domain", domain)
         formData.append("address", address)
-        formData.append("file", photo)
+        formData.append("photo", photo)
         formData.append("categoryId", categoryId)
         formData.append("cityId", cityId)
         formData.append("provinceId", provinceId)
@@ -130,8 +130,8 @@ const Sellersignup = () => {
                             onChange={e => setAddress(e.target.value)}
                         />
 
-                        <input type="file" name="file" id=""
-                            onChange={e => setPhoto(e.target.files[0].name)}
+                        <input type="file"
+                            onChange={e => setPhoto(e.target.files[0])}
                         />
 
                         <div className="kategori">

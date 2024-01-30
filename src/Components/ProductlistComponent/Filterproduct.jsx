@@ -1,4 +1,4 @@
-const Filterproduct = ({ setCategory, category, city, province }) => {
+const Filterproduct = ({ province, setProvID, city, setcityID }) => {
 
   return (
     <>
@@ -12,7 +12,7 @@ const Filterproduct = ({ setCategory, category, city, province }) => {
           <br />
           <input type="range" style={{ marginTop: "15px" }} />
         </div>
-        <div className="product-list-filter-form-detail shadow">
+        {/* <div className="product-list-filter-form-detail shadow">
           <h2>Pilih Kategori</h2>
           <select name="" id="" onChange={(e)=>setCategory(e.target.value)}>
             {
@@ -21,28 +21,33 @@ const Filterproduct = ({ setCategory, category, city, province }) => {
               ))
             }
           </select>
-        </div>
+        </div> */}
+
         <div className="product-list-filter-form-detail shadow">
-          <h2>Pilih Kota</h2>
-          <select name="" id="">
+          <h2>Filter Wilayah</h2>
+          <select onChange={(e)=>setProvID(e.target.value)}>
+            <option>--Pilih Provinsi--</option>
+            {
+              province.map((prov) => (
+                <option key={prov.id} value={prov.id}>{prov.name}</option>
+              ))
+            }
+          </select>
+
+          <select onChange={(e)=>setcityID(e.target.value)}>
+            <option>--Pilih Kota--</option>
             {
               city.map((cy) => (
-                <option key={cy.id} value={cy.name}>{cy.name}</option>
+                <option key={cy.id} value={cy.id}>{cy.name}</option>
               ))
             }
           </select>
         </div>
 
         <div className="product-list-filter-form-detail shadow">
-          <h2>Pilih Provinsi</h2>
-          <select name="" id="">
-            {
-              province.map((prov) => (
-                <option key={prov.id} value={prov.name}>{prov.name}</option>
-              ))
-            }
-          </select>
+          
         </div>
+
       </div>
     </>
   );

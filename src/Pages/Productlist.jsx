@@ -9,15 +9,18 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import { cityList, provinceList, storeList } from "../Service/api";
+import { useParams } from "react-router-dom";
 
 const Productlist = () => {
   const token = Cookies.get("token");
   axios.defaults.withCredentials = true;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-  const [category, setCategory] = useState([]);
   const [city, setCity] = useState([]);
+  const [cityID, setcityID] = useState('');
   const [province, setProvince] = useState([]);
+  const [provID, setProvID] = useState('');
+  const [category, setCategory] = useState([]);
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -27,63 +30,45 @@ const Productlist = () => {
   }, [])
 
   useEffect(() => {
-    cityList(4).then((ct) => {
+    cityList(provID).then((ct) => {
       setCity(ct);
     })
-  }, [])
+  }, [provID])
 
   useEffect(() => {
-    storeList(1).then((s) => {
+    storeList(cityID, 2).then((s) => {
       setProduct(s);
     })
-  }, [])
+  }, [cityID])
 
-  console.log(product)
+  //console.log(product)
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/categories")
+    axios.get("http://localhost:5000/store")
       .then((res) => {
         if (res.data.message === "Succesfully") {
-          setCategory(res.data.data);
+          if (provID === '' || cityID === '') {
+            setProduct(res.data.data);
+          }
         }
       })
       .then((err) => console.log(err));
   }, []);
 
+  //console.log(product)
+
   // useEffect(() => {
   //   axios
-  //     .get("http://localhost:5000/store")
+  //     .get("http://localhost:5000/categories")
   //     .then((res) => {
   //       if (res.data.message === "Succesfully") {
-  //         setProduct(res.data.data);
+  //         setCategory(res.data.data);
   //       }
   //     })
   //     .then((err) => console.log(err));
   // }, []);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000/cities")
-  //     .then((res) => {
-  //       if (res.data.message === "Succesfully") {
-  //         setCity(res.data.data);
-  //       }
-  //     })
-  //     .then((err) => console.log(err));
-  // }, []);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000/province")
-  //     .then((res) => {
-  //       if (res.data.message === "Succesfully") {
-  //         setProvince(res.data.data);
-  //       }
-  //     })
-  //     //.then(res => console.log(res))
-  //     .then((err) => console.log(err));
-  // }, []);
 
   return (
     <>
@@ -93,13 +78,13 @@ const Productlist = () => {
       </div>
       <div className="container">
         <div className="two-col-productlist-wrapper">
-          {/* <Filterproduct
-            setCategory={setCategory}
-            category={category}
-            city={city}
+          <Filterproduct
             province={province}
-          /> */}
-          {/* <Listproduct product={product} /> */}
+            setProvID={setProvID}
+            city={city}
+            setcityID={setcityID}
+          />
+          <Listproduct product={product} />
         </div>
       </div>
       <Footer />
