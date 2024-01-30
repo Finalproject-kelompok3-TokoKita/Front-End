@@ -12,7 +12,12 @@ export const cityList = async (parameters) => {
     return cityData.data.data;
 }
 
-export const storeList = async (parameterscontent, category) => {
-    const storeData = await axios.get(`http://localhost:5000/getbycity/${parameterscontent}/${category}`);
+export const storeList = async (parameterscontent) => {
+    const storeData = await axios.get(`http://localhost:5000/getbycity/${parameterscontent}`);
     return storeData.data.data;
 }
+
+// export const storeList = async (parameterscontent, category) => {
+//     const storeData = await axios.get(`http://localhost:5000/getbycity/${parameterscontent}/${category}`);
+//     return storeData.data.data;
+// }

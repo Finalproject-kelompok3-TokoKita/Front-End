@@ -13,7 +13,7 @@ const Sellersignup = () => {
     const [phone, setPhone] = useState('')
     const [domain, setDomain] = useState('')
     const [address, setAddress] = useState('')
-    const [photo, setPhoto] = useState()
+    const [photo, setPhoto] = useState('')
     const [categoryId, setCategoryId] = useState()
     const [categories, setCategories] = useState([])
     const [cityId, setCityId] = useState()
@@ -59,35 +59,33 @@ const Sellersignup = () => {
 
 
 
-    const sellerRegister = (event) => {
-        event.preventDefault();
-        //console.log(file)
+    const sellerRegister = async () => {
         const formData = new FormData()
         formData.append("name", name)
         formData.append("phone", phone)
         formData.append("domain", domain)
         formData.append("address", address)
-        formData.append("photo", photo)
+        formData.append("file", photo)
         formData.append("categoryId", categoryId)
         formData.append("cityId", cityId)
         formData.append("provinceId", provinceId)
 
-        // for (const value of formData.values()) {
-        //     console.log(value);
-        // }
-        axios.post('http://localhost:5000/store', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        })
-            // .then(res => {
-            //     if (res.data.message === "Created") {
-            //         redirect('/dashboard')
-            //{ name: name, phone: phone, domain: domain, address: address, categoryId: categoryId, cityId: cityId, provinceId: provinceId }
-            //     }
-            // })
-            .then(res => console.log(res))
-            .then(err => console.log(err))
+        const response = await axios.post('http://localhost:5000/store', formData, {
+            headers: { 'Content-Type': "multipart/form-data" },
+        });
+
+        if (response.data.message === "Created") {
+            setTimeout(() => {
+                redirect('/dashboard');
+            }, 2000);
+        }
+
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await sellerRegister();
+
     }
 
     return (
@@ -97,7 +95,7 @@ const Sellersignup = () => {
                     <p className="title">
                         Hallo, <span className="bold">Insyu</span> ayo isi detail toko kamu
                     </p>
-                    <form id="form" onSubmit={sellerRegister}>
+                    <form id="form" onSubmit={handleSubmit}>
                         <label htmlFor="nohp">Masukkan NO.HP mu</label>
                         <input
                             name="phone"
@@ -130,7 +128,7 @@ const Sellersignup = () => {
                             onChange={e => setAddress(e.target.value)}
                         />
 
-                        <input type="file"
+                        <input type="file" name="file"
                             onChange={e => setPhoto(e.target.files[0])}
                         />
 
