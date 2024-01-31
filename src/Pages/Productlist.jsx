@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import { cityList, provinceList, storeList } from "../Service/Api";
-import { useParams } from "react-router-dom";
 
 const Productlist = () => {
   const token = Cookies.get("token");

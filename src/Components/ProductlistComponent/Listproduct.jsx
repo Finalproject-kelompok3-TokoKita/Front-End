@@ -19,7 +19,13 @@ const Listproduct = ({ product }) => {
                     className="product-list-details"
                     style={{ textAlign: "center" }}
                   >
-                    
+                    Kategori : Warung
+                  </div>
+                  <div
+                    className="product-list-details"
+                    style={{ textAlign: "center" }}
+                  >
+                    Kota, Provinsi 
                   </div>
                   <br />
                   <Link to={`/seller/${prod.id}`} className="product-list-button-link">Kunjungi Toko</Link>

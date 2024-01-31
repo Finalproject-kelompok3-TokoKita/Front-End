@@ -40,9 +40,6 @@ const Dashboard = () => {
       .then(err => console.log(err))
   }, [])
 
-  // const x = Object.keys(product).length
-  // console.log(x)
-
   return (
     <>
       <Nav />
@@ -52,7 +49,7 @@ const Dashboard = () => {
             <Dashboardnav />
             <div className="">
               <Sellerprofile dashboard={dashboard} cities={cities} prov={prov} categories={categories}/>
-              <Sellercardinfo product={product} />
+              {/* <Sellercardinfo product={product} /> */}
               <Sellermenulist product={product} />
             </div>
           </div>

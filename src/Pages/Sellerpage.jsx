@@ -31,7 +31,7 @@ const Sellerpage = () => {
       .then((err) => console.log(err));
   }, []);
 
-  //console.log(products)
+  console.log(products)
 
   return (
     <>
