@@ -1,4 +1,4 @@
-import Homeheader from "../Components/HomeComponent/Homeheader";
+import HomeHeader from "../Components/HomeComponent/HomeHeader";
 import Footer from "../Components/Footer";
 import Anekakuliner from "../Components/HomeComponent/Anekakuliner";
 import Tokodisekitar from "../Components/HomeComponent/Tokodisekitar";
@@ -7,11 +7,11 @@ import { useEffect } from "react";
 import axios from "axios";
 
 const Home = () => {
-  const token = Cookies.get('token')
-  
+  const token = Cookies.get("token");
+
   return (
     <>
-      <Homeheader />
+      <HomeHeader />
       <Tokodisekitar />
       <Footer />
     </>
