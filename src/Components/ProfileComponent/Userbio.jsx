@@ -6,7 +6,7 @@ const Userbio = ({ userdata }) => {
         <>
             <div className="wrapper">
                 <div className="left">
-                    <img width={100} />
+                    <img src={`http://localhost:5000/static/users/${userdata.photo}`} width={100} />
                     <button className="ubah">Ubah Foto Profil</button>
                     <p className="file">
                         Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file

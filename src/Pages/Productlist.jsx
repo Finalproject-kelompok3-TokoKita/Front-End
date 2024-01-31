@@ -36,37 +36,34 @@ const Productlist = () => {
   }, [provID])
 
   useEffect(() => {
-    storeList(cityID, 2).then((s) => {
+    storeList(cityID).then((s) => {
       setProduct(s);
     })
   }, [cityID])
 
-  //console.log(product)
-
   useEffect(() => {
-    axios.get("http://localhost:5000/store")
+    axios.get("http://localhost:5000/getstore")
       .then((res) => {
-        if (res.data.message === "Succesfully") {
+        if (res.data.message === 'Successfully') {
           if (provID === '' || cityID === '') {
             setProduct(res.data.data);
           }
         }
       })
-      .then((err) => console.log(err));
+      .then((err) => console.log(err))
   }, []);
 
-  //console.log(product)
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000/categories")
-  //     .then((res) => {
-  //       if (res.data.message === "Succesfully") {
-  //         setCategory(res.data.data);
-  //       }
-  //     })
-  //     .then((err) => console.log(err));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/categories")
+      .then((res) => {
+        if (res.data.message === "Succesfully") {
+          setCategory(res.data.data);
+        }
+      })
+      .then((err) => console.log(err));
+  }, []);
 
 
 
@@ -74,15 +71,13 @@ const Productlist = () => {
     <>
       <Nav />
       <div className="container">
-        <Searchbar />
-      </div>
-      <div className="container">
         <div className="two-col-productlist-wrapper">
           <Filterproduct
             province={province}
             setProvID={setProvID}
             city={city}
             setcityID={setcityID}
+            category={category}
           />
           <Listproduct product={product} />
         </div>

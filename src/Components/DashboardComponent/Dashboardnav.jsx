@@ -10,9 +10,6 @@ const Dashboardnav = () => {
           <a href={"/add-menu"}>Tambah Menu</a>
         </div>
         <div className="big">
-          <a href={"/orderlist"}>Daftar Pesanan</a>
-        </div>
-        <div className="big">
           <a href="">Pengaturan</a>
         </div>
       </div>

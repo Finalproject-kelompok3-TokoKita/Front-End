@@ -7,10 +7,27 @@ import card5 from "../assets/menu.png";
 import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
-const Nav = () => {
+const Nav = ({ userData }) => {
   const key = Cookies.get("token");
+  const [userdata, setUserdata] = useState({});
+  axios.defaults.withCredentials = true;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${key}`;
   const back = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/user")
+      .then((res) => {
+        if (res.data.message === "Berhasil") {
+          setUserdata(res.data.data);
+        }
+      })
+      //.then(res => console.log(res))
+      .then((err) => console.log(err));
+  }, []);
+
 
   const logout = () => {
     Cookies.remove("token");
@@ -43,7 +60,7 @@ const Nav = () => {
               <img src={card3} />
             </a>
             <a href={"/userprofile"}>
-              <img src={card4} />
+              <img src={`http://localhost:5000/static/users/${userdata.photo}`}  />
             </a>
             <a onClick={logout}>
               <img src={card4} />

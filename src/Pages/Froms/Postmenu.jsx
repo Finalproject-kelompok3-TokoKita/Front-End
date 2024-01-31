@@ -25,22 +25,32 @@ const Postmenu = () => {
     description: '',
     price: '',
     quantity: '',
-    cityId: '',
-    provinceId: '',
-    categoryId: ''
+    photo: ''
   })
 
-  const handleProduct = (event) => {
-    event.preventDefault()
-    axios.post('http://localhost:5000/product', input)
-      .then(res => {
-        if (res.data.message === "Berhasil Dibuat") {
-          redirect('/dashboard')
-        }
-      })
-      // .then(res => console.log(res))
-      .then(err => console.log(err))
+  const inputProduct = async () => {
+    const formData = new FormData()
+    formData.append("name", input.name)
+    formData.append("description", input.description)
+    formData.append("price", input.price)
+    formData.append("quantity", input.quantity)
+    formData.append("file", input.photo)
+
+    const req = await axios.post('http://localhost:5000/product', formData, {
+      headers: { 'Content-Type': "multipart/form-data" },
+    });
+
+    if (req.data.message === "Berhasil Dibuat") {
+      setTimeout(() => {
+        redirect('/dashboard');
+      }, 1000);
+    }
   }
+
+  const handleProduct = async (e) => {
+    e.preventDefault();
+    await inputProduct();
+}
 
 
   return (
@@ -67,7 +77,7 @@ const Postmenu = () => {
                 <input
                   type="file"
                   id="img"
-                  accept="image/*"
+                  onChange={e => setInput({ ...input, photo: e.target.files[0] })}
                 />
               </div>
             </div>

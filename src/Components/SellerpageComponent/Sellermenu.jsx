@@ -53,7 +53,7 @@ const Sellermenu = ({ products }) => {
                       </button>
                     </div>
                     <div id="seller-page-menu-img">
-                      <img src="" alt="seller-menu-img" height="200" />
+                      <img src={`http://localhost:5000/static/products/${data.photo}`} alt="seller-menu-img" height="200" />
                     </div>
                   </div>
                 </div>

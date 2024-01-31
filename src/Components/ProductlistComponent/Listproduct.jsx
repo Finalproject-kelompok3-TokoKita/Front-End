@@ -9,27 +9,17 @@ const Listproduct = ({ product }) => {
             product.map((prod) => (
 
               <div className="product-list-content shadow" key={prod.id}>
-                <img src="" alt="" />
+                <img src={`http://localhost:5000/static/stores/${prod.photo}`} alt="" />
                 <div className="container">
-                  <h4 className="jaj">
+                  <h4 className="jaj" style={{textAlign:"center"}}>
                     {prod.name}
                     <br />
-                    <small></small>
                   </h4>
                   <div
                     className="product-list-details"
                     style={{ textAlign: "center" }}
                   >
-                    <span> 10 Rb - 20 Rb </span>
-                    <span
-                      style={{
-                        borderLeft: "2px solid black",
-                        borderRight: "2px solid black",
-                      }}
-                    >
-                      10 Km
-                    </span>
-                    <span> 5⭐ </span>
+                    
                   </div>
                   <br />
                   <Link to={`/seller/${prod.id}`} className="product-list-button-link">Kunjungi Toko</Link>

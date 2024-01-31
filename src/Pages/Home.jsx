@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <>
       <Homeheader />
-      <Anekakuliner />
       <Tokodisekitar />
       <Footer />
     </>

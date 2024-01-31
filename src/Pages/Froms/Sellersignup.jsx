@@ -13,7 +13,7 @@ const Sellersignup = () => {
     const [phone, setPhone] = useState('')
     const [domain, setDomain] = useState('')
     const [address, setAddress] = useState('')
-    const [photo, setPhoto] = useState('')
+    const [photo, setPhoto] = useState()
     const [categoryId, setCategoryId] = useState()
     const [categories, setCategories] = useState([])
     const [cityId, setCityId] = useState()
@@ -70,6 +70,8 @@ const Sellersignup = () => {
         formData.append("cityId", cityId)
         formData.append("provinceId", provinceId)
 
+        
+
         const response = await axios.post('http://localhost:5000/store', formData, {
             headers: { 'Content-Type': "multipart/form-data" },
         });
@@ -77,7 +79,7 @@ const Sellersignup = () => {
         if (response.data.message === "Created") {
             setTimeout(() => {
                 redirect('/dashboard');
-            }, 2000);
+            }, 1000);
         }
 
     }
@@ -128,7 +130,7 @@ const Sellersignup = () => {
                             onChange={e => setAddress(e.target.value)}
                         />
 
-                        <input type="file" name="file"
+                        <input type="file"
                             onChange={e => setPhoto(e.target.files[0])}
                         />
 

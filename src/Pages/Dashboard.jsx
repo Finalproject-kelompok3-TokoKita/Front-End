@@ -17,6 +17,7 @@ const Dashboard = () => {
   const [dashboard, setDashboard] = useState({})
   const [cities, setCities] = useState('')
   const [prov, setProv] = useState('')
+  const [categories, setCategories] = useState('')
   const [product, setProduct] = useState([])
   const back = useNavigate()
 
@@ -28,6 +29,7 @@ const Dashboard = () => {
             setDashboard(res.data.data[0])
             setCities(res.data.data[0].city.name)
             setProv(res.data.data[0].province.name)
+            setCategories(res.data.data[0].category.name)
             setProduct(res.data.data[0].products)
           } else {
             back('/seller-register')
@@ -49,7 +51,7 @@ const Dashboard = () => {
           <div className="two-col-dashboard-wrapper">
             <Dashboardnav />
             <div className="">
-              <Sellerprofile dashboard={dashboard} cities={cities} prov={prov} />
+              <Sellerprofile dashboard={dashboard} cities={cities} prov={prov} categories={categories}/>
               <Sellercardinfo product={product} />
               <Sellermenulist product={product} />
             </div>

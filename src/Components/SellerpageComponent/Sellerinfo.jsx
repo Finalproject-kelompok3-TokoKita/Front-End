@@ -26,7 +26,7 @@ const Sellerinfo = ({ seller, city, prov, categories }) => {
             <div id="seller-title">
                 <div className="container">
                     <div className="seller-title-detail">
-                        <img src="" alt="seller-img" srcset="" width="225" height="200" />
+                        <img src={`http://localhost:5000/static/stores/${seller.photo}`} alt="seller-img" srcset="" width="225" height="200" />
                     </div>
                     <div className="seller-title-detail seller-info">
                         <h1>{seller.name}</h1>

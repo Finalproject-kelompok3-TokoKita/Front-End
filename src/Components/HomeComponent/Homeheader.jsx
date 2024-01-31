@@ -10,7 +10,9 @@ const Homeheader = () => {
         <img src={card5} alt="" />
         <div id="index-main-detail">
           <div className="container">
-            <Searchbar />
+            <h1 style={{color:"white", marginTop:"100px"}}>
+            NOTED : Bang Disini saya hilangin search bar karena kelamaan nanti, bagian ini isi tulisan aja, moto aplikasi kita, atau terserah ya @Bang Willy & Mas Agung
+            </h1>
           </div>
         </div>
       </div>
