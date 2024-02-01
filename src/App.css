@@ -284,15 +284,18 @@ nav {
   background-color: #f1f1f1;
   margin-left: -80px;
   padding: 50px;
-  margin-bottom: -90px;
+  margin-bottom: 1px;
 }
 #dasboard-nav a {
   margin-top: 20px;
   color: black;
   font-size: 20px;
 }
-#dasboard-nav .bag {
+.bag a {
   margin-top: 50px;
+}
+#dasboard-nav .bag {
+  margin-top: 30px;
 }
 #dasboard-nav .bag a:hover {
   color: #00aa13;
@@ -302,6 +305,7 @@ nav {
   color: #00aa13;
   margin-top: -70px;
   font-size: 29px;
+  padding-bottom: 50px;
 }
 #dasboard-nav .big {
   padding-top: 20px;
@@ -358,6 +362,15 @@ nav {
 }
 #dashboard-allmenu .fw {
   font-weight: 500;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+#dashboard-allmenu .fg {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.dashboard-seller-wrap .ff {
+  padding-bottom: 20px;
 }
 
 .dasboard-filter-form {

@@ -3,22 +3,22 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 
 const Sellermenulist = ({ product }) => {
+  const token = Cookies.get("token");
+  axios.defaults.withCredentials = true;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-  const token = Cookies.get('token')
-  axios.defaults.withCredentials = true
-  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-
-  const [editId, setEditId] = useState()
+  const [editId, setEditId] = useState();
   const [updateData, setUpdateData] = useState({
-    name: '',
-    description: '',
-    price: '',
-    quantity: '',
-  })
+    name: "",
+    description: "",
+    price: "",
+    quantity: "",
+  });
 
   const btnUpdate = (id) => {
-    axios.get("http://localhost:5000/product/" + id)
-      .then(res => {
+    axios
+      .get("http://localhost:5000/product/" + id)
+      .then((res) => {
         if (res.data.message === "Scucessfully") {
           setUpdateData({
             ...updateData,
@@ -26,40 +26,46 @@ const Sellermenulist = ({ product }) => {
             description: res.data.data.description,
             price: res.data.data.price,
             quantity: res.data.data.quantity,
-          })
+          });
         }
       })
       //.then(res => console.log(res))
-      .then(err => console.log(err))
-    setEditId(id)
-  }
+      .then((err) => console.log(err));
+    setEditId(id);
+  };
 
   const handleUpdate = () => {
-    axios.put("http://localhost:5000/product/" + editId, updateData)
-      .then(res => {
-        if (res.data.message === 'Updated') {
+    axios
+      .put("http://localhost:5000/product/" + editId, updateData)
+      .then((res) => {
+        if (res.data.message === "Updated") {
           location.reload();
         }
       })
-      .then(err => console.log(err))
-  }
+      .then((err) => console.log(err));
+  };
 
   const btnDelete = (id) => {
-    axios.delete("http://localhost:5000/product/" + id)
-      .then(res => {
+    axios
+      .delete("http://localhost:5000/product/" + id)
+      .then((res) => {
         if (res.data.message === "Deleted") {
           location.reload();
         }
       })
       //.then(res => console.log(res))
-      .then(err => console.log(err))
-  }
+      .then((err) => console.log(err));
+  };
 
   return (
     <>
       <div id="dashboard-allmenu">
-        <h2 style={{ textAlign: "center" }}>Daftar Menu</h2>
-        <h6 style={{ textAlign: "center" }}>Total : {Object.keys(product).length}</h6>
+        <h2 className="fg" style={{ textAlign: "center" }}>
+          Daftar Menu
+        </h2>
+        <h6 className="fg" style={{ textAlign: "center" }}>
+          Total : {Object.keys(product).length}
+        </h6>
         {/* <form action="" method="get" style={{ marginBottom: "20px" }}>
           <input
             type="text"
@@ -80,27 +86,53 @@ const Sellermenulist = ({ product }) => {
             </tr>
           </thead>
           <tbody>
-            {product.map((prod) => (
-              prod.id === editId ?
+            {product.map((prod) =>
+              prod.id === editId ? (
                 <tr>
                   <td>
-                    <input type="text" name="name" value={updateData.name}
-                      onChange={e => setUpdateData({ ...updateData, name: e.target.value })}
+                    <input
+                      type="text"
+                      name="name"
+                      value={updateData.name}
+                      onChange={(e) =>
+                        setUpdateData({ ...updateData, name: e.target.value })
+                      }
                     />
                   </td>
                   <td>
-                    <input type="text" name="description" value={updateData.description}
-                      onChange={e => setUpdateData({ ...updateData, description: e.target.value })}
+                    <input
+                      type="text"
+                      name="description"
+                      value={updateData.description}
+                      onChange={(e) =>
+                        setUpdateData({
+                          ...updateData,
+                          description: e.target.value,
+                        })
+                      }
                     />
                   </td>
                   <td>
-                    <input type="text" name="price" value={updateData.price}
-                      onChange={e => setUpdateData({ ...updateData, price: e.target.value })}
+                    <input
+                      type="text"
+                      name="price"
+                      value={updateData.price}
+                      onChange={(e) =>
+                        setUpdateData({ ...updateData, price: e.target.value })
+                      }
                     />
                   </td>
                   <td>
-                    <input type="text" name="quantity" value={updateData.quantity}
-                      onChange={e => setUpdateData({ ...updateData, quantity: e.target.value })}
+                    <input
+                      type="text"
+                      name="quantity"
+                      value={updateData.quantity}
+                      onChange={(e) =>
+                        setUpdateData({
+                          ...updateData,
+                          quantity: e.target.value,
+                        })
+                      }
                     />
                   </td>
                   <td>
@@ -114,7 +146,7 @@ const Sellermenulist = ({ product }) => {
                     </button>
                   </td>
                 </tr>
-                :
+              ) : (
                 <tr key={prod.id}>
                   <td>{prod.name}</td>
                   <td>{prod.description}</td>
@@ -141,7 +173,8 @@ const Sellermenulist = ({ product }) => {
                     </button>
                   </td>
                 </tr>
-            ))}
+              )
+            )}
           </tbody>
         </table>
       </div>
