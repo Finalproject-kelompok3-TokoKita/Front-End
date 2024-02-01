@@ -1,4 +1,5 @@
 import HomePage from "./HomePage.jsx";
 import ContactPage from "./ContactPage.jsx";
+import ProductPage from "./ProductPage.jsx";
 
-export { HomePage, ContactPage };
+export { HomePage, ProductPage, ContactPage };
