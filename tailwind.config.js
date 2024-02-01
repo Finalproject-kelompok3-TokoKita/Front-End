@@ -10,6 +10,7 @@ export default {
         primary: "#00AA13",
         secondary: "#FF5600",
         primarybg: "#F1F1F1",
+        secondarybg: "#080019",
       },
     },
   },
