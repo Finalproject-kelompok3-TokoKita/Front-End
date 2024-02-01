@@ -11,7 +11,6 @@ import "./style.css";
 import Productlist from "./Pages/Productlist";
 import Sellerpage from "./Pages/Sellerpage";
 import Userprofile from "./Pages/Userprofile";
-import Contact from "./Pages/Contact";
 import Cart from "./Pages/Cart";
 import Favorite from "./Pages/Favorite";
 import Dashboard from "./Pages/Dashboard";
