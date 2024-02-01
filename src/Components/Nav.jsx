@@ -1,4 +1,4 @@
-import { cart, favorite, store, logout_icon } from "../utils/images";
+import { cart, favorite, store, logout_icon, profile } from "../utils/images";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -22,6 +22,8 @@ const Nav = ({ userData }) => {
       //.then(res => console.log(res))
       .then((err) => console.log(err));
   }, []);
+
+  const photo = userdata.photo
 
   const logout = () => {
     Cookies.remove("token");
@@ -64,10 +66,16 @@ const Nav = ({ userData }) => {
               <img src={store} className="w-[18px]" />
             </a>
             <a href={"/userprofile"}>
-              <img
-                src={`http://localhost:5000/static/users/${userdata.photo}`}
-                className="w-[36px] rounded-full"
-              />
+              {
+                photo ?
+                  <img
+                    src={`http://localhost:5000/static/users/${userdata.photo}`}
+                    className="w-[36px] rounded-full"
+                  />
+                  :
+                  <img src={profile} className="w-[18px]" />
+              }
+
             </a>
             <a onClick={logout}>
               <img src={logout_icon} className="w-[24px]" />
@@ -81,7 +89,7 @@ const Nav = ({ userData }) => {
               Sign In
             </a>
             <a
-              href
+              href="/signup"
               className="bg-secondary text-white px-[8px] py-[4px] rounded-[10px] w-[100px] flex justify-center hover:bg-white hover:text-secondary hover:border hover:border-solid hover:border-secondary">
               Sign Up
             </a>

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Nav from "../Components/Nav";
 // import image
 import silang from "../assets/silang.png";
@@ -11,13 +11,16 @@ const Pesanan = () => {
   axios.defaults.withCredentials = true;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   const [payment, setPayment] = useState([])
-  const [getDate, setGetDate] = useState("")
+  const [getOrder, setGetOrder] = useState([])
+  const [status, setStatus] = useState('')
+  const back = useNavigate()
 
   useEffect(() => {
     axios.get("http://localhost:5000/order")
       .then(res => {
         if (res.data.message === "Succesfully") {
-          setGetDate(res.data.data[0].createdAt)
+          setGetOrder(res.data.data[0])
+          setStatus(res.data.data[0].status)
         }
       })
       //.then(res => (console.log(res)))
@@ -35,39 +38,46 @@ const Pesanan = () => {
       .then(err => (console.log(err)))
   }, [])
 
-  console.log(payment)
 
   return (
     <>
-      <Nav />
-      <div className="container-pesanan">
-        <form action>
-          <div className="row">
-            <div className="col">
-              <img className="silang" src={silang} alt />
-              <div className="silang-bayar">Yey kamu berhasil membayar</div>
-              <p className="silang-bayar2">{getDate}</p>
+      {
+        status === "PENDING" ?
+          back('/')
+          :
+          <>
+            <Nav />
+            <div className="container-pesanan">
+              <form action>
+                <div className="row">
+                  <div className="col">
+                    <img className="silang" src={silang} alt />
+                    <div className="silang-bayar">Yey kamu berhasil membayar</div>
+                    <p className="silang-bayar2">{getOrder.createdAt}</p>
+                  </div>
+                </div>
+                <div className="transaksi">
+                  <h3>Total Transaksi</h3>
+                  {/* <p className="tran">4000</p> */}
+                  <div className="pem">
+                    <h4>Pesanan</h4>
+                    {
+                      payment.map((pay) => (
+                        <p key={pay.id}>
+                          {pay.product.name}
+                          <span className="metode3">{pay.product.price}</span>
+                        </p>
+                      ))
+                    }
+                    <h4>Informasi :</h4>
+                    <h5>Pembayaran berhasil. Order telah diproses.</h5>
+                  </div>
+                </div>
+              </form>
             </div>
-          </div>
-          <div className="transaksi">
-            <h3>Total Transaksi</h3>
-            {/* <p className="tran">4000</p> */}
-            <div className="pem">
-              <h4>Pesanan</h4>
-              {
-                payment.map((pay) => (
-                  <p key={pay.id}>
-                    {pay.product.name}
-                    <span className="metode3">{pay.product.price}</span>
-                  </p>
-                ))
-              }
-              <h4>Informasi :</h4>
-              <h5>Pembayaran berhasil. Order telah diproses.</h5>
-            </div>
-          </div>
-        </form>
-      </div>
+          </>
+      }
+
     </>
   );
 };

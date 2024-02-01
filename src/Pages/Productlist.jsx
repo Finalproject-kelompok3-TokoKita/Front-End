@@ -52,6 +52,7 @@ const Productlist = () => {
       .then((err) => console.log(err))
   }, []);
 
+  console.log(product)
 
   useEffect(() => {
     axios

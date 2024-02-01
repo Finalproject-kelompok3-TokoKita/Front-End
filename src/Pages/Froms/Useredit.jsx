@@ -81,7 +81,6 @@ const Useredit = () => {
                                     />
                                     <input type="file"
                                         onChange={e => SetData({ ...data, photo: e.target.files[0] })}
-                                        //onChange={e => setPhoto(e.target.files[0])}
                                     />
                                 </div>
                             </div>
@@ -89,23 +88,22 @@ const Useredit = () => {
                                 <h2>Ubah Data Diri</h2>
                                 <label htmlFor="fullName">Nama</label>
                                 <input name="fullName" type="text"
-                                    //value={fullName}
+                                    value={data.fullName}
                                     className="input-useredit"
                                     onChange={e => SetData({ ...data, fullName: e.target.value })}
-                                    //onChange={e => setfullName(e.target.value)}
                                 />
                                 <label htmlFor="tgllahir">Tgl Lahir</label>
                                 <input
-                                    type="text"
+                                    type="date"
                                     className="input-useredit"
                                     name="dateOfBirth"
-                                    //value={dateOfBirth}
+                                    value={data.dateOfBirth}
                                     onChange={e => SetData({ ...data, dateOfBirth: e.target.value })}
                                     //onChange={e => setDateOfBirth(e.target.value)}
                                 />
                                 <label htmlFor="jeniskelamin">Jenis Kelamin</label>
                                 <input name="gender" type="text"
-                                    // value={data.gender} 
+                                    value={data.gender} 
                                     className="input-useredit"
                                     onChange={e => SetData({ ...data, gender: e.target.value })}
                                     //onChange={e => setGender(e.target.value)}
@@ -113,13 +111,13 @@ const Useredit = () => {
                                 <h2>Ubah Kontak</h2>
                                 <label htmlFor="email">Email</label>
                                 <input name="email" type="email" className="input-useredit"
-                                    //value={data.email}
+                                    value={data.email}
                                     onChange={e => SetData({ ...data, email: e.target.value })}
                                     //onChange={e => setEmail(e.target.value)}
                                 />
                                 <label htmlFor="nohp">No Handphone</label>
                                 <input name="phone" type="text" className="input-useredit"
-                                    //value={data.phone}
+                                    value={data.phone}
                                     onChange={e => SetData({ ...data, phone: e.target.value })}
                                     //onChange={e => setPhone(e.target.value)}
                                 />

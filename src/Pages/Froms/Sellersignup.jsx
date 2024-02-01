@@ -3,6 +3,7 @@ import "./form.css"
 import axios from "axios"
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { cityList, provinceList } from "../../Service/Api";
 
 const Sellersignup = () => {
     const token = Cookies.get('token')
@@ -33,29 +34,40 @@ const Sellersignup = () => {
             .then((err) => console.log(err));
     }, []);
 
+    useEffect(() => {
+        provinceList().then((prov) => {
+            setProv(prov);
+        })
+    }, [])
 
     useEffect(() => {
-        axios
-            .get("http://localhost:5000/province")
-            .then((res) => {
-                if (res.data.message === "Succesfully") {
-                    setProv(res.data.data)
-                }
-            })
-            //.then(res => console.log(res))
-            .then((err) => console.log(err));
-    }, []);
+        cityList(provinceId).then((ct) => {
+            setCity(ct);
+        })
+    }, [provinceId])
 
-    useEffect(() => {
-        axios
-            .get("http://localhost:5000/cities")
-            .then((res) => {
-                if (res.data.message === "Succesfully") {
-                    setCity(res.data.data)
-                }
-            })
-            .then((err) => console.log(err));
-    }, []);
+    // useEffect(() => {
+    //     axios
+    //         .get("http://localhost:5000/province")
+    //         .then((res) => {
+    //             if (res.data.message === "Succesfully") {
+    //                 setProv(res.data.data)
+    //             }
+    //         })
+    //         //.then(res => console.log(res))
+    //         .then((err) => console.log(err));
+    // }, []);
+
+    // useEffect(() => {
+    //     axios
+    //         .get("http://localhost:5000/cities")
+    //         .then((res) => {
+    //             if (res.data.message === "Succesfully") {
+    //                 setCity(res.data.data)
+    //             }
+    //         })
+    //         .then((err) => console.log(err));
+    // }, []);
 
 
 
@@ -70,7 +82,9 @@ const Sellersignup = () => {
         formData.append("cityId", cityId)
         formData.append("provinceId", provinceId)
 
-        
+        // for (const value of formData.values()) {
+        //     console.log(value);
+        //   }
 
         const response = await axios.post('http://localhost:5000/store', formData, {
             headers: { 'Content-Type': "multipart/form-data" },
@@ -140,23 +154,10 @@ const Sellersignup = () => {
                             </div>
                             <div className="form-group">
                                 <select name="pets" id="pet-select upload-produk-select" onChange={e => setCategoryId(e.target.value)}>
+                                <option>--Pilih Kategori Toko--</option>
                                     {
                                         categories.map((cat) => (
                                             <option key={cat.id} value={cat.id}>{cat.name}</option>
-                                        ))
-                                    }
-                                </select>
-                            </div>
-                        </div>
-                        <div className="kategori">
-                            <div className="label-kategori">
-                                <h3>kota</h3>
-                            </div>
-                            <div className="form-group">
-                                <select name="pets" id="pet-select upload-produk-select" onChange={e => setCityId(e.target.value)}>
-                                    {
-                                        city.map((ct) => (
-                                            <option key={ct.id} value={ct.id}>{ct.name}</option>
                                         ))
                                     }
                                 </select>
@@ -168,9 +169,25 @@ const Sellersignup = () => {
                             </div>
                             <div className="form-group">
                                 <select name="pets" id="pet-select upload-produk-select" onChange={e => setProvinceId(e.target.value)}>
+                                    <option>--Pilih Provinsi--</option>
                                     {
                                         prov.map((p) => (
                                             <option key={p.id} value={p.id}>{p.name}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div className="kategori">
+                            <div className="label-kategori">
+                                <h3>kota</h3>
+                            </div>
+                            <div className="form-group">
+                                <select name="pets" id="pet-select upload-produk-select" onChange={e => setCityId(e.target.value)}>
+                                    <option>--Pilih Kota--</option>
+                                    {
+                                        city.map((ct) => (
+                                            <option key={ct.id} value={ct.id}>{ct.name}</option>
                                         ))
                                     }
                                 </select>

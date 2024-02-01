@@ -7,6 +7,7 @@ import favorite from "../assets/images/favorite.svg";
 import store from "../assets/images/store.svg";
 import photo_profile from "../assets/images/photo_profile.svg";
 import logout_icon from "../assets/images/logout_icon.svg";
+import profile from "../assets/images/profile.jpg";
 
 export {
   home_image,
@@ -18,4 +19,5 @@ export {
   store,
   photo_profile,
   logout_icon,
+  profile,
 };

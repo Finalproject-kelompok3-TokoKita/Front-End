@@ -28,12 +28,12 @@ const Pembayaran = () => {
 
   useEffect(() => {
     axios.get("http://localhost:5000/order")
-      .then(res => {
-        if (res.data.message === "Succesfully") {
-          setgetID(res.data.data[0].id)
-        }
-      })
-      //.then(res => (console.log(res)))
+      // .then(res => {
+      //   if (res.data.message === "Succesfully") {
+      //     setgetID(res.data.data[0].id)
+      //   }
+      // })
+      .then(res => (console.log(res)))
       .then(err => (console.log(err)))
   }, [])
 
@@ -41,7 +41,7 @@ const Pembayaran = () => {
     event.preventDefault()
     axios.put('http://localhost:5000/bayar/' + getID)
       .then(res => {
-        if (res.data.message === "oke") {
+        if (res.data.message === "Pembayaran berhasil. Order telah diproses.") {
           redirect('/pesanan')
         }
       })
