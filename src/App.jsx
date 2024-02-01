@@ -7,11 +7,10 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import "./style.css";
-import HomePage from "./Pages/HomePage";
+// import HomePage from "./Pages/HomePage";
 import Productlist from "./Pages/Productlist";
 import Sellerpage from "./Pages/Sellerpage";
 import Userprofile from "./Pages/Userprofile";
-import Contact from "./Pages/Contact";
 import Cart from "./Pages/Cart";
 import Favorite from "./Pages/Favorite";
 import Dashboard from "./Pages/Dashboard";
@@ -24,6 +23,7 @@ import Pembayaran from "./Pages/Pembayaran";
 import Pesanan from "./Pages/Pesanan";
 import Cookies from "js-cookie";
 import { Navigate } from "react-router-dom";
+import { HomePage, ContactPage } from "./Pages/index.jsx";
 import { LoginPage, RegisterPage } from "./Pages/Froms/index.jsx";
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/productlist" element={<Productlist />} />
         <Route path="/cart" element={key ? <Cart /> : login} />
-        <Route path="/contact" element={key ? <Contact /> : login} />
+        <Route path="/contact" element={key ? <ContactPage /> : login} />
         <Route path="/favorite" element={key ? <Favorite /> : login} />
         {/* Seller */}
         <Route
