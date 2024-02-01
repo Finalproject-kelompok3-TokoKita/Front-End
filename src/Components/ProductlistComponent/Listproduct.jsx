@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import kakap from "../../assets/kakap.jpg";
 
 const ListProduct = ({ product }) => {
   return (
@@ -33,9 +32,6 @@ const ListProduct = ({ product }) => {
                     <h6 className="text-xs">Rating</h6>
                   </div>
                 </div>
-                {/* <Link to={`/seller/${prod.id}`} className="">
-                  Kunjungi Toko
-                </Link> */}
                 <button
                   className="h-10 px-6 font-bold rounded-md bg-primary text-white w-full"
                   type="submit">

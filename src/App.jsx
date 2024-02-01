@@ -13,7 +13,6 @@ import Cart from "./Pages/Cart";
 import Favorite from "./Pages/Favorite";
 import Dashboard from "./Pages/Dashboard";
 import Statusorder from "./Pages/Statusorder";
-import Sellersignup from "./Pages/Froms/Sellersignup";
 import Useredit from "./Pages/Froms/Useredit";
 import Postmenu from "./Pages/Froms/Postmenu";
 import Putmenu from "./Pages/Froms/Putmenu";
@@ -22,7 +21,11 @@ import Pesanan from "./Pages/Pesanan";
 import Cookies from "js-cookie";
 import { Navigate } from "react-router-dom";
 import { HomePage, ContactPage, ProductPage } from "./Pages/index.jsx";
-import { LoginPage, RegisterPage } from "./Pages/Froms/index.jsx";
+import {
+  LoginPage,
+  RegisterPage,
+  SellerRegisterPage,
+} from "./Pages/Froms/index.jsx";
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -44,7 +47,7 @@ function App() {
         {/* Seller */}
         <Route
           path="/seller-register"
-          element={key ? <Sellersignup /> : login}
+          element={key ? <SellerRegisterPage /> : login}
         />
         <Route path="/add-menu" element={key ? <Postmenu /> : login} />
         <Route path="/edit-menu" element={key ? <Putmenu /> : login} />
