@@ -1,5 +1,5 @@
-import { location, mail, phone } from "../utils/images";
-import { facebook, instagram, twitter } from "../utils/images";
+//import { location, mail, phone } from "../utils/images";
+//import { facebook, instagram, twitter } from "../utils/images";
 
 const Footer = () => {
   return (
@@ -7,18 +7,18 @@ const Footer = () => {
       <div className="w-1/2 text-white">
         <h1 className="text-[32px] text-primary font-bold">Tokokita</h1>
         <div className="flex gap-4">
-          <img src={location} alt="" />
+          <img src={''} alt="" />
           <p>
             Jl. Ahmad Yani, Singa Gembara, Kecamatan Sangatta Utara, Kabupaten
             Kutai Timur, Kalimantan Timur
           </p>
         </div>
         <div className="flex gap-4">
-          <img src={mail} alt="" />
+          <img src={''} alt="" />
           <p>tokokita@gmail.com</p>
         </div>
         <div className="flex gap-4">
-          <img src={phone} alt="" />
+          <img src={''} alt="" />
           <p>080123456789</p>
         </div>
       </div>
@@ -33,13 +33,13 @@ const Footer = () => {
         <h1 className="text-[20px] font-bold mb-2">Ikuti Kami</h1>
         <div className="flex gap-2">
           <a href="#">
-            <img className="rounded" src={facebook} alt="" />
+            <img className="rounded" src={''} alt="" />
           </a>
           <a href="#">
-            <img className="rounded" src={instagram} alt="" />
+            <img className="rounded" src={''} alt="" />
           </a>
           <a href="#">
-            <img className="rounded" src={twitter} alt="" />
+            <img className="rounded" src={''} alt="" />
           </a>
         </div>
       </div>

@@ -16,11 +16,6 @@ const Userbio = ({ userdata }) => {
                             :
                             <img src={profile} width={100} />
                     }
-                    <button className="ubah">Ubah Foto Profil</button>
-                    <p className="file">
-                        Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file
-                        yang diperbolehkan: .JPG .JPEG .PNG
-                    </p>
                 </div>
                 <div className="right">
                     <div className="info">

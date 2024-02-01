@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 import Nav from "../Components/Nav";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const token = Cookies.get("token");
@@ -30,6 +31,13 @@ const Cart = () => {
   return (
     <>
       <Nav />
+      <Link to={'/cart'}><button className="">Keranjang Belanja</button></Link>
+      <Link to={'/Daftar-Pesanan'}><button className="">Daftar Pesanan</button></Link>
+      {/* 
+        bang willy, 
+        itu <Link> yang diatas jadiin diatas ya, pjok kiri atas, 
+        yang bawwah yang "Keranjang Belanja Masih Kosong" ditengahin
+      */}
       {
         cartdata.length === 0 ?
           <h1>Keranjang Belanja Masih Kosong</h1>

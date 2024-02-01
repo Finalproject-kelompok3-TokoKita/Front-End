@@ -17,23 +17,23 @@ const Pembayaran = () => {
 
   useEffect(() => {
     axios.get("http://localhost:5000/items")
-      .then(res => {
-        if (res.data.message === "Succesfully") {
-          setPayment(res.data.data)
-        }
-      })
-      //.then(res => (console.log(res)))
+      // .then(res => {
+      //   if (res.data.message === "Succesfully") {
+      //     setPayment(res.data.data)
+      //   }
+      // })
+      .then(res => (console.log(res)))
       .then(err => (console.log(err)))
   }, [])
 
   useEffect(() => {
     axios.get("http://localhost:5000/order")
-      // .then(res => {
-      //   if (res.data.message === "Succesfully") {
-      //     setgetID(res.data.data[0].id)
-      //   }
-      // })
-      .then(res => (console.log(res)))
+      .then(res => {
+        if (res.data.message === "Succesfully") {
+          setgetID(res.data.data[0].id)
+        }
+      })
+      //.then(res => (console.log(res)))
       .then(err => (console.log(err)))
   }, [])
 

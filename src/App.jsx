@@ -41,6 +41,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/productlist" element={<Productlist />} />
         <Route path="/cart" element={key ? <Cart /> : login} />
+        <Route path="/Daftar-Pesanan" element={key ? <Statusorder /> : login} />
         <Route path="/contact" element={key ? <ContactPage /> : login} />
         <Route path="/favorite" element={key ? <Favorite /> : login} />
         {/* Seller */}

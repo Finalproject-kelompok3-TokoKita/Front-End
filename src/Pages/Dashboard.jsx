@@ -49,7 +49,6 @@ const Dashboard = () => {
             <Dashboardnav />
             <div className="">
               <Sellerprofile dashboard={dashboard} cities={cities} prov={prov} categories={categories}/>
-              {/* <Sellercardinfo product={product} /> */}
               <Sellermenulist product={product} />
             </div>
           </div>

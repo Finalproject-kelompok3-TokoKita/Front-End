@@ -5,7 +5,7 @@ import home_terlaris from "../assets/images/home_terlaris.svg";
 import cart from "../assets/images/cart.svg";
 import favorite from "../assets/images/favorite.svg";
 import store from "../assets/images/store.svg";
-import photo_profile from "../assets/images/photo_profile.svg";
+import profile from "../assets/images/profile.jpg";
 import logout_icon from "../assets/images/logout_icon.svg";
 
 export {
@@ -16,6 +16,6 @@ export {
   cart,
   favorite,
   store,
-  photo_profile,
+  profile,
   logout_icon,
 };

@@ -142,7 +142,7 @@ const Postmenu = () => {
             </div>
 
             <div className="button">
-              <button type="submit" className="upload-produk-btnsubmit">
+              <button type="submit" className="upload-produk-btnsubmit" style={{color:"yellow"}}>
                 Simpan
               </button>
             </div>
