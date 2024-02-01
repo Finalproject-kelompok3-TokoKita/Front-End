@@ -1,44 +1,49 @@
-import car1 from "../assets/facebook.png";
-import car2 from "../assets/instagram.png";
-import car3 from "../assets/twitter.jpg";
+import { location, mail, phone } from "../utils/images";
+import { facebook, instagram, twitter } from "../utils/images";
+
 const Footer = () => {
   return (
-    <>
-      <div id="footer">
-        <div className="container">
-          <div className="two-col-wrapper">
-            <div id="footer-detail-info">
-              <h1>TokoKita</h1>
-              <p>
-                Jl. Ahmad Yani, Singa Gembara, Kabupaten Kutai Timur, Kalimantan
-                Timur
-              </p>
-              <p>tokokita@gmail.com</p>
-              <p>08151234567</p>
-            </div>
-            <div id="footer-detail-contact">
-              <h3>Newsletter</h3>
-              <p>Dapatkan Informasi Melalui Newsletter Kami</p>
-              <a href="" className="button-link-newsletter">
-                Berlangganan
-              </a>
-              <h3>Ikuti Kami</h3>
-              <div className="fab-icon">
-                <a href="">
-                  <img className="feb" src={car1} alt="" />
-                </a>
-                <a href="">
-                  <img className="feb" src={car2} alt="" />
-                </a>
-                <a href="">
-                  <img className="feb" src={car3} alt="" />
-                </a>
-              </div>
-            </div>
-          </div>
+    <div className="h-[320px] bg-secondarybg flex justify-between gap-80 p-12 font-inter">
+      <div className="w-1/2 text-white">
+        <h1 className="text-[32px] text-primary font-bold">Tokokita</h1>
+        <div className="flex gap-4">
+          <img src={location} alt="" />
+          <p>
+            Jl. Ahmad Yani, Singa Gembara, Kecamatan Sangatta Utara, Kabupaten
+            Kutai Timur, Kalimantan Timur
+          </p>
+        </div>
+        <div className="flex gap-4">
+          <img src={mail} alt="" />
+          <p>tokokita@gmail.com</p>
+        </div>
+        <div className="flex gap-4">
+          <img src={phone} alt="" />
+          <p>080123456789</p>
         </div>
       </div>
-    </>
+      <div className="w-1/2 text-white">
+        <h1 className="text-[24px] font-bold">Newsletter</h1>
+        <p>Dapatkan Informasi Melalui Newsletter Kami</p>
+        <button
+          className="h-10 px-6 font-bold rounded-md bg-primary text-white w-full mb-6"
+          type="submit">
+          Berlangganan
+        </button>
+        <h1 className="text-[20px] font-bold mb-2">Ikuti Kami</h1>
+        <div className="flex gap-2">
+          <a href="#">
+            <img className="rounded" src={facebook} alt="" />
+          </a>
+          <a href="#">
+            <img className="rounded" src={instagram} alt="" />
+          </a>
+          <a href="#">
+            <img className="rounded" src={twitter} alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
   );
 };
 

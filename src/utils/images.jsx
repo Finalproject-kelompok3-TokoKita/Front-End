@@ -7,6 +7,12 @@ import favorite from "../assets/images/favorite.svg";
 import store from "../assets/images/store.svg";
 import photo_profile from "../assets/images/photo_profile.svg";
 import logout_icon from "../assets/images/logout_icon.svg";
+import location from "../assets/images/location.svg";
+import mail from "../assets/images/mail.svg";
+import phone from "../assets/images/phone.svg";
+import facebook from "../assets/images/facebook.svg";
+import instagram from "../assets/images/instagram.svg";
+import twitter from "../assets/images/twitter.svg";
 
 export {
   home_image,
@@ -18,4 +24,10 @@ export {
   store,
   photo_profile,
   logout_icon,
+  location,
+  mail,
+  phone,
+  facebook,
+  instagram,
+  twitter,
 };
