@@ -1,25 +1,24 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+
 const Sellermenu = ({ products }) => {
   const token = Cookies.get("token");
   axios.defaults.withCredentials = true;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const addtocart = (event) => {
-    //console.log(event.target.dataset)
-    const productId = event.target.dataset.id;
-    event.preventDefault();
-    axios
-      .post("http://localhost:5000/cart", { productId })
-      // .then(res => {
-      //   if (res.data.message === "Log In success") {
-      //     redirect('/')
-      //   }
-      // })
-      .then((res) => console.log(res))
-      .then((err) => console.log(err));
-  };
+    const productId = event.target.dataset.id
+    event.preventDefault()
+    axios.post('http://localhost:5000/cart', {productId})
+      .then(res => {
+        if (res.data.message === "Created") {
+          location.reload()
+        }
+      })
+      //.then(res => console.log(res))
+      .then(err => console.log(err))
+  }
 
   return (
     <>

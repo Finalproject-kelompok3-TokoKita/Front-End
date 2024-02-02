@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import kakap from "../../assets/kakap.jpg";
+import { profile } from "../../utils/images"
 
 const Userbio = ({ userdata }) => {
+
+  const photo = userdata.photo
+
   return (
     <div className="p-12 font-inter flex justify-center min-h-screen">
       <div className="bg-primarybg shadow-lg w-2/3 h-[360px] p-8 flex flex-col gap-4 rounded-lg">
@@ -10,11 +13,12 @@ const Userbio = ({ userdata }) => {
         </div>
         <div className="flex gap-8">
           <div className="w-[240px] h-[240px]">
-            <img
-              src={kakap}
-              alt=""
-              className="object-cover w-full h-full rounded-lg"
-            />
+            {
+              photo ?
+                <img src={`http://localhost:5000/static/users/${userdata.photo}`} className="object-cover w-full h-full rounded-lg" />
+                :
+                <img src={profile} className="object-cover w-full h-full rounded-lg" />
+            }
           </div>
           <div className="flex flex-col justify-between">
             <div className="text-lg">

@@ -4,30 +4,31 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import Nav from "../../Components/Nav.jsx";
+import { cityList, provinceList } from "../../Service/Api";
 
 const SellerRegisterPage = () => {
   const token = Cookies.get("token");
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   const redirect = useNavigate();
 
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [domain, setDomain] = useState("");
-  const [address, setAddress] = useState("");
-  const [photo, setPhoto] = useState();
-  const [categoryId, setCategoryId] = useState();
-  const [categories, setCategories] = useState([]);
-  const [cityId, setCityId] = useState();
-  const [city, setCity] = useState([]);
-  const [provinceId, setProvinceId] = useState();
-  const [prov, setProv] = useState([]);
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [domain, setDomain] = useState('')
+  const [address, setAddress] = useState('')
+  const [photo, setPhoto] = useState()
+  const [categoryId, setCategoryId] = useState()
+  const [categories, setCategories] = useState([])
+  const [cityId, setCityId] = useState()
+  const [city, setCity] = useState([])
+  const [provinceId, setProvinceId] = useState()
+  const [prov, setProv] = useState([])
 
   useEffect(() => {
     axios
       .get("http://localhost:5000/categories")
       .then((res) => {
         if (res.data.message === "Succesfully") {
-          setCategories(res.data.data);
+          setCategories(res.data.data)
         }
       })
       //.then(res => console.log(res))
@@ -35,54 +36,47 @@ const SellerRegisterPage = () => {
   }, []);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/province")
-      .then((res) => {
-        if (res.data.message === "Succesfully") {
-          setProv(res.data.data);
-        }
-      })
-      //.then(res => console.log(res))
-      .then((err) => console.log(err));
-  }, []);
+    provinceList().then((prov) => {
+      setProv(prov);
+    })
+  }, [])
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/cities")
-      .then((res) => {
-        if (res.data.message === "Succesfully") {
-          setCity(res.data.data);
-        }
-      })
-      .then((err) => console.log(err));
-  }, []);
+    cityList(provinceId).then((ct) => {
+      setCity(ct);
+    })
+  }, [provinceId])
+
+
 
   const sellerRegister = async () => {
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("phone", phone);
-    formData.append("domain", domain);
-    formData.append("address", address);
-    formData.append("file", photo);
-    formData.append("categoryId", categoryId);
-    formData.append("cityId", cityId);
-    formData.append("provinceId", provinceId);
+    const formData = new FormData()
+    formData.append("name", name)
+    formData.append("phone", phone)
+    formData.append("domain", domain)
+    formData.append("address", address)
+    formData.append("file", photo)
+    formData.append("categoryId", categoryId)
+    formData.append("cityId", cityId)
+    formData.append("provinceId", provinceId)
 
-    const response = await axios.post("http://localhost:5000/store", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
+    const response = await axios.post('http://localhost:5000/store', formData, {
+      headers: { 'Content-Type': "multipart/form-data" },
     });
 
     if (response.data.message === "Created") {
       setTimeout(() => {
-        redirect("/dashboard");
+        redirect('/dashboard');
       }, 1000);
     }
-  };
+
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await sellerRegister();
-  };
+
+  }
 
   return (
     <>
@@ -90,7 +84,7 @@ const SellerRegisterPage = () => {
       <div className="flex justify-center items-center font-inter py-8">
         <div className="w-full max-w-sm">
           <p className="text-center text-lg mb-2">
-            Hallo,<span className="font-bold text-black">Insyu</span> ayo isi
+            Hallo, ayo isi
             detail toko kamu
           </p>
           <form onSubmit={handleSubmit}>
@@ -135,7 +129,7 @@ const SellerRegisterPage = () => {
               type="text"
               placeholder=""
               className="text-sm border border-gray-300 rounded w-full py-2 px-3 text-slate-700 mb-2"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setAddress(e.target.value)}
             />
             <div className="flex justify-center items-center gap-2 mb-2">
               <h1 className="text-black text-opacity-50">Provinsi</h1>
@@ -143,6 +137,7 @@ const SellerRegisterPage = () => {
                 name="pets"
                 className="text-sm border border-gray-300 rounded w-full py-2 px-3 text-slate-700"
                 onChange={(e) => setProvinceId(e.target.value)}>
+                <option>-----Pilih Provinsi-----</option>
                 {prov.map((p) => (
                   <option key={p.id} value={p.id}>
                     {p.name}
@@ -156,6 +151,7 @@ const SellerRegisterPage = () => {
                 name="pets"
                 className="text-sm border border-gray-300 rounded w-full py-2 px-3 text-slate-700"
                 onChange={(e) => setCityId(e.target.value)}>
+                <option>-----Pilih Kota-----</option>
                 {city.map((ct) => (
                   <option key={ct.id} value={ct.id}>
                     {ct.name}
@@ -170,6 +166,7 @@ const SellerRegisterPage = () => {
               name="pets"
               className="text-sm border border-gray-300 rounded w-full py-2 px-3 text-slate-700 mb-2"
               onChange={(e) => setCategoryId(e.target.value)}>
+              <option>--Pilih Kategori--</option>
               {categories.map((cat) => (
                 <option key={cat.id} value={cat.id}>
                   {cat.name}

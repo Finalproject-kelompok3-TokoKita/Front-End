@@ -98,7 +98,7 @@ const Useredit = () => {
                 <input
                   name="fullName"
                   type="text"
-                  //value={fullName}
+                  value={data.fullName}
                   className="input-useredit"
                   onChange={(e) =>
                     SetData({ ...data, fullName: e.target.value })
@@ -110,7 +110,7 @@ const Useredit = () => {
                   type="text"
                   className="input-useredit"
                   name="dateOfBirth"
-                  //value={dateOfBirth}
+                  value={data.dateOfBirth}
                   onChange={(e) =>
                     SetData({ ...data, dateOfBirth: e.target.value })
                   }
@@ -120,7 +120,7 @@ const Useredit = () => {
                 <input
                   name="gender"
                   type="text"
-                  // value={data.gender}
+                  value={data.gender}
                   className="input-useredit"
                   onChange={(e) => SetData({ ...data, gender: e.target.value })}
                   //onChange={e => setGender(e.target.value)}
@@ -131,7 +131,7 @@ const Useredit = () => {
                   name="email"
                   type="email"
                   className="input-useredit"
-                  //value={data.email}
+                  value={data.email}
                   onChange={(e) => SetData({ ...data, email: e.target.value })}
                   //onChange={e => setEmail(e.target.value)}
                 />
@@ -140,7 +140,7 @@ const Useredit = () => {
                   name="phone"
                   type="text"
                   className="input-useredit"
-                  //value={data.phone}
+                  value={data.phone}
                   onChange={(e) => SetData({ ...data, phone: e.target.value })}
                   //onChange={e => setPhone(e.target.value)}
                 />
