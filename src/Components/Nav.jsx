@@ -23,7 +23,7 @@ const Nav = ({ userData }) => {
       .then((err) => console.log(err));
   }, []);
 
-  const photo = userdata.photo
+  const photo = userdata.photo;
 
   const logout = () => {
     Cookies.remove("token");
@@ -66,30 +66,31 @@ const Nav = ({ userData }) => {
               <img src={store} className="w-[18px]" />
             </a>
             <a href={"/userprofile"}>
-              {
-                photo ?
-                  <img
-                    src={`http://localhost:5000/static/users/${userdata.photo}`}
-                    className="w-[36px] rounded-full"
-                  />
-                  :
-                  <img src={profile} className="w-[18px]" />
-              }
+              {photo ? (
+                <img
+                  src={`http://localhost:5000/static/users/${userdata.photo}`}
+                  className="w-[36px] rounded-full"
+                />
+              ) : (
+                <img src={profile} className="w-[18px]" />
+              )}
             </a>
             <a onClick={logout}>
-              <img src={logout_icon} className="w-[24px]" />
+              <img src={logout_icon} className="w-[24px] cursor-pointer" />
             </a>
           </div>
         ) : (
           <div className="flex justify-between items-center text-[20px] font-bold gap-2">
             <a
               href="/login"
-              className="bg-primary text-white px-[8px] py-[4px] rounded-[10px] w-[100px] flex justify-center hover:bg-white hover:text-primary hover:border hover:border-solid hover:border-primary">
+              className="bg-primary text-white px-[8px] py-[4px] rounded-[10px] w-[100px] flex justify-center hover:bg-white hover:text-primary hover:border hover:border-solid hover:border-primary"
+            >
               Sign In
             </a>
             <a
               href="/signup"
-              className="bg-secondary text-white px-[8px] py-[4px] rounded-[10px] w-[100px] flex justify-center hover:bg-white hover:text-secondary hover:border hover:border-solid hover:border-secondary">
+              className="bg-secondary text-white px-[8px] py-[4px] rounded-[10px] w-[100px] flex justify-center hover:bg-white hover:text-secondary hover:border hover:border-solid hover:border-secondary"
+            >
               Sign Up
             </a>
           </div>

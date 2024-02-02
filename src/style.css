@@ -93,6 +93,14 @@ header {
   border: none;
   border-radius: 5px;
 }
+.tradisi {
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  margin-top: -210px;
+  font-size: 30px;
+  font-family: cursive;
+}
 /* ----------userprofile---------- */
 .wrapper {
   position: absolute;

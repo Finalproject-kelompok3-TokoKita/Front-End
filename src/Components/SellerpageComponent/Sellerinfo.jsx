@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import kakap from "../../assets/kakap.jpg";
 
 const Sellerinfo = ({ seller, city, prov, categories }) => {
   const token = Cookies.get("token");
