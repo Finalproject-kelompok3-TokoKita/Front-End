@@ -66,13 +66,12 @@ const Useredit = () => {
 
   return (
     <>
-      <div className="container">
-        <Nav />
-      </div>
+      <Nav />
+      <div className="container"></div>
       <div className="container" style={{ marginTop: "50px" }}>
         <main id="main">
           <div className="head-1">
-            <h2>Biodata Diri</h2>
+            <h2 className="font-bold text-lg">Biodata Diri</h2>
           </div>
           <div className="biodata">
             <form id="form-useredit" onSubmit={editUser}>
@@ -94,7 +93,7 @@ const Useredit = () => {
                 </div>
               </div>
               <div className="edit-biodata">
-                <h2>Ubah Data Diri</h2>
+                <h2 className="font-bold text-xl">Ubah Data Diri</h2>
                 <label htmlFor="fullName">Nama</label>
                 <input
                   name="fullName"
@@ -126,7 +125,7 @@ const Useredit = () => {
                   onChange={(e) => SetData({ ...data, gender: e.target.value })}
                   //onChange={e => setGender(e.target.value)}
                 />
-                <h2>Ubah Kontak</h2>
+                <h2 className="font-bold text-xl">Ubah Kontak</h2>
                 <label htmlFor="email">Email</label>
                 <input
                   name="email"
@@ -145,8 +144,10 @@ const Useredit = () => {
                   onChange={(e) => SetData({ ...data, phone: e.target.value })}
                   //onChange={e => setPhone(e.target.value)}
                 />
-                <button type="submit" className="btn-useredit">
-                  simpan
+                <button
+                  className="h-10 px-6 font-bold rounded-md bg-primary text-white w-full"
+                  type="submit">
+                  Simpan
                 </button>
               </div>
             </form>
