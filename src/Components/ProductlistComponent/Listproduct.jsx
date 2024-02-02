@@ -4,17 +4,17 @@ const ListProduct = ({ product }) => {
   return (
     <>
       <div className="font-inter p-8">
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 justify-center">
           {product.map((prod) => (
-            <div className="w-[220px] flex flex-col" key={prod.id}>
-              <div className="h-[220px]">
+            <div className="w-[200px] flex flex-col" key={prod.id}>
+              <div className="h-[200px]">
                 <img
                   src={`http://localhost:5000/static/stores/${prod.photo}`}
                   alt=""
                   className="object-cover w-full h-full rounded-t-xl"
                 />
               </div>
-              <div className="bg-primarybg flex flex-col gap-4 h-[190px] p-4 rounded-b-xl">
+              <div className="bg-primarybg flex flex-col gap-4 h-[160px] p-4 rounded-b-xl">
                 <div>
                   <h2 className="font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
                     {prod.name}
