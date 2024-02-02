@@ -25,7 +25,6 @@ import {
   LoginPage,
   RegisterPage,
   SellerRegisterPage,
-  UserEditPage,
 } from "./Pages/Froms/index.jsx";
 
 function App() {
