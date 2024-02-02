@@ -46,29 +46,6 @@ const Sellersignup = () => {
         })
     }, [provinceId])
 
-    // useEffect(() => {
-    //     axios
-    //         .get("http://localhost:5000/province")
-    //         .then((res) => {
-    //             if (res.data.message === "Succesfully") {
-    //                 setProv(res.data.data)
-    //             }
-    //         })
-    //         //.then(res => console.log(res))
-    //         .then((err) => console.log(err));
-    // }, []);
-
-    // useEffect(() => {
-    //     axios
-    //         .get("http://localhost:5000/cities")
-    //         .then((res) => {
-    //             if (res.data.message === "Succesfully") {
-    //                 setCity(res.data.data)
-    //             }
-    //         })
-    //         .then((err) => console.log(err));
-    // }, []);
-
 
 
     const sellerRegister = async () => {

@@ -23,8 +23,6 @@ const Favorite = () => {
       .then(err => console.log(err))
   }, [])
 
-  console.log(stores)
-
   return (
     <>
       <Nav />

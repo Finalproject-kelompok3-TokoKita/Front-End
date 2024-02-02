@@ -4,7 +4,6 @@ import { profile } from "../../utils/images"
 const Userbio = ({ userdata }) => {
 
     const photo = userdata.photo
-    console.log(userdata)
 
     return (
         <>

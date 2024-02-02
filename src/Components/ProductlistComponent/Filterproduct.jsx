@@ -1,4 +1,4 @@
-const Filterproduct = ({ province, setProvID, city, setcityID, category }) => {
+const Filterproduct = ({ province, setProvID, city, setcityID }) => {
 
   return (
     <>

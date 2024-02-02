@@ -23,7 +23,6 @@ const Cart = () => {
           //setCartproduct(res.data.data[0].product)
         }
       })
-      //.then(res => (console.log(res)))
       .then(err => (console.log(err)))
   }, [])
 
@@ -32,11 +31,6 @@ const Cart = () => {
     <>
       <Nav />
       <h1>Keranjang Belanja</h1>
-      {/* 
-        bang willy, 
-        itu <Link> yang diatas jadiin diatas ya, pjok kiri atas, 
-        yang bawwah yang "Keranjang Belanja Masih Kosong" ditengahin
-      */}
       {
         cartdata.length === 0 ?
           <h1>Keranjang Belanja Masih Kosong</h1>
