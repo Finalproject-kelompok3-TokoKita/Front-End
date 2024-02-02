@@ -26,39 +26,47 @@ const Favorite = () => {
   return (
     <>
       <Nav />
-      {
-        stores.length === 0 ?
-          <h1>Anda Belum Memiliki Toko Favorite, Silahkan Explore</h1>
-          :
-          <div>
-            <div className="">
-              <div className="cart">
-                <div className="container">
-                  <h3 style={{ paddingBottom: "20px", paddingTop: "50px" }}>Toko Yang Kamu Sukai</h3>
-                  <div className="three-col-wrapper">
-                    {
-                      stores.map((list) => (
-                        <div className="index-product-list" key={list.id}>
-                          <img src={`http://localhost:5000/static/stores/${list.store.photo}`} alt="" />
-                          <div className="container">
-                            <h3 style={{ textAlign: "center" }}>
-                              {list.store.name}
-                              <br />
-                            </h3>
-                            <h4>
-                            </h4>
-                            <br />
-                            <Link to={`/seller/${list.store.id}`} className="index-product-button-link">Kunjungi Toko</Link>
-                          </div>
-                        </div>
-                      ))
-                    }
-                  </div>
+      {stores.length === 0 ? (
+        <h1 className="lanja3">
+          Anda Belum Memiliki Toko Favorite, Silahkan Explore
+        </h1>
+      ) : (
+        <div>
+          <div className="">
+            <div className="cart">
+              <div className="container">
+                <h3 style={{ paddingBottom: "20px", paddingTop: "50px" }}>
+                  Toko Yang Kamu Sukai
+                </h3>
+                <div className="three-col-wrapper">
+                  {stores.map((list) => (
+                    <div className="index-product-list" key={list.id}>
+                      <img
+                        src={`http://localhost:5000/static/stores/${list.store.photo}`}
+                        alt=""
+                      />
+                      <div className="container">
+                        <h3 style={{ textAlign: "center" }}>
+                          {list.store.name}
+                          <br />
+                        </h3>
+                        <h4></h4>
+                        <br />
+                        <Link
+                          to={`/seller/${list.store.id}`}
+                          className="index-product-button-link"
+                        >
+                          Kunjungi Toko
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-      }
+        </div>
+      )}
       <Footer />
     </>
   );
