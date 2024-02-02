@@ -1,64 +1,39 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import kakap from "../../assets/kakap.jpg";
 
 const Userbio = ({ userdata }) => {
-
-    return (
-        <>
-            <div className="wrapper">
-                <div className="left">
-                    <img src={`http://localhost:5000/static/users/${userdata.photo}`} width={100} />
-                    <button className="ubah">Ubah Foto Profil</button>
-                    <p className="file">
-                        Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file
-                        yang diperbolehkan: .JPG .JPEG .PNG
-                    </p>
-                </div>
-                <div className="right">
-                    <div className="info">
-                        <h3>Ubah Biodata Diri</h3>
-                        <div className="info_data">
-                            <div className="data">
-                                <h4>Nama</h4>
-                                <h4>Tanggal Lahir</h4>
-                                <h4>Jenis Kelamin</h4>
-                            </div>
-                            <div className="data">
-                                <h5>
-                                    {userdata.fullName}
-                                </h5>
-                                <h5>
-                                    {userdata.dateOfBirth}
-                                </h5>
-                                <h5>
-                                    {userdata.gender}
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="projects">
-                        <h3>Ubah Kontak</h3>
-                        <div className="projects_data">
-                            <div className="data">
-                                <h4>Email</h4>
-                                <h4>No Hp</h4>
-                            </div>
-                            <div className="data">
-                                <h5>
-                                    {userdata.email}
-                                </h5>
-                                <h5>
-                                    {userdata.phone}
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <Link to={`/editprofile/${userdata.id}`}><button className="">edit user</button></Link>
-                    </div>
-                </div>
+  return (
+    <div className="p-12 font-inter flex justify-center min-h-screen">
+      <div className="bg-primarybg shadow-lg w-2/3 h-[360px] p-8 flex flex-col gap-4 rounded-lg">
+        <div>
+          <h1 className="font-bold text-lg">{userdata.fullName}</h1>
+        </div>
+        <div className="flex gap-8">
+          <div className="w-[240px] h-[240px]">
+            <img
+              src={kakap}
+              alt=""
+              className="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+          <div className="flex flex-col justify-between">
+            <div className="text-lg">
+              <h1>Nama: {userdata.fullName}</h1>
+              <h4>Tanggal Lahir: {userdata.dateOfBirth} </h4>
+              <h4>Jenis Kelamin: {userdata.gender} </h4>
+              <h4>Email: {userdata.email}</h4>
+              <h4>No. HP: {userdata.phone}</h4>
             </div>
-        </>
-    )
-}
+            <button
+              className="h-10 px-6 font-bold rounded-md bg-primary text-white w-[200px]"
+              type="submit">
+              <Link to={`/editprofile/${userdata.id}`}>Edit Profil</Link>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Userbio
+export default Userbio;
