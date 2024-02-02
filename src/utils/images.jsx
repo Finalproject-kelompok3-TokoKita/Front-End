@@ -13,6 +13,7 @@ import phone from "../assets/images/phone.svg";
 import facebook from "../assets/images/facebook.svg";
 import instagram from "../assets/images/instagram.svg";
 import twitter from "../assets/images/twitter.svg";
+import profile from "../assets/images/profile.jpg";
 
 export {
   home_image,
@@ -30,4 +31,5 @@ export {
   facebook,
   instagram,
   twitter,
+  profile,
 };

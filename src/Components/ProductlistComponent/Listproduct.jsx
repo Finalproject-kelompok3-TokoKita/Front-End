@@ -17,19 +17,19 @@ const ListProduct = ({ product }) => {
               <div className="bg-primarybg flex flex-col gap-4 h-[190px] p-4 rounded-b-xl">
                 <div>
                   <h2 className="font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
-                    {prod.name} - Yogyakarta
+                    {prod.name}
                   </h2>
-                  <h6 className="text-xs">Jajanan</h6>
+                  <h6 className="text-xs">{prod.category.name}</h6>
                 </div>
                 <div className="flex justify-center gap-4">
                   <div className="flex flex-col justify-center items-center">
-                    <h2 className="font-bold">15.000</h2>
-                    <h6 className="text-xs">Harga</h6>
+                    <h2 className="font-bold">Kota</h2>
+                    <h6 className="text-xs">{prod.city.name}</h6>
                   </div>
                   <div className="border-r border-gray-500 h-full"></div>
                   <div className="flex flex-col justify-center items-center">
-                    <h2 className="font-bold">5⭐</h2>
-                    <h6 className="text-xs">Rating</h6>
+                    <h2 className="font-bold">Provinsi</h2>
+                    <h6 className="text-xs">{prod.province.name}</h6>
                   </div>
                 </div>
                 <button

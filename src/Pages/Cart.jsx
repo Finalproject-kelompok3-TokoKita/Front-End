@@ -26,20 +26,24 @@ const Cart = () => {
       .then(err => (console.log(err)))
   }, [])
 
-  console.log(cartdata)
-
   return (
     <>
       <Nav />
-      <div className="container">
-        <p className="nan" style={{ padding: "15px 0" }}>
-          Daftar Pesanan
-        </p>
-        <div className="cart">
-          <Cartlist cartdata={cartdata} />
-          <Checkout />
-        </div>
-      </div>
+      <h1>Keranjang Belanja</h1>
+      {
+        cartdata.length === 0 ?
+          <h1>Keranjang Belanja Masih Kosong</h1>
+          :
+          <div className="container">
+            <p className="nan" style={{ padding: "15px 0" }}>
+              Daftar Pesanan
+            </p>
+            <div className="cart">
+              <Cartlist cartdata={cartdata} />
+              <Checkout />
+            </div>
+          </div>
+      }
       <Footer />
     </>
   );

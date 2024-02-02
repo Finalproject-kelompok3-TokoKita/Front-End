@@ -16,53 +16,38 @@ const ProductPage = () => {
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const [city, setCity] = useState([]);
-  const [cityID, setcityID] = useState("");
+  const [cityID, setcityID] = useState('');
   const [province, setProvince] = useState([]);
-  const [provID, setProvID] = useState("");
-  const [category, setCategory] = useState([]);
+  const [provID, setProvID] = useState('');
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
     provinceList().then((prov) => {
       setProvince(prov);
-    });
-  }, []);
+    })
+  }, [])
 
   useEffect(() => {
     cityList(provID).then((ct) => {
       setCity(ct);
-    });
-  }, [provID]);
+    })
+  }, [provID])
 
   useEffect(() => {
-    storeList(cityID).then((s) => {
-      setProduct(s);
-    });
-  }, [cityID]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/getstore")
-      .then((res) => {
-        if (res.data.message === "Successfully") {
-          if (provID === "" || cityID === "") {
-            setProduct(res.data.data);
+    if (provID == '' || provID == '--Pilih%20Provinsi--' || cityID == '' || cityID == '--Pilih Kota--') {
+      axios.get("http://localhost:5000/getstore")
+        .then((res) => {
+          if (res.data.message === 'Successfully') {
+              setProduct(res.data.data);
           }
-        }
+        })
+        .then((err) => console.log(err))
+    }else{
+      storeList(cityID).then((s) => {
+        setProduct(s);
       })
-      .then((err) => console.log(err));
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/categories")
-      .then((res) => {
-        if (res.data.message === "Succesfully") {
-          setCategory(res.data.data);
-        }
-      })
-      .then((err) => console.log(err));
-  }, []);
+    }  
+  }, [cityID])
 
   return (
     <>
@@ -74,7 +59,6 @@ const ProductPage = () => {
             setProvID={setProvID}
             city={city}
             setcityID={setcityID}
-            category={category}
           />
         </div>
         <div className="w-2/3">

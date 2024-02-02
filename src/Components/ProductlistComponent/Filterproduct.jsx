@@ -1,4 +1,4 @@
-const FilterProduct = ({ province, setProvID, city, setcityID, category }) => {
+const FilterProduct = ({ province, setProvID, city, setcityID }) => {
   return (
     <>
       <div className="p-8 flex flex-col gap-8">
@@ -17,16 +17,6 @@ const FilterProduct = ({ province, setProvID, city, setcityID, category }) => {
             {city.map((cy) => (
               <option key={cy.id} value={cy.id}>
                 {cy.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-col w-2/3 p-4 rounded-2xl shadow-xl gap-2">
-          <h2 className="font-bold">Pilih Kategori</h2>
-          <select name="" id="" onChange={(e) => setCategory(e.target.value)}>
-            {category.map((cat) => (
-              <option key={cat.id} value={cat.name}>
-                {cat.name}
               </option>
             ))}
           </select>
