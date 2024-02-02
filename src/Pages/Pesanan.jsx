@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Nav from "../Components/Nav";
 // import image
 import silang from "../assets/silang.png";
@@ -58,7 +58,7 @@ const Pesanan = () => {
                 </div>
                 <div className="transaksi">
                   <h3>Total Transaksi</h3>
-                  {/* <p className="tran">4000</p> */}
+                  <p className="tran">{getOrder.payment}</p>
                   <div className="pem">
                     <h4>Pesanan</h4>
                     {
@@ -71,6 +71,7 @@ const Pesanan = () => {
                     }
                     <h4>Informasi :</h4>
                     <h5>Pembayaran berhasil. Order telah diproses.</h5>
+                    <Link to={'/productlist'}><button>Pesan Lagi</button></Link>
                   </div>
                 </div>
               </form>

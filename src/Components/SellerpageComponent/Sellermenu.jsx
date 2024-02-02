@@ -12,12 +12,12 @@ const Sellermenu = ({ products }) => {
     const productId = event.target.dataset.id
     event.preventDefault()
     axios.post('http://localhost:5000/cart', {productId})
-      // .then(res => {
-      //   if (res.data.message === "Log In success") {
-      //     redirect('/')
-      //   }
-      // })
-      .then(res => console.log(res))
+      .then(res => {
+        if (res.data.message === "Created") {
+          location.reload()
+        }
+      })
+      //.then(res => console.log(res))
       .then(err => console.log(err))
   }
 

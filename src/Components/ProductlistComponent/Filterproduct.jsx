@@ -24,17 +24,6 @@ const Filterproduct = ({ province, setProvID, city, setcityID, category }) => {
           </select>
         </div>
 
-        <div className="product-list-filter-form-detail shadow">
-          <h2>Pilih Kategori</h2>
-          <select name="" id="" onChange={(e)=>setCategory(e.target.value)}>
-            {
-              category.map((cat) => (
-                <option key={cat.id} value={cat.name}>{cat.name}</option>
-              ))
-            }
-          </select>
-        </div>
-
       </div>
     </>
   );

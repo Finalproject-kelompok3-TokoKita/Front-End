@@ -31,8 +31,7 @@ const Cart = () => {
   return (
     <>
       <Nav />
-      <Link to={'/cart'}><button className="">Keranjang Belanja</button></Link>
-      <Link to={'/Daftar-Pesanan'}><button className="">Daftar Pesanan</button></Link>
+      <h1>Keranjang Belanja</h1>
       {/* 
         bang willy, 
         itu <Link> yang diatas jadiin diatas ya, pjok kiri atas, 

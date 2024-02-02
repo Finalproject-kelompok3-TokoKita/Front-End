@@ -19,7 +19,6 @@ const Productlist = () => {
   const [cityID, setcityID] = useState('');
   const [province, setProvince] = useState([]);
   const [provID, setProvID] = useState('');
-  const [category, setCategory] = useState([]);
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -35,37 +34,20 @@ const Productlist = () => {
   }, [provID])
 
   useEffect(() => {
-    storeList(cityID).then((s) => {
-      setProduct(s);
-    })
-  }, [cityID])
-
-  useEffect(() => {
-    axios.get("http://localhost:5000/getstore")
-      .then((res) => {
-        if (res.data.message === 'Successfully') {
-          if (provID === '' || cityID === '') {
-            setProduct(res.data.data);
+    if (provID == '' || provID == '--Pilih%20Provinsi--' || cityID == '' || cityID == '--Pilih Kota--') {
+      axios.get("http://localhost:5000/getstore")
+        .then((res) => {
+          if (res.data.message === 'Successfully') {
+              setProduct(res.data.data);
           }
-        }
+        })
+        .then((err) => console.log(err))
+    }else{
+      storeList(cityID).then((s) => {
+        setProduct(s);
       })
-      .then((err) => console.log(err))
-  }, []);
-
-  console.log(product)
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/categories")
-      .then((res) => {
-        if (res.data.message === "Succesfully") {
-          setCategory(res.data.data);
-        }
-      })
-      .then((err) => console.log(err));
-  }, []);
-
-
+    }  
+  }, [cityID])
 
   return (
     <>
@@ -77,7 +59,6 @@ const Productlist = () => {
             setProvID={setProvID}
             city={city}
             setcityID={setcityID}
-            category={category}
           />
           <Listproduct product={product} />
         </div>

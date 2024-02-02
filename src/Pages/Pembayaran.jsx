@@ -12,28 +12,30 @@ const Pembayaran = () => {
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const [payment, setPayment] = useState([])
+  const [total, setTotal] = useState('')
   const [getID, setgetID] = useState()
   const redirect = useNavigate()
 
   useEffect(() => {
     axios.get("http://localhost:5000/items")
-      // .then(res => {
-      //   if (res.data.message === "Succesfully") {
-      //     setPayment(res.data.data)
-      //   }
-      // })
-      .then(res => (console.log(res)))
+      .then(res => {
+        if (res.data.message === "Succesfully") {
+          setPayment(res.data.data)
+          setTotal(res.data.data[0].order)
+        }
+      })
       .then(err => (console.log(err)))
   }, [])
 
+  // console.log(payment[0].order.payment)
+
   useEffect(() => {
-    axios.get("http://localhost:5000/order")
+    axios.get("http://localhost:5000/orders")
       .then(res => {
         if (res.data.message === "Succesfully") {
           setgetID(res.data.data[0].id)
         }
       })
-      //.then(res => (console.log(res)))
       .then(err => (console.log(err)))
   }, [])
 
@@ -45,7 +47,6 @@ const Pembayaran = () => {
           redirect('/pesanan')
         }
       })
-      //.then(res => console.log(res))
       .then(err => console.log(err))
   }
 
@@ -84,6 +85,9 @@ const Pembayaran = () => {
                     </p>
                   ))
                 }
+                <p>TOTAL : 
+                  <span className="metode3">{total.payment}</span>
+                </p>
               </div>
             </div>
           </div>
