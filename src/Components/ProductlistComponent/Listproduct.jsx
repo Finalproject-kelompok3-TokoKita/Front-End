@@ -4,9 +4,9 @@ const ListProduct = ({ product }) => {
   return (
     <>
       <div className="font-inter p-8">
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           {product.map((prod) => (
-            <div className="w-1/3 flex flex-col" key={prod.id}>
+            <div className="w-[220px] flex flex-col" key={prod.id}>
               <div className="h-[220px]">
                 <img
                   src={`http://localhost:5000/static/stores/${prod.photo}`}
@@ -19,17 +19,17 @@ const ListProduct = ({ product }) => {
                   <h2 className="font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
                     {prod.name}
                   </h2>
-                  <h6 className="text-xs">{prod.category.name}</h6>
+                  {/* <h6 className="text-xs">{prod.category.name}</h6> */}
                 </div>
                 <div className="flex justify-center gap-4">
                   <div className="flex flex-col justify-center items-center">
                     <h2 className="font-bold">Kota</h2>
-                    <h6 className="text-xs">{prod.city.name}</h6>
+                    {/* <h6 className="text-xs">{prod.city.name}</h6> */}
                   </div>
                   <div className="border-r border-gray-500 h-full"></div>
                   <div className="flex flex-col justify-center items-center">
                     <h2 className="font-bold">Provinsi</h2>
-                    <h6 className="text-xs">{prod.province.name}</h6>
+                    {/* <h6 className="text-xs">{prod.province.name}</h6> */}
                   </div>
                 </div>
                 <button
