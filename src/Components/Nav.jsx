@@ -81,7 +81,7 @@ const Nav = ({ userData }) => {
               Sign In
             </a>
             <a
-              href
+              href="/signup"
               className="bg-secondary text-white px-[8px] py-[4px] rounded-[10px] w-[100px] flex justify-center hover:bg-white hover:text-secondary hover:border hover:border-solid hover:border-secondary">
               Sign Up
             </a>
