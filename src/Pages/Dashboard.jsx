@@ -6,8 +6,6 @@ import Sellercardinfo from "../Components/DashboardComponent/sellercardinfo";
 import Nav from "../Components/Nav";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { jwtDecode } from "jwt-decode";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Dashboard = () => {
