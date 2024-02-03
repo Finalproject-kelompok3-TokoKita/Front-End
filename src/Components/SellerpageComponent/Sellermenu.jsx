@@ -8,17 +8,18 @@ const Sellermenu = ({ products }) => {
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const addtocart = (event) => {
-    const productId = event.target.dataset.id
-    event.preventDefault()
-    axios.post('http://localhost:5000/cart', {productId})
-      .then(res => {
+    const productId = event.target.dataset.id;
+    event.preventDefault();
+    axios
+      .post("http://localhost:5000/cart", { productId })
+      .then((res) => {
         if (res.data.message === "Created") {
-          location.reload()
+          location.reload();
         }
       })
       //.then(res => console.log(res))
-      .then(err => console.log(err))
-  }
+      .then((err) => console.log(err));
+  };
 
   return (
     <>
@@ -38,8 +39,9 @@ const Sellermenu = ({ products }) => {
                       type="submit"
                       id="seller-page-addtocart"
                       data-id={data.id}
-                      onClick={addtocart}>
-                      <b>Pesan Sekarang</b>
+                      onClick={addtocart}
+                    >
+                      Pesan Sekarang
                     </button>
                   </div>
                   <div id="seller-page-menu-img">

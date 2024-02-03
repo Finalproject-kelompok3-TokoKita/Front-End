@@ -46,7 +46,7 @@ const Favorite = () => {
                         alt=""
                       />
                       <div className="container">
-                        <h3 style={{ textAlign: "center" }}>
+                        <h3 className="yase" style={{ textAlign: "center" }}>
                           {list.store.name}
                           <br />
                         </h3>

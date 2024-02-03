@@ -27,7 +27,8 @@ const Footer = () => {
         <p>Dapatkan Informasi Melalui Newsletter Kami</p>
         <button
           className="h-10 px-6 font-bold rounded-md bg-primary text-white w-full mb-6"
-          type="submit">
+          type="submit"
+        >
           Berlangganan
         </button>
         <h1 className="text-[20px] font-bold mb-2">Ikuti Kami</h1>

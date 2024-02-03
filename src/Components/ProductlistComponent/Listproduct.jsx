@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ListProduct = ({ product }) => {
   return (
     <>
-      <div className="font-inter p-8">
+      <div className="okk font-inter p-8">
         <div className="flex flex-wrap gap-4 justify-center">
           {product.map((prod) => (
             <div className="w-[200px] flex flex-col" key={prod.id}>
@@ -34,7 +34,8 @@ const ListProduct = ({ product }) => {
                 </div>
                 <button
                   className="h-10 px-6 font-bold rounded-md bg-primary text-white w-full"
-                  type="submit">
+                  type="submit"
+                >
                   <Link to={`/seller/${prod.id}`} className="">
                     Kunjungi Toko
                   </Link>

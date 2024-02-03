@@ -1,3 +1,4 @@
+import { loc } from "../../utils/images";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -36,12 +37,14 @@ const Sellerinfo = ({ seller, city, prov, categories }) => {
           <div className="font-bold">
             <h1 className="">{seller.name}</h1>
             <h3>Jenis Kuliner : {categories}</h3>
-            <h3>
-              Lokasi : {city}, {prov}
+            <img src={loc} alt="" />
+            <h3 className="locat">
+              {city}, {prov}
             </h3>
-            <h3>Alamat : {seller.address}</h3>
+            <img src={loc} alt="" />
+            <h3 className="locat">{seller.address}</h3>
             <h3>Harga : 10.000 - 20.000</h3>
-            <button onClick={likeStore} data-id={seller.id}>
+            <button onClick={likeStore} data-id={seller.id} className="rite">
               Favorite
             </button>
           </div>

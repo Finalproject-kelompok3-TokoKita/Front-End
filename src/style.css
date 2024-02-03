@@ -101,6 +101,35 @@ header {
   font-size: 30px;
   font-family: cursive;
 }
+/* ---------- toko sekitar.jsx --------- */
+.tokonya {
+  font-weight: 600;
+  font-size: 20px;
+}
+/* ---------- filter produk.jsx --------- */
+.okk {
+  margin-right: 80px;
+}
+.locat {
+  margin-top: -20px;
+  margin-left: 25px;
+}
+/* ---------- favorite --------- */
+.yase {
+  padding-top: 20px;
+}
+
+/* ---------- sellerinfo.jsx ---------- */
+.rite {
+  margin-top: 5px;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  background-color: tomato;
+}
+.rite:hover {
+  background-color: #00aa13;
+}
 /* ----------userprofile---------- */
 .wrapper {
   position: absolute;

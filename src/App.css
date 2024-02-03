@@ -165,8 +165,7 @@ nav {
 .index-product-button-link {
   background-color: green;
   color: white;
-  margin-top: 50px;
-  margin-left: -10px;
+  margin-top: 80px;
   width: 100%;
   padding: 10px;
   align-items: center;
@@ -262,7 +261,8 @@ nav {
   cursor: pointer;
   border: none;
   color: white;
-  padding: 10px 380px;
+  width: 100%;
+  padding: 10px;
   text-align: center;
   border-radius: 12px;
   margin-bottom: 10px;
