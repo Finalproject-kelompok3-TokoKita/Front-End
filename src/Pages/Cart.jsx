@@ -11,35 +11,39 @@ const Cart = () => {
   axios.defaults.withCredentials = true;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-  const [cartdata, setCartdata] = useState([])
-  const [cartproduct, setCartproduct] = useState({})
+  const [cartdata, setCartdata] = useState([]);
+  const [cartproduct, setCartproduct] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:5000/cart")
-      .then(res => {
+    axios
+      .get("http://localhost:5000/cart")
+      .then((res) => {
         if (res.data.message === "Succesfully") {
-          setCartdata(res.data.data)
+          setCartdata(res.data.data);
           //setCartproduct(res.data.data[0].product)
         }
       })
       //.then(res => (console.log(res)))
-      .then(err => (console.log(err)))
-  }, [])
-
-  console.log(cartdata)
+      .then((err) => console.log(err));
+  }, []);
 
   return (
     <>
       <Nav />
-      <div className="container">
-        <p className="nan" style={{ padding: "15px 0" }}>
-          Daftar Pesanan
-        </p>
-        <div className="cart">
-          <Cartlist cartdata={cartdata} />
-          <Checkout />
+      <h1 className="lanja1">Keranjang Belanja</h1>
+      {cartdata.length === 0 ? (
+        <h1 className="lanja2">Keranjang Belanja Masih Kosong</h1>
+      ) : (
+        <div className="container">
+          <p className="nan" style={{ padding: "15px 0" }}>
+            Daftar Pesanan
+          </p>
+          <div className="cart">
+            <Cartlist cartdata={cartdata} />
+            <Checkout />
+          </div>
         </div>
-      </div>
+      )}
       <Footer />
     </>
   );

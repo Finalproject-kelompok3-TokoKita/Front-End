@@ -93,6 +93,42 @@ header {
   border: none;
   border-radius: 5px;
 }
+.tradisi {
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  font-family: cursive;
+}
+/* ---------- toko sekitar.jsx --------- */
+.tokonya {
+  font-weight: 600;
+  font-size: 20px;
+}
+/* ---------- filter produk.jsx --------- */
+.okk {
+  margin-right: 80px;
+}
+.locat {
+  margin-top: -20px;
+  margin-left: 25px;
+}
+/* ---------- favorite --------- */
+.yase {
+  padding-top: 20px;
+}
+
+/* ---------- sellerinfo.jsx ---------- */
+.rite {
+  margin-top: 5px;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  background-color: tomato;
+}
+.rite:hover {
+  background-color: #00aa13;
+}
 /* ----------userprofile---------- */
 .wrapper {
   position: absolute;
@@ -347,6 +383,22 @@ p {
 .cart-total .bayar {
   font-weight: 600;
   padding-bottom: 10px;
+}
+.lanja1 {
+  margin-top: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+.lanja2 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.lanja3 {
+  margin-top: 50px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 120px;
 }
 
 /* ----------Contact---------- */
@@ -975,7 +1027,11 @@ p {
 .container-pembayaran form .submit-btn:hover {
   background: #2ecc71;
 }
-/* ..........Pesanan.jsx---------- */
+/* ---------- post menu----------- */
+.button .upload-produk-btnsubmit {
+  background-color: tomato;
+}
+/* ----------Pesanan.jsx---------- */
 .col .silang {
   width: 20px;
   cursor: pointer;

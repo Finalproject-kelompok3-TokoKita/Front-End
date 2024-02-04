@@ -1,11 +1,6 @@
-// import image
-import card1 from "../assets/card.png";
-import card2 from "../assets/favorite.png";
-import card3 from "../assets/rumah.png";
-import card4 from "../assets/orang.png";
-import card5 from "../assets/menu.png";
+import { cart, favorite, store, logout_icon, profile } from "../utils/images";
 import Cookies from "js-cookie";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -28,6 +23,7 @@ const Nav = ({ userData }) => {
       .then((err) => console.log(err));
   }, []);
 
+  const photo = userdata.photo;
 
   const logout = () => {
     Cookies.remove("token");
@@ -38,49 +34,69 @@ const Nav = ({ userData }) => {
     // .then(err => console.log(err))
   };
   return (
-    <>
-      <header>
-        <div className="logo">
-          <a href="#">Tokokita</a>
+    <div>
+      <header className="font-inter h-[80px] flex items-center justify-between">
+        <div>
+          <a href="/" className="text-primary font-bold text-[32px]">
+            Tokokita
+          </a>
         </div>
-        <nav className="navbar-header">
-          <a href={"/"}>Home</a>
-          <a href={"/productlist"}>Shop</a>
-          <a href={"/contact"}>Contact</a>
-        </nav>
+        <div className="w-[281px]">
+          <nav className="text-black text-[20px] font-normal flex justify-between">
+            <a href="/" className="hover:text-primary">
+              Home
+            </a>
+            <a href="/productlist" className="hover:text-primary">
+              Shop
+            </a>
+            <a href="/contact" className="hover:text-primary">
+              Contact
+            </a>
+          </nav>
+        </div>
         {key ? (
-          <ul className="items">
+          <div className="flex justify-center items-center gap-8">
             <a href={"/cart"}>
-              <img src={card1} />
+              <img src={cart} className="w-[18px]" />
             </a>
             <a href={"/favorite"}>
-              <img src={card2} />
+              <img src={favorite} className="w-[18px]" />
             </a>
             <a href={"/dashboard"}>
-              <img src={card3} />
+              <img src={store} className="w-[18px]" />
             </a>
             <a href={"/userprofile"}>
-              <img src={`http://localhost:5000/static/users/${userdata.photo}`}  />
+              {photo ? (
+                <img
+                  src={`http://localhost:5000/static/users/${userdata.photo}`}
+                  className="w-[36px] rounded-full"
+                />
+              ) : (
+                <img src={profile} className="w-[18px]" />
+              )}
             </a>
             <a onClick={logout}>
-              <img src={card4} />
+              <img src={logout_icon} className="w-[24px] cursor-pointer" />
             </a>
-            <a href="#" id="mobile">
-              <img src={card5} />
-            </a>
-          </ul>
+          </div>
         ) : (
-          <ul className="items">
-            <a href={"/login"} className="use">
-              Sign in
+          <div className="flex justify-between items-center text-[20px] font-bold gap-2">
+            <a
+              href="/login"
+              className="bg-primary text-white px-[8px] py-[4px] rounded-[10px] w-[100px] flex justify-center hover:bg-white hover:text-primary hover:border hover:border-solid hover:border-primary"
+            >
+              Sign In
             </a>
-            <a href={"/signup"} className="uses">
-              Sign up
+            <a
+              href="/signup"
+              className="bg-secondary text-white px-[8px] py-[4px] rounded-[10px] w-[100px] flex justify-center hover:bg-white hover:text-secondary hover:border hover:border-solid hover:border-secondary"
+            >
+              Sign Up
             </a>
-          </ul>
+          </div>
         )}
       </header>
-    </>
+    </div>
   );
 };
 

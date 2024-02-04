@@ -1,4 +1,6 @@
 const Cartlist = ({ cartdata }) => {
+
+  console.log(cartdata)
   return (
     <>
       <div className="products">
@@ -14,8 +16,7 @@ const Cartlist = ({ cartdata }) => {
                 </p>
                 <p className="product-remove"></p>
               </div>
-              <img src="./assets/images/makanan.jpg" />
-              <h1>total</h1>
+              <img src={`http://localhost:5000/static/products/${cart.product.photo}`} />
             </div>
           ))
         }

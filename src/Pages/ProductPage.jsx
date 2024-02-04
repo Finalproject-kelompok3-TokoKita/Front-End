@@ -1,6 +1,6 @@
 import Footer from "../Components/Footer";
-import Filterproduct from "../Components/ProductlistComponent/Filterproduct";
-import Listproduct from "../Components/ProductlistComponent/Listproduct";
+import FilterProduct from "../Components/ProductlistComponent/FilterProduct";
+import ListProduct from "../Components/ProductlistComponent/ListProduct";
 import Searchbar from "../Components/Searchbar";
 import Nav from "../Components/Nav";
 
@@ -10,7 +10,7 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import { cityList, provinceList, storeList } from "../Service/Api";
 
-const Productlist = () => {
+const ProductPage = () => {
   const token = Cookies.get("token");
   axios.defaults.withCredentials = true;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
@@ -19,9 +19,7 @@ const Productlist = () => {
   const [cityID, setcityID] = useState('');
   const [province, setProvince] = useState([]);
   const [provID, setProvID] = useState('');
-  const [category, setCategory] = useState([]);
   const [product, setProduct] = useState([]);
-
 
   useEffect(() => {
     provinceList().then((prov) => {
@@ -54,16 +52,17 @@ const Productlist = () => {
   return (
     <>
       <Nav />
-      <div className="container">
-        <div className="two-col-productlist-wrapper">
-          <Filterproduct
+      <div className="flex px-12">
+        <div className="w-1/3">
+          <FilterProduct
             province={province}
             setProvID={setProvID}
             city={city}
             setcityID={setcityID}
-            category={category}
           />
-          <Listproduct product={product} />
+        </div>
+        <div className="w-2/3">
+          <ListProduct product={product} />
         </div>
       </div>
       <Footer />
@@ -71,4 +70,4 @@ const Productlist = () => {
   );
 };
 
-export default Productlist;
+export default ProductPage;

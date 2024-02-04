@@ -23,7 +23,7 @@ const Sellerpage = () => {
           setSeller(res.data.data)
           setCity(res.data.data.city.name)
           setprov(res.data.data.province.name)
-          setCategories(res.data.data.province.name)
+          setCategories(res.data.data.category.name)
           setProducts(res.data.data.products)
         }
       })

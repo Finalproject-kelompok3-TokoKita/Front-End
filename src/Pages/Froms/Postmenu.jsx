@@ -1,57 +1,51 @@
 import "./form.css";
-// import image
-import card1 from "../../assets/card.png";
-import card2 from "../../assets/favorite.png";
-import card3 from "../../assets/rumah.png";
-import card4 from "../../assets/orang.png";
-import Nav from "../../Components/Nav";
+
 import Cookies from "js-cookie";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Postmenu = () => {
-  const token = Cookies.get('token')
-  axios.defaults.withCredentials = true
-  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-  const redirect = useNavigate()
+  const token = Cookies.get("token");
+  axios.defaults.withCredentials = true;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  const redirect = useNavigate();
 
-  const [category, setCategory] = useState([])
-  const [city, setCity] = useState([])
-  const [prov, setProv] = useState([])
+  const [category, setCategory] = useState([]);
+  const [city, setCity] = useState([]);
+  const [prov, setProv] = useState([]);
 
   const [input, setInput] = useState({
-    name: '',
-    description: '',
-    price: '',
-    quantity: '',
-    photo: ''
-  })
+    name: "",
+    description: "",
+    price: "",
+    quantity: "",
+    photo: "",
+  });
 
   const inputProduct = async () => {
-    const formData = new FormData()
-    formData.append("name", input.name)
-    formData.append("description", input.description)
-    formData.append("price", input.price)
-    formData.append("quantity", input.quantity)
-    formData.append("file", input.photo)
+    const formData = new FormData();
+    formData.append("name", input.name);
+    formData.append("description", input.description);
+    formData.append("price", input.price);
+    formData.append("quantity", input.quantity);
+    formData.append("file", input.photo);
 
-    const req = await axios.post('http://localhost:5000/product', formData, {
-      headers: { 'Content-Type': "multipart/form-data" },
+    const req = await axios.post("http://localhost:5000/product", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
     });
 
     if (req.data.message === "Berhasil Dibuat") {
       setTimeout(() => {
-        redirect('/dashboard');
+        redirect("/dashboard");
       }, 1000);
     }
-  }
+  };
 
   const handleProduct = async (e) => {
     e.preventDefault();
     await inputProduct();
-}
-
+  };
 
   return (
     <>
@@ -77,7 +71,9 @@ const Postmenu = () => {
                 <input
                   type="file"
                   id="img"
-                  onChange={e => setInput({ ...input, photo: e.target.files[0] })}
+                  onChange={(e) =>
+                    setInput({ ...input, photo: e.target.files[0] })
+                  }
                 />
               </div>
             </div>
@@ -95,7 +91,7 @@ const Postmenu = () => {
                   name="name"
                   type="text"
                   className="upload-produk-inputtext"
-                  onChange={e => setInput({ ...input, name: e.target.value })}
+                  onChange={(e) => setInput({ ...input, name: e.target.value })}
                 />
               </div>
             </div>
@@ -112,7 +108,9 @@ const Postmenu = () => {
                 <input
                   name="description"
                   className="upload-produk-inputtext"
-                  onChange={e => setInput({ ...input, description: e.target.value })}
+                  onChange={(e) =>
+                    setInput({ ...input, description: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -125,7 +123,9 @@ const Postmenu = () => {
                 <input
                   name="price"
                   className="upload-produk-inputnumber"
-                  onChange={e => setInput({ ...input, price: e.target.value })}
+                  onChange={(e) =>
+                    setInput({ ...input, price: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -135,8 +135,13 @@ const Postmenu = () => {
                 <h3>stok</h3>
               </div>
               <div className="form-group">
-                <input type="text" name="quantity"
-                  onChange={e => setInput({ ...input, quantity: e.target.value })}
+                <input
+                  type="text"
+                  name="quantity"
+                  className="upload-produk-inputtext"
+                  onChange={(e) =>
+                    setInput({ ...input, quantity: e.target.value })
+                  }
                 />
               </div>
             </div>

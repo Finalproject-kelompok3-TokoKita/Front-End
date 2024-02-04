@@ -25,9 +25,8 @@ const Userprofile = () => {
 
   return (
     <>
-      <Nav/>
+      <Nav />
       <Userbio userdata={userdata} />
-      <div className="bac"></div>
       <Footer />
     </>
   );
