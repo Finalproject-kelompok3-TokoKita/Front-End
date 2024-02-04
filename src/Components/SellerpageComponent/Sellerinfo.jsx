@@ -13,12 +13,11 @@ const Sellerinfo = ({ seller, city, prov, categories }) => {
     event.preventDefault();
     axios
       .post("http://localhost:5000/like", { storeId })
-      // .then(res => {
-      //   if (res.data.message === "Log In success") {
-      //     redirect('/')
-      //   }
-      // })
-      .then((res) => console.log(res))
+      .then(res => {
+        if (res.data.message === "Created") {
+          location.reload();
+        }
+      })
       .then((err) => console.log(err));
   };
 

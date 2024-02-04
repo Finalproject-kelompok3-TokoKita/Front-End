@@ -59,22 +59,13 @@ const Sellermenulist = ({ product }) => {
 
   return (
     <>
-      <div id="dashboard-allmenu">
+      <div id="dashboard-allmenu" style={{marginBottom:"50px"}}>
         <h2 className="fg" style={{ textAlign: "center" }}>
           Daftar Menu
         </h2>
         <h6 className="fg" style={{ textAlign: "center" }}>
           Total : {Object.keys(product).length}
         </h6>
-        {/* <form action="" method="get" style={{ marginBottom: "20px" }}>
-          <input
-            type="text"
-            name=""
-            id=""
-            className="dasboard-filter-form"
-            placeholder="Cari produk"
-          />
-        </form> */}
         <hr />
         <table>
           <thead>

@@ -23,6 +23,7 @@ const Favorite = () => {
       .then((err) => console.log(err));
   }, []);
 
+  console.log(stores)
   return (
     <>
       <Nav />
@@ -40,24 +41,28 @@ const Favorite = () => {
                 </h3>
                 <div className="three-col-wrapper">
                   {stores.map((list) => (
-                    <div className="index-product-list" key={list.id}>
+                    <div className="index-product-list" style={{height:"450px"}} key={list.id}>
                       <img
                         src={`http://localhost:5000/static/stores/${list.store.photo}`}
                         alt=""
                       />
-                      <div className="container">
-                        <h3 className="yase" style={{ textAlign: "center" }}>
-                          {list.store.name}
-                          <br />
-                        </h3>
-                        <h4></h4>
-                        <br />
-                        <Link
-                          to={`/seller/${list.store.id}`}
-                          className="index-product-button-link"
+                      <div className="bg-primarybg flex flex-col gap-4 h-[178px] p-4 rounded-b-xl">
+                        <div>
+                          <h3
+                            style={{textAlign:"center"}} 
+                            className="tokonya overflow-hidden whitespace-nowrap overflow-ellipsis">
+                            {list.store.name}
+                          </h3>
+                        </div>
+                        <button
+                          style={{marginTop:"40px"}}
+                          className="h-10 px-6 font-bold rounded-md bg-primary text-white w-full"
+                          type="submit"
                         >
-                          Kunjungi Toko
-                        </Link>
+                          <Link to={`/seller/${list.store.id}`} className="">
+                            Kunjungi Toko
+                          </Link>
+                        </button>
                       </div>
                     </div>
                   ))}

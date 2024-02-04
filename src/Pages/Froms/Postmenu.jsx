@@ -138,6 +138,7 @@ const Postmenu = () => {
                 <input
                   type="text"
                   name="quantity"
+                  className="upload-produk-inputtext"
                   onChange={(e) =>
                     setInput({ ...input, quantity: e.target.value })
                   }

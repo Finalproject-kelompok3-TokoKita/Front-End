@@ -261,8 +261,9 @@ nav {
   cursor: pointer;
   border: none;
   color: white;
+  font-weight: bold;
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
   border-radius: 12px;
   margin-bottom: 10px;
@@ -445,4 +446,14 @@ tr:nth-child(even) {
   text-decoration: none;
   display: inline-block;
   border-radius: 15px;
+}
+
+.btn-pesanan{
+  background-color: #00aa13;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-left: 225px;
+  margin-top:20px;
+  margin-bottom: 20px;
 }

@@ -59,19 +59,21 @@ const Pesanan = () => {
                 <div className="transaksi">
                   <h3>Total Transaksi</h3>
                   <p className="tran">{getOrder.payment}</p>
-                  <div className="pem">
+                  <div className="pem" style={{}}>
                     <h4>Pesanan</h4>
                     {
                       payment.map((pay) => (
-                        <p key={pay.id}>
+                        <div key={pay.id} style={{ marginLeft: "20px" }}>
                           {pay.product.name}
-                          <span className="metode3">{pay.product.price}</span>
-                        </p>
+                          <span style={{ marginLeft: "70px" }}>{pay.product.price}</span>
+                        </div>
                       ))
                     }
-                    <h4>Informasi :</h4>
-                    <h5>Pembayaran berhasil. Order telah diproses.</h5>
-                    <Link to={'/productlist'}><button>Pesan Lagi</button></Link>
+                    <hr style={{ marginTop: "30px" }}/>
+                    <h4 style={{textAlign:"center", marginTop:"5px"}}>Informasi :</h4>
+                    <h5 style={{textAlign:"center"}}>Pembayaran berhasil! Pesanan telah diproses.
+                    </h5>
+                    <Link to={'/productlist'}><button className="btn-pesanan"> Pesan Lagi</button></Link>
                   </div>
                 </div>
               </form>

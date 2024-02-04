@@ -15,6 +15,8 @@ import facebook from "../assets/images/facebook.svg";
 import instagram from "../assets/images/instagram.svg";
 import twitter from "../assets/images/twitter.svg";
 import profile from "../assets/images/profile.jpg";
+import bca from "../assets/images/bca.png";
+import bri from "../assets/images/bri.png";
 
 export {
   home_image,
@@ -34,4 +36,6 @@ export {
   instagram,
   twitter,
   profile,
+  bca,
+  bri,
 };

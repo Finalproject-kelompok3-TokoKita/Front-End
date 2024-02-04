@@ -4,6 +4,7 @@ import silang from "../assets/silang.png";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
+import { bca, bri } from "../utils/images";
 
 const Pembayaran = () => {
 
@@ -62,18 +63,16 @@ const Pembayaran = () => {
               </a>
               <div className="silang-bayar">Pembayaran</div>
               <div className="inputBox">
-                <div className="metode">Pilih Metode Pembayaran</div>
+                <div className="metode">Pilih Rekening Tujuan</div>
                 <span className="metode1">Lihat Semua</span>
               </div>
               <div className="inputBox1">
-                <img className="bca" src="./assets/bca.png" alt />
-                <div className="bcaa">BCA Virtual Account</div>
-                <input type="checkbox" className="metode2" />
+                <img className="bca" src={bca} alt />
+                <div className="bcaa">BCA Virtual Account<span style={{marginLeft:"190px"}}>8098098890</span></div>
               </div>
               <div className="inputBox1">
-                <img className="bca" src="./assets/bri.png" alt />
-                <div className="bcaa">BRI Virtual Account</div>
-                <input type="checkbox" className="metode2" />
+                <img className="bca" src={bri} alt />
+                <div className="bcaa">BRI Virtual Account<span style={{marginLeft:"190px"}}>5454644654</span></div>
               </div>
               <div className="pem">
                 <h4>Daftar Pesanan</h4>

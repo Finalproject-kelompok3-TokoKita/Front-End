@@ -3,7 +3,6 @@ import Footer from "../Components/Footer";
 import Dashboardnav from "../Components/DashboardComponent/Dashboardnav";
 import Sellermenulist from "../Components/DashboardComponent/Sellermenulist";
 import Sellerprofile from "../Components/DashboardComponent/Sellerprofile";
-import Sellercardinfo from "../Components/DashboardComponent/sellercardinfo";
 import Nav from "../Components/Nav";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -54,7 +53,7 @@ const Dashboard = () => {
                 prov={prov}
                 categories={categories}
               />
-              {/* <Sellercardinfo product={product} /> */}
+              <hr style={{marginTop:"40px"}} />
               <Sellermenulist product={product} />
             </div>
           </div>

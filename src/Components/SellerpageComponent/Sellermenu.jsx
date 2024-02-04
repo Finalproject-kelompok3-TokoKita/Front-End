@@ -21,20 +21,22 @@ const Sellermenu = ({ products }) => {
       .then((err) => console.log(err));
   };
 
+  
+
   return (
     <>
       <div id="seller-page-menu">
         <div className="seller-page-product">
           <div className="container">
-            <h1>Daftar Menu</h1>
+            <h1 style={{fontWeight:"bold", fontSize:"30px"}}>Daftar Menu</h1>
             {products.map((data) => (
               <div className="seller-page-category-wrapper" key={data.id}>
                 <hr />
                 <div className="two-col-sellerpage-wrapper seller-page-product-list">
                   <div id="seller-page-menu-info">
-                    <h2>{data.name}</h2>
+                    <h2 style={{paddingTop:"25px",fontWeight:"bold"}}>{data.name}</h2>
                     <p>{data.description}</p>
-                    <h3>{data.price}</h3>
+                    <h3 style={{fontWeight:"bold",paddingBottom:"10px"}}>Harga : {data.price}</h3>
                     <button
                       type="submit"
                       id="seller-page-addtocart"
@@ -47,7 +49,7 @@ const Sellermenu = ({ products }) => {
                   <div id="seller-page-menu-img">
                     <img
                       src={`http://localhost:5000/static/products/${data.photo}`}
-                      height="200"
+                      style={{paddingTop:"25px",height:"180px",borderRadius:"10px"}}
                     />
                   </div>
                 </div>
